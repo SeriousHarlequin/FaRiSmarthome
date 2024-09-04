@@ -1,0 +1,211 @@
+Added Component: Designator=B1(B_Schraube-M3 PAD)
+Added Component: Designator=B2(B_Schraube-M3 PAD)
+Added Component: Designator=B3(B_Schraube-M3 PAD)
+Added Component: Designator=C1(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C2(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C3(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C4(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D1(D_SMD_0603)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D2(D_DO-214)
+Add component (AddParameter): Name = "Spannung For."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J1(SIP-5)
+Added Component: Designator=J2(SIP-5)
+Added Component: Designator=J3(SIP-6)
+Added Component: Designator=J4(J-SMD-Micro-USB)
+Added Component: Designator=Q1(SOT-23)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/IRFZ44NPBF/Infineon+Technologies/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "IRFZ44NPBF-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Infineon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "IRFZ44NPBF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "TO-220-3 Infineon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/IRFZ44NPBF/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/IRFZ44NPBF/Infineon+Technologies/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Q2(SOT-23)
+Added Component: Designator=Q3(SOT-23)
+Added Component: Designator=R1(R_SMD_0603)
+Added Component: Designator=R2(R_SMD_0603)
+Added Component: Designator=R3(R_SMD_0603)
+Added Component: Designator=R4(R_SMD_0603)
+Added Component: Designator=R5(R_SMD_0603)
+Added Component: Designator=R6(R_SMD_0603)
+Added Component: Designator=U1(TO-220-3V)
+Added Component: Designator=U2(MODULE_ESP32-C3-WROOM-02-H4)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-C3-WROOM-02-N4/Espressif+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ESP32-C3-WROOM-02-N4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/ESP32-C3-WROOM-02-N4/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-C3-WROOM-02-N4/Espressif+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U3(QFN50P500X500X100-29N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/CP2102/Silicon+Labs/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Silicon Labs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CP2102"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "WFQFN-20 Silicon Labs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/CP2102/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/CP2102/Silicon+Labs/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3,3V Pin=C1-1
+Added Pin To Net: NetName=3,3V Pin=C4-1
+Added Pin To Net: NetName=3,3V Pin=D2-2
+Added Pin To Net: NetName=3,3V Pin=J2-1
+Added Pin To Net: NetName=3,3V Pin=U2-1
+Added Pin To Net: NetName=3,3V Pin=U3-6
+Added Net: Name=3,3V
+Added Pin To Net: NetName=BAT-CHECK Pin=R3-1
+Added Pin To Net: NetName=BAT-CHECK Pin=R4-2
+Added Pin To Net: NetName=BAT-CHECK Pin=U2-17
+Added Net: Name=BAT-CHECK
+Added Pin To Net: NetName=EN-MODUL Pin=J2-4
+Added Pin To Net: NetName=EN-MODUL Pin=Q1-1
+Added Pin To Net: NetName=EN-MODUL Pin=R1-2
+Added Net: Name=EN-MODUL
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=J2-5
+Added Pin To Net: NetName=GND Pin=J4-5
+Added Pin To Net: NetName=GND Pin=J4-6
+Added Pin To Net: NetName=GND Pin=J4-7
+Added Pin To Net: NetName=GND Pin=J4-8
+Added Pin To Net: NetName=GND Pin=J4-9
+Added Pin To Net: NetName=GND Pin=J4-10
+Added Pin To Net: NetName=GND Pin=J4-11
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=GND Pin=R4-1
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-19
+Added Pin To Net: NetName=GND Pin=U2-20
+Added Pin To Net: NetName=GND Pin=U2-21
+Added Pin To Net: NetName=GND Pin=U2-22
+Added Pin To Net: NetName=GND Pin=U2-23
+Added Pin To Net: NetName=GND Pin=U2-24
+Added Pin To Net: NetName=GND Pin=U2-25
+Added Pin To Net: NetName=GND Pin=U2-26
+Added Pin To Net: NetName=GND Pin=U2-27
+Added Pin To Net: NetName=GND Pin=U2-28
+Added Pin To Net: NetName=GND Pin=U2-29
+Added Pin To Net: NetName=GND Pin=U2-30
+Added Pin To Net: NetName=GND Pin=U2-31
+Added Pin To Net: NetName=GND Pin=U2-32
+Added Pin To Net: NetName=GND Pin=U2-33
+Added Pin To Net: NetName=GND Pin=U2-34
+Added Pin To Net: NetName=GND Pin=U2-35
+Added Pin To Net: NetName=GND Pin=U2-36
+Added Pin To Net: NetName=GND Pin=U2-37
+Added Pin To Net: NetName=GND Pin=U2-38
+Added Pin To Net: NetName=GND Pin=U2-39
+Added Pin To Net: NetName=GND Pin=U3-3
+Added Pin To Net: NetName=GND Pin=U3-29
+Added Net: Name=GND
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC2_2 Pin=Q2-3
+Added Pin To Net: NetName=NetC2_2 Pin=R2-1
+Added Pin To Net: NetName=NetC2_2 Pin=U2-2
+Added Net: Name=NetC2_2
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=D2-1
+Added Pin To Net: NetName=NetD1_1 Pin=U1-2
+Added Net: Name=NetD1_1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD1_2 Pin=Q1-3
+Added Pin To Net: NetName=NetD1_2 Pin=U1-1
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetJ1_1 Pin=J1-1
+Added Pin To Net: NetName=NetJ1_1 Pin=U2-16
+Added Net: Name=NetJ1_1
+Added Pin To Net: NetName=NetJ1_2 Pin=J1-2
+Added Pin To Net: NetName=NetJ1_2 Pin=U2-15
+Added Net: Name=NetJ1_2
+Added Pin To Net: NetName=NetJ1_3 Pin=J1-3
+Added Pin To Net: NetName=NetJ1_3 Pin=U2-3
+Added Net: Name=NetJ1_3
+Added Pin To Net: NetName=NetJ1_4 Pin=J1-4
+Added Pin To Net: NetName=NetJ1_4 Pin=U2-4
+Added Net: Name=NetJ1_4
+Added Pin To Net: NetName=NetJ1_5 Pin=J1-5
+Added Pin To Net: NetName=NetJ1_5 Pin=U2-5
+Added Net: Name=NetJ1_5
+Added Pin To Net: NetName=NetJ3_1 Pin=J3-1
+Added Pin To Net: NetName=NetJ3_1 Pin=U2-6
+Added Net: Name=NetJ3_1
+Added Pin To Net: NetName=NetJ3_2 Pin=J3-2
+Added Pin To Net: NetName=NetJ3_2 Pin=U2-7
+Added Net: Name=NetJ3_2
+Added Pin To Net: NetName=NetJ3_3 Pin=J3-3
+Added Pin To Net: NetName=NetJ3_3 Pin=U2-8
+Added Net: Name=NetJ3_3
+Added Pin To Net: NetName=NetJ3_4 Pin=J3-4
+Added Pin To Net: NetName=NetJ3_4 Pin=U2-10
+Added Net: Name=NetJ3_4
+Added Pin To Net: NetName=NetJ3_5 Pin=J3-5
+Added Pin To Net: NetName=NetJ3_5 Pin=U2-13
+Added Net: Name=NetJ3_5
+Added Pin To Net: NetName=NetJ3_6 Pin=J3-6
+Added Pin To Net: NetName=NetJ3_6 Pin=U2-14
+Added Net: Name=NetJ3_6
+Added Pin To Net: NetName=NetJ4_2 Pin=J4-2
+Added Pin To Net: NetName=NetJ4_2 Pin=U3-5
+Added Net: Name=NetJ4_2
+Added Pin To Net: NetName=NetJ4_3 Pin=J4-3
+Added Pin To Net: NetName=NetJ4_3 Pin=U3-4
+Added Net: Name=NetJ4_3
+Added Pin To Net: NetName=NetQ2_1 Pin=Q2-1
+Added Pin To Net: NetName=NetQ2_1 Pin=R5-2
+Added Net: Name=NetQ2_1
+Added Pin To Net: NetName=NetQ2_2 Pin=Q2-2
+Added Pin To Net: NetName=NetQ2_2 Pin=R6-1
+Added Pin To Net: NetName=NetQ2_2 Pin=U3-24
+Added Net: Name=NetQ2_2
+Added Pin To Net: NetName=NetQ3_1 Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R6-2
+Added Net: Name=NetQ3_1
+Added Pin To Net: NetName=NetQ3_2 Pin=Q3-2
+Added Pin To Net: NetName=NetQ3_2 Pin=R5-1
+Added Pin To Net: NetName=NetQ3_2 Pin=U3-28
+Added Net: Name=NetQ3_2
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=U2-18
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=NetU2_11 Pin=U2-11
+Added Pin To Net: NetName=NetU2_11 Pin=U3-26
+Added Net: Name=NetU2_11
+Added Pin To Net: NetName=NetU2_12 Pin=U2-12
+Added Pin To Net: NetName=NetU2_12 Pin=U3-25
+Added Net: Name=NetU2_12
+Added Pin To Net: NetName=V_BAT Pin=J2-3
+Added Pin To Net: NetName=V_BAT Pin=R3-2
+Added Net: Name=V_BAT
+Added Pin To Net: NetName=VBUS Pin=C3-1
+Added Pin To Net: NetName=VBUS Pin=J2-2
+Added Pin To Net: NetName=VBUS Pin=J4-1
+Added Pin To Net: NetName=VBUS Pin=Q1-2
+Added Pin To Net: NetName=VBUS Pin=R2-2
+Added Pin To Net: NetName=VBUS Pin=U3-7
+Added Pin To Net: NetName=VBUS Pin=U3-8
+Added Net: Name=VBUS
+Added Class: Name=Sheet3

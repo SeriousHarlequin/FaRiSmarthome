@@ -1,0 +1,73 @@
+Removed Pin From Net: NetName=NetJ1_1 Pin=J1-1
+Removed Pin From Net: NetName=NetJ1_2 Pin=J1-2
+Removed Pin From Net: NetName=NetJ1_3 Pin=J1-3
+Removed Pin From Net: NetName=NetJ1_4 Pin=J1-4
+Removed Pin From Net: NetName=NetJ1_3 Pin=U2-3
+Removed Pin From Net: NetName=NetJ1_4 Pin=U2-4
+Removed Pin From Net: NetName=NetJ1_2 Pin=U2-15
+Removed Pin From Net: NetName=NetJ1_1 Pin=U2-16
+Added Component: Designator=C5(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C6(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C7(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C8(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D3(D_SMD_LED-ARGB)
+Added Component: Designator=D4(D_SMD_LED-ARGB)
+Added Component: Designator=D5(D_SMD_LED-ARGB)
+Added Component: Designator=D6(D_SMD_LED-ARGB)
+Added Component: Designator=J1(Sip-4)
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=3,3V Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=3,3V Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=3,3V Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=3,3V Pin=C8-2
+Added Pin To Net: NetName=GND Pin=D3-1
+Added Pin To Net: NetName=3,3V Pin=D3-3
+Added Pin To Net: NetName=GND Pin=D4-1
+Added Pin To Net: NetName=3,3V Pin=D4-3
+Added Pin To Net: NetName=GND Pin=D5-1
+Added Pin To Net: NetName=3,3V Pin=D5-3
+Added Pin To Net: NetName=GND Pin=D6-1
+Added Pin To Net: NetName=3,3V Pin=D6-3
+Added Pin To Net: NetName=NetJ1_1 Pin=J1-1
+Added Pin To Net: NetName=NetJ1_2 Pin=J1-2
+Added Pin To Net: NetName=NetJ1_3 Pin=J1-3
+Added Pin To Net: NetName=NetJ1_4 Pin=J1-4
+Added Pin To Net: NetName=NetJ1_2 Pin=U2-3
+Added Pin To Net: NetName=NetJ1_3 Pin=U2-4
+Added Pin To Net: NetName=NetJ1_4 Pin=U2-5
+Added Pin To Net: NetName=NetJ1_1 Pin=U2-15
+Added Pin To Net: NetName=ARGB Pin=D3-3
+Added Pin To Net: NetName=ARGB Pin=U2-16
+Added Net: Name=ARGB
+Added Pin To Net: NetName=NetD3_4 Pin=D3-4
+Added Pin To Net: NetName=NetD3_4 Pin=D4-3
+Added Net: Name=NetD3_4
+Added Pin To Net: NetName=NetD4_4 Pin=D4-4
+Added Pin To Net: NetName=NetD4_4 Pin=D5-3
+Added Net: Name=NetD4_4
+Added Pin To Net: NetName=NetD5_4 Pin=D5-4
+Added Pin To Net: NetName=NetD5_4 Pin=D6-3
+Added Net: Name=NetD5_4
+Added Member To Class: ClassName=Sheet3 Member=Component C5 100nF
+Added Member To Class: ClassName=Sheet3 Member=Component C6 100nF
+Added Member To Class: ClassName=Sheet3 Member=Component C7 100nF
+Added Member To Class: ClassName=Sheet3 Member=Component C8 100nF
+Added Member To Class: ClassName=Sheet3 Member=Component D3 #Wert
+Added Member To Class: ClassName=Sheet3 Member=Component D4 #Wert
+Added Member To Class: ClassName=Sheet3 Member=Component D5 #Wert
+Added Member To Class: ClassName=Sheet3 Member=Component D6 #Wert
