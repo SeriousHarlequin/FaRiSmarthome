@@ -1,0 +1,25 @@
+Added Component: Designator=U2(VREG_V62/16624-01YE)
+Add component (AddParameter): Name = "Availability"; Value = "Warning"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TPS63000DRCRG4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "VSON-10 Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/TPS63000DRCRG4/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TPS63000DRCRG4/Texas%20Instruments/view-part/287688/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3,3V Pin=U2-1
+Added Pin To Net: NetName=NetL1_1 Pin=U2-2
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=NetL1_2 Pin=U2-4
+Added Pin To Net: NetName=NetC4_1 Pin=U2-5
+Added Pin To Net: NetName=NetC5_1 Pin=U2-6
+Added Pin To Net: NetName=NetC5_1 Pin=U2-7
+Added Pin To Net: NetName=NetC5_1 Pin=U2-8
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=NetR1_1 Pin=U2-10
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Member To Class: ClassName=Sheet2 Member=Component U2 U_TPS63000DRCRG4
