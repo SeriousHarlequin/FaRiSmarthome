@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=EN-MODUL Pin=D1-1
+Removed Pin From Net: NetName=NetC4_1 Pin=D1-2
+Removed Pin From Net: NetName=NetC4_1 Pin=D2-2
+Removed Member From Class: ClassName=Sheet2 Member=D1
+Removed Member From Class: ClassName=Sheet2 Member=D2
+Change Component Footprint: Designator=L1 Old Footprint=L_SMD_NPIS42LS New Footprint=L_SMD_ND_NR3015T2R2M
+Change Component Comment : Designator=L1 Old Comment=2,2uH New Comment=2,2uH - NR3015T2R2M
+Added Component: Designator=D?(D_DO-214)
+Add component (AddParameter): Name = "Spannung For."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_DO-214)
+Add component (AddParameter): Name = "Spannung For."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=EN-MODUL Pin=D?-1
+Added Pin To Net: NetName=NetC4_1 Pin=D?-2
+Added Pin To Net: NetName=NetC4_1 Pin=D?-2
+Added Pin To Net: NetName=NetD?_1 Pin=D?-1
+Added Pin To Net: NetName=NetD?_1 Pin=J2-3
+Added Pin To Net: NetName=NetD?_1 Pin=S1-1
+Added Net: Name=NetD?_1
+Added Member To Class: ClassName=Sheet2 Member=Component D? STPS340
+Added Member To Class: ClassName=Sheet2 Member=Component D? STPS340
+Added Member To Class: ClassName=Sheet2 Member=Component F1 1A

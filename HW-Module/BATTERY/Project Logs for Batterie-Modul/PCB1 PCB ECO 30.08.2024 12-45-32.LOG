@@ -1,0 +1,106 @@
+Added Component: Designator=C1(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C2(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C3(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C4(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C5(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_THT_0.4)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=F1(F_THT_Fuse2pol)
+Add component (AddParameter): Name = "Auslösecharakteristik"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J1(SIP-2)
+Added Component: Designator=J2(SIP-5)
+Added Component: Designator=L1(L_SMD_NPIS42LS)
+Added Component: Designator=R1(R_SMD_0603)
+Added Component: Designator=R2(R_SMD_0603)
+Added Component: Designator=R3(R_SMD_0603)
+Added Component: Designator=U1(SOT95P280X145-5N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/MCP73811T-420I/OT/Microchip/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "MCP73811T-420I/OT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT-23 Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/MCP73811T-420I/OT/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/MCP73811T-420I/OT/Microchip/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U2(VREG_V62/16624-01YE)
+Add component (AddParameter): Name = "Availability"; Value = "Warning"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TPS63000DRCRG4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "VSON-10 Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/TPS63000DRCRG4/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TPS63000DRCRG4/Texas%20Instruments/view-part/287688/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3,3V Pin=C1-1
+Added Pin To Net: NetName=3,3V Pin=C2-1
+Added Pin To Net: NetName=3,3V Pin=J2-1
+Added Pin To Net: NetName=3,3V Pin=R1-2
+Added Pin To Net: NetName=3,3V Pin=U2-1
+Added Net: Name=3,3V
+Added Pin To Net: NetName=EN-MODUL Pin=J2-4
+Added Net: Name=EN-MODUL
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J2-5
+Added Pin To Net: NetName=GND Pin=R2-1
+Added Pin To Net: NetName=GND Pin=U1-2
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Net: Name=GND
+Added Pin To Net: NetName=NetC5_1 Pin=C5-1
+Added Pin To Net: NetName=NetC5_1 Pin=R3-1
+Added Pin To Net: NetName=NetC5_1 Pin=U2-6
+Added Pin To Net: NetName=NetC5_1 Pin=U2-7
+Added Pin To Net: NetName=NetC5_1 Pin=U2-8
+Added Net: Name=NetC5_1
+Added Pin To Net: NetName=NetL1_1 Pin=L1-1
+Added Pin To Net: NetName=NetL1_1 Pin=U2-2
+Added Net: Name=NetL1_1
+Added Pin To Net: NetName=NetL1_2 Pin=L1-2
+Added Pin To Net: NetName=NetL1_2 Pin=U2-4
+Added Net: Name=NetL1_2
+Added Pin To Net: NetName=NetR1_1 Pin=R1-1
+Added Pin To Net: NetName=NetR1_1 Pin=R2-2
+Added Pin To Net: NetName=NetR1_1 Pin=U2-10
+Added Net: Name=NetR1_1
+Added Pin To Net: NetName=U_IN Pin=C3-1
+Added Pin To Net: NetName=U_IN Pin=C4-1
+Added Pin To Net: NetName=U_IN Pin=D?-2
+Added Pin To Net: NetName=U_IN Pin=J2-2
+Added Pin To Net: NetName=U_IN Pin=R3-2
+Added Pin To Net: NetName=U_IN Pin=U1-1
+Added Pin To Net: NetName=U_IN Pin=U1-4
+Added Pin To Net: NetName=U_IN Pin=U1-5
+Added Pin To Net: NetName=U_IN Pin=U2-5
+Added Net: Name=U_IN
+Added Pin To Net: NetName=V_BAT Pin=D?-1
+Added Pin To Net: NetName=V_BAT Pin=F1-1
+Added Pin To Net: NetName=V_BAT Pin=F1-1
+Added Pin To Net: NetName=V_BAT Pin=J2-3
+Added Pin To Net: NetName=V_BAT Pin=U1-3
+Added Net: Name=V_BAT
+Added Class: Name=Sheet2

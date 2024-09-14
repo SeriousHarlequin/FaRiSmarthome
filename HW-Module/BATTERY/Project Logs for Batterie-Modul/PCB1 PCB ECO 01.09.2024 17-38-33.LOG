@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=V_BAT Pin=F1-1
+Removed Pin From Net: NetName=NetF1_2 Pin=F1-2
+Change Component Footprint: Designator=C5 Old Footprint=C_THT_RAD-0.2/.1 New Footprint=C_SMD_0603
+Added Component: Designator=F1(F_OMF63_Schurtner)
+Add component (AddParameter): Name = "Auslösecharakteristik"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetF1_2 Pin=F1-2
+Added Member To Class: ClassName=Sheet2 Member=Component D? STPS340

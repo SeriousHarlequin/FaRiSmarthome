@@ -1,0 +1,42 @@
+Removed Pin From Net: NetName=U_IN Pin=C4-1
+Removed Pin From Net: NetName=V_BAT Pin=D?-1
+Removed Pin From Net: NetName=U_IN Pin=D?-2
+Removed Pin From Net: NetName=V_BAT Pin=J2-3
+Removed Pin From Net: NetName=U_IN Pin=R3-2
+Removed Pin From Net: NetName=U_IN Pin=U2-5
+Change Footprint: Cannot match pads with new footprint in component :F1 Footprint:C_SMD_1206
+Change Component Comment : Designator=F1 Old Comment=#Wert New Comment=1,5A
+Change Component Comment : Designator=J2 Old Comment=#Wert New Comment=BAT_OUTPUT
+Change Component Designator: OldDesignator=D? NewDesignator=D2
+Added Component: Designator=B1(B_Schraube-M3 PAD)
+Added Component: Designator=B2(B_Schraube-M3 PAD)
+Added Component: Designator=B3(B_Schraube-M3 PAD)
+Added Component: Designator=D1(D_THT_0.4)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S1(S_THT_SW-3Pol)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "100SP1T1B4M2QE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=U_IN Pin=D1-1
+Added Pin To Net: NetName=U_IN Pin=J2-4
+Added Pin To Net: NetName=V_BAT Pin=S1-2
+Change Net Name : Old Net Name=U_IN New Net Name=EN-MODUL
+Added Pin To Net: NetName=NetC4_1 Pin=C4-1
+Added Pin To Net: NetName=NetC4_1 Pin=D1-2
+Added Pin To Net: NetName=NetC4_1 Pin=D2-2
+Added Pin To Net: NetName=NetC4_1 Pin=R3-2
+Added Pin To Net: NetName=NetC4_1 Pin=U2-5
+Added Net: Name=NetC4_1
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=S1-1
+Added Net: Name=NetD2_1
+Added Member To Class: ClassName=Sheet2 Member=Component B1 Schraube
+Added Member To Class: ClassName=Sheet2 Member=Component B2 Schraube
+Added Member To Class: ClassName=Sheet2 Member=Component B3 Schraube
+Added Member To Class: ClassName=Sheet2 Member=Component D1 #Wert
+Added Member To Class: ClassName=Sheet2 Member=Component S1 #Wert
