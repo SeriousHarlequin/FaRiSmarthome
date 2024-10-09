@@ -1,4 +1,4 @@
-2.10.2024: Fehler auf Node V1.1. Es wurde festgestellt dass der ESP32-C3 nativen USB-Support hat, die nächste Revision wird somit den USB-TO-UART Converter, CP2101, nicht mehr beinhalten.
+2.10.2024: Fehler auf Node V1.1 gefunden. Es wurde festgestellt, dass der ESP32-C3 nativen USB-Support hat, die nächste Revision wird somit den USB-TO-UART Converter, CP2101, nicht mehr beinhalten.
 Es wurden zwei Datenpins des USB-C Ports nicht am PCB geroutet. Fehler => Design Rule Check wurde nicht durchgeführt. 
 
 Idee zu der Modul-Erkennung: Spannungsteiler am Module. Wenn das Modul aufgesteckt wurde, wird dieser über einen Analog-Pin ausgelesen.
