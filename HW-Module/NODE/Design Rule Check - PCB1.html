@@ -1,0 +1,531 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">13.09.2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">13:39:52</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc" class="file"><acronym title="C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc">C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">65</td></tr>
+</table>
+</td>
+</table><a name="IDAU0MUKH5U2ICBBJ1HQ5VZ5LMZDZUW0RXX0WAYTK3VK0FMC5IEW5I"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4H5ZSWMWMIY2B2FV1054ZPO2SKKTS3DRKJYARRHGOXBDXUDDARYF">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBWVDOCK0L2PONH3EP21QNUXYFONU4MDLP53RCC44H4QMABRENPL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYAVW2KUC11NTF5RVIBBB34N0DHTIQH5PP1S1FBR11O42BNWF21C">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLN1ESBROAGYHMZE0WRE5ZAH0BJVY5G2JC2LVS2HNHO0UW22WBK5H">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXFFHFEWAN4C3HZRMCWFBQH3VNLS5FGEEXI1255HN1VJYUJMNKZML">Width Constraint (Min=0.2mm) (Max=6mm) (Preferred=0.75mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDK14XITOCNXGMP4NUCCD2X4ZRFBUQ0WPBTVC4XDJHIZFL5GOJT3I">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFIHTEEBRTUN0KQUU0VD0HCII1OISWO040ZTBKUTTF1NUUEVOHN">Minimum Annular Ring (Minimum=0.5mm) (All)</a></td>
+<td class="column2">63</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZG1SIXHO5XFIDCYQXMPBG5SLHHFFYRS5U5GOFNFTLDEUUKNF0OIH">Hole Size Constraint (Min=0.2mm) (Max=6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN0EWATOC0P4UE0ZV5ZH055P3JHWTGBHVTSGVFRNM43WKDQSYLX3">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDTT4J1CJXYPDFGLDJ35QVNH5CLTW42UQQNGZP5EBOAC2FSCHBROP">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDJ2101DLJO4MPZOEJOO3M4LDJZPSAS5OCID5UK2NXVKFU4VUCHK">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGKU32KOPYFTEMEGFWEIM5B0RLKSD4L2UNDUVTHOBYXQYQFEHFIMJ">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGNXGWDSAZBMSGX1QOXJAC2LWWBJ0YERJ04BXVKJV3MPZCIXM4CFC">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1N15MGVL0O5LISI3XY3EZJTDYHDFIVUMQXV0LDWIHLYTIJOYMO">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">65</td>
+</tr>
+</table><br><a name="IDYAVW2KUC11NTF5RVIBBB34N0DHTIQH5PP1S1FBR11O42BNWF21C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1324.016mil|Location2.X=1373.228mil|Location1.Y=1931.102mil|Location2.Y=1986.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1324.016mil|Location2.X=1373.228mil|Location1.Y=1931.102mil|Location2.Y=1986.22mil|Absolute=True">Un-Routed Net Constraint: Net NetJ4_A6 Between Pad J4-B6(7.255mm,14.25mm) on Top Layer And Pad J4-A6(7.255mm,15.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1324.016mil|Location2.X=1373.228mil|Location1.Y=1950.787mil|Location2.Y=2005.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1324.016mil|Location2.X=1373.228mil|Location1.Y=1950.787mil|Location2.Y=2005.906mil|Absolute=True">Un-Routed Net Constraint: Net NetJ4_A7 Between Pad J4-A7(7.255mm,14.75mm) on Top Layer And Pad J4-B7(7.255mm,15.75mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDFIHTEEBRTUN0KQUU0VD0HCII1OISWO040ZTBKUTTF1NUUEVOHN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Annular Ring (Minimum=0.5mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.115mil|Location2.X=1299.05mil|Location1.Y=2116.698mil|Location2.Y=2149.05mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.115mil|Location2.X=1299.05mil|Location1.Y=2116.698mil|Location2.Y=2149.05mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Pad J4-SH1(6.68mm,19.32mm) on Multi-Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.115mil|Location2.X=1299.05mil|Location1.Y=1776.54mil|Location2.Y=1808.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.115mil|Location2.X=1299.05mil|Location1.Y=1776.54mil|Location2.Y=1808.893mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Pad J4-SH2(6.68mm,10.68mm) on Multi-Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1119.454mil|Location2.X=1140.389mil|Location1.Y=2116.698mil|Location2.Y=2149.05mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1119.454mil|Location2.X=1140.389mil|Location1.Y=2116.698mil|Location2.Y=2149.05mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Pad J4-SH3(2.5mm,19.32mm) on Multi-Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1119.454mil|Location2.X=1140.389mil|Location1.Y=1776.54mil|Location2.Y=1808.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1119.454mil|Location2.X=1140.389mil|Location1.Y=1776.54mil|Location2.Y=1808.893mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Pad J4-SH4(2.5mm,10.68mm) on Multi-Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2798.391mil|Location2.X=2830.743mil|Location1.Y=1658.036mil|Location2.Y=1678.971mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2798.391mil|Location2.X=2830.743mil|Location1.Y=1658.036mil|Location2.Y=1678.971mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-28(44.345mm,7.205mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.084mil|Location2.X=2787.436mil|Location1.Y=1658.036mil|Location2.Y=1678.971mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.084mil|Location2.X=2787.436mil|Location1.Y=1658.036mil|Location2.Y=1678.971mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-29(43.245mm,7.205mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2820.044mil|Location2.X=2852.397mil|Location1.Y=1679.69mil|Location2.Y=1700.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2820.044mil|Location2.X=2852.397mil|Location1.Y=1679.69mil|Location2.Y=1700.625mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-30(44.895mm,7.755mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2776.737mil|Location2.X=2809.09mil|Location1.Y=1679.69mil|Location2.Y=1700.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2776.737mil|Location2.X=2809.09mil|Location1.Y=1679.69mil|Location2.Y=1700.625mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-31(43.795mm,7.755mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.43mil|Location2.X=2765.783mil|Location1.Y=1679.69mil|Location2.Y=1700.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.43mil|Location2.X=2765.783mil|Location1.Y=1679.69mil|Location2.Y=1700.625mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-32(42.695mm,7.755mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2798.391mil|Location2.X=2830.743mil|Location1.Y=1701.343mil|Location2.Y=1722.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2798.391mil|Location2.X=2830.743mil|Location1.Y=1701.343mil|Location2.Y=1722.278mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-33(44.345mm,8.305mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.084mil|Location2.X=2787.436mil|Location1.Y=1701.343mil|Location2.Y=1722.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.084mil|Location2.X=2787.436mil|Location1.Y=1701.343mil|Location2.Y=1722.278mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-34(43.245mm,8.305mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2820.044mil|Location2.X=2852.397mil|Location1.Y=1722.997mil|Location2.Y=1743.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2820.044mil|Location2.X=2852.397mil|Location1.Y=1722.997mil|Location2.Y=1743.932mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-35(44.895mm,8.855mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2776.737mil|Location2.X=2809.09mil|Location1.Y=1722.997mil|Location2.Y=1743.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2776.737mil|Location2.X=2809.09mil|Location1.Y=1722.997mil|Location2.Y=1743.932mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-36(43.795mm,8.855mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.43mil|Location2.X=2765.783mil|Location1.Y=1722.997mil|Location2.Y=1743.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.43mil|Location2.X=2765.783mil|Location1.Y=1722.997mil|Location2.Y=1743.932mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-37(42.695mm,8.855mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2798.391mil|Location2.X=2830.743mil|Location1.Y=1744.65mil|Location2.Y=1765.585mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2798.391mil|Location2.X=2830.743mil|Location1.Y=1744.65mil|Location2.Y=1765.585mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-38(44.345mm,9.405mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.084mil|Location2.X=2787.436mil|Location1.Y=1744.65mil|Location2.Y=1765.585mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.084mil|Location2.X=2787.436mil|Location1.Y=1744.65mil|Location2.Y=1765.585mil|Absolute=True">Minimum Annular Ring: (0.05mm &lt; 0.5mm) Pad U2-39(43.245mm,9.405mm) on Multi-Layer (Annular Ring=0.05mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1472.525mil|Location2.X=1504.877mil|Location1.Y=2059.296mil|Location2.Y=2080.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1472.525mil|Location2.X=1504.877mil|Location1.Y=2059.296mil|Location2.Y=2080.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (10.668mm,17.272mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1505.281mil|Location2.X=1537.633mil|Location1.Y=1930.477mil|Location2.Y=1951.412mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1505.281mil|Location2.X=1537.633mil|Location1.Y=1930.477mil|Location2.Y=1951.412mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (11.5mm,14mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1512.525mil|Location2.X=1544.877mil|Location1.Y=1839.296mil|Location2.Y=1860.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1512.525mil|Location2.X=1544.877mil|Location1.Y=1839.296mil|Location2.Y=1860.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (11.684mm,11.684mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1485.595mil|Location2.X=1517.948mil|Location1.Y=1517.092mil|Location2.Y=1538.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1485.595mil|Location2.X=1517.948mil|Location1.Y=1517.092mil|Location2.Y=1538.027mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (11mm,3.5mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.525mil|Location2.X=1624.877mil|Location1.Y=1919.296mil|Location2.Y=1940.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.525mil|Location2.X=1624.877mil|Location1.Y=1919.296mil|Location2.Y=1940.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (13.716mm,13.716mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1619.533mil|Location2.X=1651.885mil|Location1.Y=1821.343mil|Location2.Y=1842.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1619.533mil|Location2.X=1651.885mil|Location1.Y=1821.343mil|Location2.Y=1842.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (14.402mm,11.228mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1739.533mil|Location2.X=1771.885mil|Location1.Y=2021.343mil|Location2.Y=2042.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1739.533mil|Location2.X=1771.885mil|Location1.Y=2021.343mil|Location2.Y=2042.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (17.45mm,16.308mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1762.525mil|Location2.X=1794.877mil|Location1.Y=1849.296mil|Location2.Y=1870.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1762.525mil|Location2.X=1794.877mil|Location1.Y=1849.296mil|Location2.Y=1870.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (18.034mm,11.938mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.533mil|Location2.X=1811.885mil|Location1.Y=1681.343mil|Location2.Y=1702.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.533mil|Location2.X=1811.885mil|Location1.Y=1681.343mil|Location2.Y=1702.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (18.466mm,7.672mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1782.525mil|Location2.X=1814.877mil|Location1.Y=2149.296mil|Location2.Y=2170.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1782.525mil|Location2.X=1814.877mil|Location1.Y=2149.296mil|Location2.Y=2170.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (18.542mm,19.558mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1789.533mil|Location2.X=1821.885mil|Location1.Y=2021.343mil|Location2.Y=2042.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1789.533mil|Location2.X=1821.885mil|Location1.Y=2021.343mil|Location2.Y=2042.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (18.72mm,16.308mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.533mil|Location2.X=1851.885mil|Location1.Y=2051.343mil|Location2.Y=2072.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.533mil|Location2.X=1851.885mil|Location1.Y=2051.343mil|Location2.Y=2072.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (19.482mm,17.07mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1937.525mil|Location2.X=1969.877mil|Location1.Y=2144.296mil|Location2.Y=2165.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1937.525mil|Location2.X=1969.877mil|Location1.Y=2144.296mil|Location2.Y=2165.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (22.479mm,19.431mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1989.533mil|Location2.X=2021.885mil|Location1.Y=1551.343mil|Location2.Y=1572.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1989.533mil|Location2.X=2021.885mil|Location1.Y=1551.343mil|Location2.Y=1572.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (23.8mm,4.37mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2042.525mil|Location2.X=2074.877mil|Location1.Y=2039.296mil|Location2.Y=2060.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2042.525mil|Location2.X=2074.877mil|Location1.Y=2039.296mil|Location2.Y=2060.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (25.146mm,16.764mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2059.532mil|Location2.X=2091.885mil|Location1.Y=2371.343mil|Location2.Y=2392.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2059.532mil|Location2.X=2091.885mil|Location1.Y=2371.343mil|Location2.Y=2392.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (25.578mm,25.198mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2159.532mil|Location2.X=2191.885mil|Location1.Y=1841.343mil|Location2.Y=1862.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2159.532mil|Location2.X=2191.885mil|Location1.Y=1841.343mil|Location2.Y=1862.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (28.118mm,11.736mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2219.532mil|Location2.X=2251.885mil|Location1.Y=1731.343mil|Location2.Y=1752.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2219.532mil|Location2.X=2251.885mil|Location1.Y=1731.343mil|Location2.Y=1752.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (29.642mm,8.942mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2389.532mil|Location2.X=2421.885mil|Location1.Y=2331.343mil|Location2.Y=2352.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2389.532mil|Location2.X=2421.885mil|Location1.Y=2331.343mil|Location2.Y=2352.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (33.96mm,24.182mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2392.525mil|Location2.X=2424.877mil|Location1.Y=2139.296mil|Location2.Y=2160.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2392.525mil|Location2.X=2424.877mil|Location1.Y=2139.296mil|Location2.Y=2160.231mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (34.036mm,19.304mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2399.532mil|Location2.X=2431.885mil|Location1.Y=1811.343mil|Location2.Y=1832.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2399.532mil|Location2.X=2431.885mil|Location1.Y=1811.343mil|Location2.Y=1832.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (34.214mm,10.974mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2519.532mil|Location2.X=2551.885mil|Location1.Y=2141.343mil|Location2.Y=2162.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2519.532mil|Location2.X=2551.885mil|Location1.Y=2141.343mil|Location2.Y=2162.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (37.262mm,19.356mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.532mil|Location2.X=2561.885mil|Location1.Y=1851.343mil|Location2.Y=1872.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.532mil|Location2.X=2561.885mil|Location1.Y=1851.343mil|Location2.Y=1872.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (37.516mm,11.99mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.532mil|Location2.X=2561.885mil|Location1.Y=1701.343mil|Location2.Y=1722.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.532mil|Location2.X=2561.885mil|Location1.Y=1701.343mil|Location2.Y=1722.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (37.516mm,8.18mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2538.465mil|Location2.X=2570.817mil|Location1.Y=1462.037mil|Location2.Y=1482.972mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2538.465mil|Location2.X=2570.817mil|Location1.Y=1462.037mil|Location2.Y=1482.972mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (37.743mm,2.102mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2539.532mil|Location2.X=2571.885mil|Location1.Y=1541.343mil|Location2.Y=1562.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2539.532mil|Location2.X=2571.885mil|Location1.Y=1541.343mil|Location2.Y=1562.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (37.77mm,4.116mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.532mil|Location2.X=2581.885mil|Location1.Y=1501.343mil|Location2.Y=1522.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.532mil|Location2.X=2581.885mil|Location1.Y=1501.343mil|Location2.Y=1522.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (38.024mm,3.1mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.532mil|Location2.X=2651.885mil|Location1.Y=1861.343mil|Location2.Y=1882.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.532mil|Location2.X=2651.885mil|Location1.Y=1861.343mil|Location2.Y=1882.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (39.802mm,12.244mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2659.532mil|Location2.X=2691.885mil|Location1.Y=2071.343mil|Location2.Y=2092.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2659.532mil|Location2.X=2691.885mil|Location1.Y=2071.343mil|Location2.Y=2092.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (40.818mm,17.578mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2839.532mil|Location2.X=2871.885mil|Location1.Y=2131.343mil|Location2.Y=2152.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2839.532mil|Location2.X=2871.885mil|Location1.Y=2131.343mil|Location2.Y=2152.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (45.39mm,19.102mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3009.532mil|Location2.X=3041.885mil|Location1.Y=1971.343mil|Location2.Y=1992.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3009.532mil|Location2.X=3041.885mil|Location1.Y=1971.343mil|Location2.Y=1992.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (49.708mm,15.038mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3049.532mil|Location2.X=3081.885mil|Location1.Y=1601.343mil|Location2.Y=1622.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3049.532mil|Location2.X=3081.885mil|Location1.Y=1601.343mil|Location2.Y=1622.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (50.724mm,5.64mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3059.532mil|Location2.X=3091.885mil|Location1.Y=2021.343mil|Location2.Y=2042.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3059.532mil|Location2.X=3091.885mil|Location1.Y=2021.343mil|Location2.Y=2042.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (50.978mm,16.308mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=1781.343mil|Location2.Y=1802.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=1781.343mil|Location2.Y=1802.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (51.994mm,10.212mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=1841.343mil|Location2.Y=1862.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=1841.343mil|Location2.Y=1862.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (51.994mm,11.736mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=1911.343mil|Location2.Y=1932.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=1911.343mil|Location2.Y=1932.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (51.994mm,13.514mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=2191.343mil|Location2.Y=2212.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=2191.343mil|Location2.Y=2212.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (51.994mm,20.626mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=2251.343mil|Location2.Y=2272.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.532mil|Location2.X=3131.885mil|Location1.Y=2251.343mil|Location2.Y=2272.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (51.994mm,22.15mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3252.525mil|Location2.X=3284.877mil|Location1.Y=1903.568mil|Location2.Y=1924.503mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3252.525mil|Location2.X=3284.877mil|Location1.Y=1903.568mil|Location2.Y=1924.503mil|Absolute=True">Minimum Annular Ring: (0.475mm &lt; 0.5mm) Via (55.88mm,12.954mm) from Top Layer to Bottom Layer (Annular Ring=0.475mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3252.525mil|Location2.X=3284.877mil|Location1.Y=2133.568mil|Location2.Y=2154.503mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3252.525mil|Location2.X=3284.877mil|Location1.Y=2133.568mil|Location2.Y=2154.503mil|Absolute=True">Minimum Annular Ring: (0.475mm &lt; 0.5mm) Via (55.88mm,18.796mm) from Top Layer to Bottom Layer (Annular Ring=0.475mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3399.532mil|Location2.X=3431.885mil|Location1.Y=1431.343mil|Location2.Y=1452.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3399.532mil|Location2.X=3431.885mil|Location1.Y=1431.343mil|Location2.Y=1452.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (59.614mm,1.322mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3399.532mil|Location2.X=3431.885mil|Location1.Y=2061.343mil|Location2.Y=2082.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3399.532mil|Location2.X=3431.885mil|Location1.Y=2061.343mil|Location2.Y=2082.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (59.614mm,17.324mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3572.236mil|Location2.X=3604.588mil|Location1.Y=1431.343mil|Location2.Y=1452.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3572.236mil|Location2.X=3604.588mil|Location1.Y=1431.343mil|Location2.Y=1452.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (64.001mm,1.322mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3589.532mil|Location2.X=3621.885mil|Location1.Y=2111.343mil|Location2.Y=2132.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3589.532mil|Location2.X=3621.885mil|Location1.Y=2111.343mil|Location2.Y=2132.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (64.44mm,18.594mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3591.895mil|Location2.X=3624.247mil|Location1.Y=1881.343mil|Location2.Y=1902.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3591.895mil|Location2.X=3624.247mil|Location1.Y=1881.343mil|Location2.Y=1902.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (64.5mm,12.752mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3591.895mil|Location2.X=3624.247mil|Location1.Y=1661.343mil|Location2.Y=1682.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3591.895mil|Location2.X=3624.247mil|Location1.Y=1661.343mil|Location2.Y=1682.278mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (64.5mm,7.164mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1426.54mil|Location2.X=1458.893mil|Location1.Y=1851.737mil|Location2.Y=1872.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1426.54mil|Location2.X=1458.893mil|Location1.Y=1851.737mil|Location2.Y=1872.672mil|Absolute=True">Minimum Annular Ring: (0.2mm &lt; 0.5mm) Via (9.5mm,12mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
