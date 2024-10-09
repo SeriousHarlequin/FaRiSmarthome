@@ -1,0 +1,8 @@
+Change Component Comment : Designator=Q2 Old Comment=#Wert New Comment=BC856
+Added Pin To Net: NetName=NetD7_3 Pin=C7-1
+Added Pin To Net: NetName=NetD7_3 Pin=C8-1
+Added Pin To Net: NetName=NetD7_3 Pin=C9-1
+Added Pin To Net: NetName=NetD7_3 Pin=C10-1
+Added Pin To Net: NetName=NetD7_3 Pin=C11-1
+Added Pin To Net: NetName=NetD7_3 Pin=C12-1
+Change Net Name : Old Net Name=NetD7_3 New Net Name=NetC7_1
