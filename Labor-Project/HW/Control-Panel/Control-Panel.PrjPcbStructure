@@ -1,1 +1,2 @@
-Record=TopLevelDocument|FileName=Sheet1.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=Schematik1.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Schematik1.SchDoc|FileName=Sheet1.SchDoc|SheetNumber=1

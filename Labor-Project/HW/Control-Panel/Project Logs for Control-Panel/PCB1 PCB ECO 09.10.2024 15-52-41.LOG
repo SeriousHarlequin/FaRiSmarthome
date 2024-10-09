@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NetQ1_B Pin=UC1-24
+Added Component: Designator=R6(R_SMD_0805)
+Added Pin To Net: NetName=NetQ1_B Pin=R6-1
+Added Pin To Net: NetName=NetR6_2 Pin=R6-2
+Added Pin To Net: NetName=NetR6_2 Pin=UC1-24
+Added Net: Name=NetR6_2
+Added Member To Class: ClassName=Sheet1 Member=Component R6 1k
