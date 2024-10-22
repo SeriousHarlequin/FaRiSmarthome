@@ -1,0 +1,13 @@
+Change Component Comment : Designator=J? Old Comment=#Wert New Comment=MODULE_COM
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Net Name : Old Net Name=NetJ?_9 New Net Name=NetJ1_9
+Change Net Name : Old Net Name=NetJ?_10 New Net Name=NetJ1_10
+Change Net Name : Old Net Name=NetJ?_11 New Net Name=NetJ1_11
+Change Net Name : Old Net Name=NetJ?_12 New Net Name=NetJ1_12
+Change Net Name : Old Net Name=NetJ?_13 New Net Name=NetJ1_13
+Change Net Name : Old Net Name=NetJ?_14 New Net Name=NetJ1_14
+Change Net Name : Old Net Name=NetJ?_15 New Net Name=NetJ1_15
+Added Member To Class: ClassName=Sheet1 Member=Component D2 STPS340
+Added Member To Class: ClassName=Sheet1 Member=Component D6 WS2812b
+Added Member To Class: ClassName=Sheet1 Member=Component U2 ESP32-C3-WROOM-02-N4
+Added Member To Class: ClassName=Sheet1 Member=Component U2 U_DS18B20

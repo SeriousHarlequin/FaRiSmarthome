@@ -1,0 +1,31 @@
+Added Component: Designator=J?(SIP-15)
+Added Pin To Net: NetName=V_BAT Pin=J?-1
+Added Pin To Net: NetName=VBUS Pin=J?-2
+Added Pin To Net: NetName=3,3V Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=5V Pin=J?-5
+Added Pin To Net: NetName=5V Pin=J?-6
+Added Pin To Net: NetName=GND Pin=J?-7
+Added Pin To Net: NetName=3,3V Pin=J?-8
+Added Pin To Net: NetName=NetJ?_9 Pin=J?-9
+Added Pin To Net: NetName=NetJ?_9 Pin=U2-15
+Added Net: Name=NetJ?_9
+Added Pin To Net: NetName=NetJ?_10 Pin=J?-10
+Added Pin To Net: NetName=NetJ?_10 Pin=U2-3
+Added Net: Name=NetJ?_10
+Added Pin To Net: NetName=NetJ?_11 Pin=J?-11
+Added Pin To Net: NetName=NetJ?_11 Pin=U2-4
+Added Net: Name=NetJ?_11
+Added Pin To Net: NetName=NetJ?_12 Pin=J?-12
+Added Pin To Net: NetName=NetJ?_12 Pin=U2-5
+Added Net: Name=NetJ?_12
+Added Pin To Net: NetName=NetJ?_13 Pin=J?-13
+Added Pin To Net: NetName=NetJ?_13 Pin=U2-6
+Added Net: Name=NetJ?_13
+Added Pin To Net: NetName=NetJ?_14 Pin=J?-14
+Added Pin To Net: NetName=NetJ?_14 Pin=U2-7
+Added Net: Name=NetJ?_14
+Added Pin To Net: NetName=NetJ?_15 Pin=J?-15
+Added Pin To Net: NetName=NetJ?_15 Pin=U2-8
+Added Net: Name=NetJ?_15
+Added Member To Class: ClassName=Sheet1 Member=Component J? #Wert

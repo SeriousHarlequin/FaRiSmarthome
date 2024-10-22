@@ -1,0 +1,196 @@
+Removed Pin From Net: NetName=3,3V Pin=C1-1
+Removed Pin From Net: NetName=VBUS Pin=C3-1
+Removed Pin From Net: NetName=3,3V Pin=C4-1
+Removed Pin From Net: NetName=3,3V Pin=J2-1
+Removed Pin From Net: NetName=VBUS Pin=J2-2
+Removed Pin From Net: NetName=V_BAT Pin=J2-3
+Removed Pin From Net: NetName=GND Pin=J2-5
+Removed Pin From Net: NetName=3,3V Pin=J5-1
+Removed Pin From Net: NetName=3,3V Pin=J5-2
+Removed Pin From Net: NetName=3,3V Pin=J5-3
+Removed Pin From Net: NetName=GND Pin=J5-4
+Removed Pin From Net: NetName=GND Pin=J5-5
+Removed Pin From Net: NetName=GND Pin=J5-6
+Removed Pin From Net: NetName=VBUS Pin=Q1-S
+Removed Pin From Net: NetName=NetC2_2 Pin=Q2-C
+Removed Pin From Net: NetName=GND Pin=R1-1
+Removed Pin From Net: NetName=VBUS Pin=R2-2
+Removed Pin From Net: NetName=GND Pin=U1-3
+Removed Pin From Net: NetName=3,3V Pin=U2-1
+Removed Pin From Net: NetName=NetC2_2 Pin=U2-2
+Removed Pin From Net: NetName=GND Pin=U2-9
+Removed Pin From Net: NetName=NetU2_11 Pin=U2-11
+Removed Pin From Net: NetName=NetU2_12 Pin=U2-12
+Removed Pin From Net: NetName=BAT-CHECK Pin=U2-17
+Removed Pin From Net: NetName=GND Pin=U2-19
+Removed Pin From Net: NetName=GND Pin=U2-20
+Removed Pin From Net: NetName=GND Pin=U2-21
+Removed Pin From Net: NetName=GND Pin=U2-22
+Removed Pin From Net: NetName=GND Pin=U2-23
+Removed Pin From Net: NetName=GND Pin=U2-24
+Removed Pin From Net: NetName=GND Pin=U2-25
+Removed Pin From Net: NetName=GND Pin=U2-26
+Removed Pin From Net: NetName=GND Pin=U2-27
+Removed Pin From Net: NetName=GND Pin=U2-28
+Removed Pin From Net: NetName=GND Pin=U2-29
+Removed Pin From Net: NetName=GND Pin=U2-30
+Removed Pin From Net: NetName=GND Pin=U2-31
+Removed Pin From Net: NetName=GND Pin=U2-32
+Removed Pin From Net: NetName=GND Pin=U2-33
+Removed Pin From Net: NetName=GND Pin=U2-34
+Removed Pin From Net: NetName=GND Pin=U2-35
+Removed Pin From Net: NetName=GND Pin=U2-36
+Removed Pin From Net: NetName=GND Pin=U2-37
+Removed Pin From Net: NetName=GND Pin=U2-38
+Removed Pin From Net: NetName=GND Pin=U2-39
+Removed Pin From Net: NetName=GND Pin=U3-3
+Removed Pin From Net: NetName=NetJ4_A6 Pin=U3-4
+Removed Pin From Net: NetName=NetJ4_A7 Pin=U3-5
+Removed Pin From Net: NetName=3,3V Pin=U3-6
+Removed Pin From Net: NetName=VBUS Pin=U3-7
+Removed Pin From Net: NetName=VBUS Pin=U3-8
+Removed Pin From Net: NetName=NetU2_12 Pin=U3-25
+Removed Pin From Net: NetName=NetU2_11 Pin=U3-26
+Removed Pin From Net: NetName=GND Pin=U3-29
+Removed Member From Class: ClassName=Sheet1 Member=D1
+Removed Member From Class: ClassName=Sheet1 Member=J2
+Removed Member From Class: ClassName=Sheet1 Member=J3
+Removed Member From Class: ClassName=Sheet1 Member=J5
+Removed Member From Class: ClassName=Sheet1 Member=Q1
+Removed Member From Class: ClassName=Sheet1 Member=Q2
+Removed Member From Class: ClassName=Sheet1 Member=Q3
+Removed Member From Class: ClassName=Sheet1 Member=R8
+Removed Member From Class: ClassName=Sheet1 Member=U3
+Change Component Comment : Designator=D3 Old Comment=#Wert New Comment=WS2812b
+Change Component Comment : Designator=D4 Old Comment=#Wert New Comment=WS2812b
+Change Component Comment : Designator=D5 Old Comment=#Wert New Comment=WS2812b
+Change Component Comment : Designator=D6 Old Comment=#Wert New Comment=WS2812b
+Change Component Designator: OldDesignator=R2 NewDesignator=R3
+Change Component Designator: OldDesignator=R3 NewDesignator=R4
+Change Component Designator: OldDesignator=R4 NewDesignator=R5
+Change Component Designator: OldDesignator=R7 NewDesignator=R6
+Change Component Designator: OldDesignator=R8 NewDesignator=R7
+Added Component: Designator=C10(C_SMD_0805)
+Added Component: Designator=J1(SIP-15)
+Added Component: Designator=J6(Sip-3)
+Added Component: Designator=L1(L_SMD_NPIS42LS)
+Added Component: Designator=R1(R_SMD_0603)
+Added Component: Designator=R2(R_SMD_0603)
+Added Component: Designator=U1(TO-92_DS18B20)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/DS18B20/Maxim+Integrated/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Maxim"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "DS18B20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "TO-226-3 Maxim"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/DS18B20/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/DS18B20/Maxim+Integrated/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U2(MODULE_ESP32-C3-WROOM-02-H4)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-C3-WROOM-02-N4/Espressif+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ESP32-C3-WROOM-02-N4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/ESP32-C3-WROOM-02-N4/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-C3-WROOM-02-N4/Espressif+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U*(SOT50P160X60-6N)
+Added Pin To Net: NetName=GND Pin=B1-1
+Added Pin To Net: NetName=GND Pin=B2-1
+Added Pin To Net: NetName=GND Pin=B3-1
+Added Pin To Net: NetName=3,3V Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C10-2
+Added Pin To Net: NetName=VBUS Pin=D2-1
+Added Pin To Net: NetName=V_BAT Pin=J1-1
+Added Pin To Net: NetName=VBUS Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J1-4
+Added Pin To Net: NetName=3,3V Pin=J1-5
+Added Pin To Net: NetName=3,3V Pin=J1-6
+Added Pin To Net: NetName=GND Pin=J1-7
+Added Pin To Net: NetName=GND Pin=J6-1
+Added Pin To Net: NetName=3,3V Pin=J6-3
+Added Pin To Net: NetName=GND Pin=R2-2
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=NetC2_2 Pin=U2-2
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=GND Pin=U2-9
+Added Pin To Net: NetName=NetU2_11 Pin=U2-11
+Added Pin To Net: NetName=NetU2_12 Pin=U2-12
+Added Pin To Net: NetName=NetJ4_A7 Pin=U2-13
+Added Pin To Net: NetName=NetJ4_A6 Pin=U2-14
+Added Pin To Net: NetName=BAT-CHECK Pin=U2-17
+Added Pin To Net: NetName=GND Pin=U*-2
+Added Pin To Net: NetName=3,3V Pin=U*-3
+Added Pin To Net: NetName=3,3V Pin=U*-5
+Change Net Name : Old Net Name=3,3V New Net Name=5V
+Change Net Name : Old Net Name=BAT-CHECK New Net Name=NetC9_2
+Added Pin To Net: NetName=3,3V Pin=C1-1
+Added Pin To Net: NetName=3,3V Pin=C4-1
+Added Pin To Net: NetName=3,3V Pin=C10-1
+Added Pin To Net: NetName=3,3V Pin=J1-3
+Added Pin To Net: NetName=3,3V Pin=J1-8
+Added Pin To Net: NetName=3,3V Pin=L1-1
+Added Pin To Net: NetName=3,3V Pin=R1-1
+Added Pin To Net: NetName=3,3V Pin=R3-2
+Added Pin To Net: NetName=3,3V Pin=U1-3
+Added Pin To Net: NetName=3,3V Pin=U2-1
+Added Net: Name=3,3V
+Added Pin To Net: NetName=NetD3_4 Pin=D3-4
+Added Pin To Net: NetName=NetD3_4 Pin=U2-16
+Added Net: Name=NetD3_4
+Added Pin To Net: NetName=NetD6_2 Pin=D6-2
+Added Pin To Net: NetName=NetD6_2 Pin=J6-2
+Added Net: Name=NetD6_2
+Added Pin To Net: NetName=NetJ1_9 Pin=J1-9
+Added Pin To Net: NetName=NetJ1_9 Pin=U2-15
+Added Net: Name=NetJ1_9
+Added Pin To Net: NetName=NetJ1_10 Pin=J1-10
+Added Pin To Net: NetName=NetJ1_10 Pin=U2-3
+Added Net: Name=NetJ1_10
+Added Pin To Net: NetName=NetJ1_11 Pin=J1-11
+Added Pin To Net: NetName=NetJ1_11 Pin=U2-4
+Added Net: Name=NetJ1_11
+Added Pin To Net: NetName=NetJ1_12 Pin=J1-12
+Added Pin To Net: NetName=NetJ1_12 Pin=U2-8
+Added Net: Name=NetJ1_12
+Add Net: Net with name "NetJ1_12" already exists
+Add Net: Net with name "NetJ1_12" already exists
+Add Net: Net with name "NetJ1_12" already exists
+Added Pin To Net: NetName=NetL1_2 Pin=L1-2
+Added Pin To Net: NetName=NetL1_2 Pin=U*-4
+Added Net: Name=NetL1_2
+Added Pin To Net: NetName=NetR1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR1_2 Pin=R2-1
+Added Pin To Net: NetName=NetR1_2 Pin=U*-1
+Added Net: Name=NetR1_2
+Added Pin To Net: NetName=NetU1_2 Pin=U1-2
+Added Pin To Net: NetName=NetU1_2 Pin=U2-18
+Added Net: Name=NetU1_2
+Added Pin To Net: NetName=NetU2_10 Pin=U2-10
+Added Net: Name=NetU2_10
+Added Member To Class: ClassName=Sheet1 Member=Component C10 1uF
+Added Member To Class: ClassName=Sheet1 Member=Component J6 ARGB_OUTPUT
+Added Member To Class: ClassName=Sheet1 Member=Component L1 2,2uH
+Added Member To Class: ClassName=Sheet1 Member=Component U* U_TLV62569P

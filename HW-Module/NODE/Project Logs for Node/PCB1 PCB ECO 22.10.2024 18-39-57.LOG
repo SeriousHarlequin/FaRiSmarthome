@@ -1,0 +1,17 @@
+Added Component: Designator=J1(SIP-15)
+Added Pin To Net: NetName=V_BAT Pin=J1-1
+Added Pin To Net: NetName=VBUS Pin=J1-2
+Added Pin To Net: NetName=3,3V Pin=J1-3
+Added Pin To Net: NetName=GND Pin=J1-4
+Added Pin To Net: NetName=5V Pin=J1-5
+Added Pin To Net: NetName=5V Pin=J1-6
+Added Pin To Net: NetName=GND Pin=J1-7
+Added Pin To Net: NetName=3,3V Pin=J1-8
+Added Pin To Net: NetName=NetJ1_9 Pin=J1-9
+Added Pin To Net: NetName=NetJ1_10 Pin=J1-10
+Added Pin To Net: NetName=NetJ1_11 Pin=J1-11
+Added Pin To Net: NetName=NetJ1_12 Pin=J1-12
+Add Net: Net with name "NetJ1_12" already exists
+Add Net: Net with name "NetJ1_12" already exists
+Add Net: Net with name "NetJ1_12" already exists
+Added Member To Class: ClassName=Sheet1 Member=Component J1 MODUL_CON
