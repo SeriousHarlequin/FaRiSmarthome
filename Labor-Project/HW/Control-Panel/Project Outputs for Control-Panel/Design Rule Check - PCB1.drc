@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Diplomarbeit\FaRiSmarthome\Labor-Project\HW\Control-Panel\PCB1.PcbDoc
-Date     : 22.10.2024
-Time     : 10:16:48
+PCB File : C:\FaRiSmarthome\Labor-Project\HW\Control-Panel\PCB1.PcbDoc
+Date     : 23.10.2024
+Time     : 16:26:30
 
 Processing Rule : Clearance Constraint (Gap=0.4mm) (All),(All)
    Violation between Clearance Constraint: (0.175mm < 0.2mm) Between Pad J_USB-(38.61mm,6.28mm) on Multi-Layer And Pad J_USB-A1_B12(38.3mm,7.355mm) on Top Layer 

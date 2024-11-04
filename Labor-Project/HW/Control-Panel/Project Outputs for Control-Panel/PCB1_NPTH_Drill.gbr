@@ -1,0 +1,94 @@
+%TF.GenerationSoftware,Altium Limited,Altium Designer,24.0.1 (36)*%
+G04 Layer_Color=0*
+%FSLAX45Y45*%
+%MOMM*%
+%TF.SameCoordinates,4F873DDA-DFB5-4AF5-B95A-0F2F78DC07CA*%
+%TF.FilePolarity,Positive*%
+%TF.FileFunction,NonPlated,1,2,NPTH,Drill*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,OtherDrill,Pad Free- (45mm,53.5mm)*%
+%ADD97O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (37mm,53.5mm)*%
+%ADD98O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (28.7mm,53.5mm)*%
+%ADD99O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (20.4mm,53.5mm)*%
+%ADD100O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (12.6mm,53.5mm)*%
+%ADD101O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (3.9mm,53.5mm)*%
+%ADD102O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (75.692mm,64.516mm)*%
+%ADD103O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (67.564mm,64.516mm)*%
+%ADD104O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (58.166mm,64.516mm)*%
+%ADD105O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (49.022mm,64.516mm)*%
+%ADD106O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (39.878mm,64.516mm)*%
+%ADD107O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (31.242mm,64.516mm)*%
+%ADD108O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (22.098mm,64.516mm)*%
+%ADD109O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (13.462mm,64.516mm)*%
+%ADD110O,6.00000X0.75000*%
+%TA.AperFunction,OtherDrill,Pad Free- (4.826mm,64.516mm)*%
+%ADD111O,6.00000X0.75000*%
+%TA.AperFunction,ComponentDrill*%
+%ADD112C,0.65000*%
+D97*
+X4500000Y5350000D02*
+D03*
+D98*
+X3700000D02*
+D03*
+D99*
+X2870000D02*
+D03*
+D100*
+X2040000D02*
+D03*
+D101*
+X1260000D02*
+D03*
+D102*
+X390000D02*
+D03*
+D103*
+X7569200Y6451600D02*
+D03*
+D104*
+X6756400D02*
+D03*
+D105*
+X5816600D02*
+D03*
+D106*
+X4902200D02*
+D03*
+D107*
+X3987800D02*
+D03*
+D108*
+X3124200D02*
+D03*
+D109*
+X2209800D02*
+D03*
+D110*
+X1346200D02*
+D03*
+D111*
+X482600D02*
+D03*
+D112*
+X3861000Y628000D02*
+D03*
+X4439000D02*
+D03*
+%TF.MD5,303119833c36d68e7502a4150ed77903*%
+M02*

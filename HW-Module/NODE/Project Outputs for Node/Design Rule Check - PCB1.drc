@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Diplomarbeit\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc
-Date     : 22.10.2024
-Time     : 20:37:54
+PCB File : C:\FaRiSmarthome\HW-Module\NODE\PCB1.PcbDoc
+Date     : 23.10.2024
+Time     : 16:15:45
 
 WARNING: Unplated multi-layer pad(s) detected
    Pad B1-1(3.5mm,26.5mm) on Multi-Layer on Net GND
@@ -14,9 +14,7 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net NetJ4_A6 Between Pad J4-B6(7.255mm,14.25mm) on Top Layer And Pad J4-A6(7.255mm,15.25mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetJ4_A7 Between Pad J4-A7(7.255mm,14.75mm) on Top Layer And Pad J4-B7(7.255mm,15.75mm) on Top Layer 
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -53,6 +51,8 @@ Processing Rule : Minimum Annular Ring (Minimum=0.5mm) (All)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (17.405mm,16.84mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (18.364mm,21.539mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (18.467mm,3.369mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.375mm < 0.5mm) Via (21.844mm,14.732mm) from Top Layer to Bottom Layer (Annular Ring=0.375mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.375mm < 0.5mm) Via (21.958mm,12.446mm) from Top Layer to Bottom Layer (Annular Ring=0.375mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (22.682mm,22.327mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (23.647mm,27.889mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (24.054mm,21.031mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
@@ -68,8 +68,10 @@ Processing Rule : Minimum Annular Ring (Minimum=0.5mm) (All)
    Violation between Minimum Annular Ring: (0.375mm < 0.5mm) Via (60.325mm,6.35mm) from Top Layer to Bottom Layer (Annular Ring=0.375mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.375mm < 0.5mm) Via (60.325mm,9.525mm) from Top Layer to Bottom Layer (Annular Ring=0.375mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (7.037mm,3.868mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (9.398mm,13.716mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (9.398mm,16.002mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
    Violation between Minimum Annular Ring: (0.2mm < 0.5mm) Via (9.906mm,12.7mm) from Top Layer to Bottom Layer (Annular Ring=0.2mm) On (Top Layer)
-Rule Violations :41
+Rule Violations :45
 
 Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6mm) (All)
 Rule Violations :0
@@ -93,6 +95,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 43
+Violations Detected : 45
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02
