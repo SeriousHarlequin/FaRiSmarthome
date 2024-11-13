@@ -1,0 +1,32 @@
+\chapter{Software}
+
+    \section{Projektstruktur}
+    Die grundliegende Struktur des Projekts folgt der von PlatformIO 
+    normalisierten Projetstruktur. 
+
+    \section{User Interface}
+        \subsection{SquarelineStudio}
+        SquarelineStudio ist eine Software, die es ermöglicht, ein 
+        User Interface mithilfe eines Drag-and-Drop-Editors zu erstellen und
+        in C-Code zu exportieren. Dieser Code kann dann dann zusammen mit den 
+        beiden Libraries \textit{TFT\_eSPI} und \textit{lvgl} in PlatformIO
+        integriert werden.
+
+            \subsubsection{TFT\_eSPI}
+            TFT\_eSPI ist eine Library für Grafik und Fonts auf einem TFT-Display.
+            Sie ist mit vielen verschiedenen Controllern kompatibel und bietet
+            viele Funktionen, um verschiedene TFT-Display anzusteuern.
+            Sie ist eine Hälfte des Grundgerüsts für die Darstellung von Grafiken 
+            in SquarelineStudio.
+
+            \subsubsection{lvgl}
+            lvgl ist eine Library für die Darstellung von flexiblen Grafiken
+            auf vielen Platformen, darunter auch dem Arduino Framework.
+            Zusammen mit TFT\_eSPI bildet sie das Grundgerüst für die Darstellung
+            von Grafiken in SquarelineStudio.
+        \subsection{Touch Control}
+
+    \section{Kommunikation}
+        \subsection{MQTT}
+        \subsection{ESP-NOW}
+
