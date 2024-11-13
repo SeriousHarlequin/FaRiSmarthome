@@ -227,7 +227,7 @@
 //#define TFT_RST  33  // Reset pin (could connect to Arduino RESET pin)
 //#define TFT_BL   22  // LED back-light
 
-//#define TOUCH_CS 21     // Chip select pin (T_CS) of touch screen
+// #define TOUCH_CS 10     // Chip select pin (T_CS) of touch screen
 
 //#define TFT_WR 22    // Write strobe for modified Raspberry Pi TFT only
 
@@ -269,6 +269,8 @@
 #define TFT_D5   17//16
 #define TFT_D6   18//27
 #define TFT_D7   21//14
+
+// #define HAVE_TOUCHPAD
 
 // ######       EDIT THE PINs BELOW TO SUIT YOUR STM32 SPI TFT SETUP        ######
 

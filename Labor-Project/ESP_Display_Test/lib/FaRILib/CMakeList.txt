@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(FaRiLib)
+
+include_directories(include)
+
+set(SOURCE_FILES
+        src/FaRiLib.cpp
+
+)
+
