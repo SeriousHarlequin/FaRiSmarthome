@@ -1,0 +1,12 @@
+Change Component Comment : Designator=F2 Old Comment=#Wert New Comment=8A
+Change Component Comment : Designator=F1 Old Comment=#Wert New Comment=100mA
+Change Component Comment : Designator=U3 Old Comment=#Wert New Comment=LM257X
+Added Component: Designator=B1(B_Schraube-M3 PAD)
+Added Component: Designator=B2(B_Schraube-M3 PAD)
+Added Component: Designator=B3(B_Schraube-M3 PAD)
+Added Pin To Net: NetName=GND Pin=B1-1
+Added Pin To Net: NetName=GND Pin=B2-1
+Added Pin To Net: NetName=GND Pin=B3-1
+Added Member To Class: ClassName=Sheet1 Member=Component B1 Schraube
+Added Member To Class: ClassName=Sheet1 Member=Component B2 Schraube
+Added Member To Class: ClassName=Sheet1 Member=Component B3 Schraube

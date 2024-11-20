@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=18V Pin=C1-1
+Removed Pin From Net: NetName=GND Pin=C1-2
+Removed Member From Class: ClassName=Sheet1 Member=C1
+Change Component Footprint: Designator=C2 Old Footprint=C_THT_RB-.2/.4 New Footprint=C_THT_RB-.3/.6
+Change Component Footprint: Designator=U2 Old Footprint=TO-220-3H New Footprint=TO-220-3V
+Change Component Comment : Designator=C2 Old Comment=#Wert New Comment=2200µF
+Change Component Comment : Designator=J1 Old Comment=#Wert New Comment=IN
+Change Component Comment : Designator=J2 Old Comment=#Wert New Comment=OUT
+Change Component Comment : Designator=D? Old Comment=#Wert New Comment=RED
+Change Component Designator: OldDesignator=C? NewDesignator=C9
+Change Component Designator: OldDesignator=D? NewDesignator=D9
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Net Name : Old Net Name=NetD?_1 New Net Name=NetD9_1

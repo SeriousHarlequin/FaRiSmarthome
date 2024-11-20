@@ -1,0 +1,228 @@
+Added Component: Designator=C?(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_THT_RB-.2/.4)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_SMD_B-Typ)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_THT_RB-.2/.4)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_THT_RB-.2/.4)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C?(C_THT_RB-.2/.4)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(SOD-80-2)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_THT_0.4)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_THT_0.4)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_THT_0.6)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(SOD-80-2)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_THT_0.4)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(SOD-80-2)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D?(D_THT_0.4)
+Add component (AddParameter): Name = "Spannung For."; Value = "0,7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=F?(F_THT_Fuse2pol)
+Add component (AddParameter): Name = "Auslösecharakteristik"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=F?(F_THT_Fuse2pol)
+Add component (AddParameter): Name = "Auslösecharakteristik"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J?(Sip-3)
+Added Component: Designator=J?(Sip-3)
+Added Component: Designator=J?(SIP-15)
+Added Component: Designator=L?(L_SMD_NPIS42LS)
+Added Component: Designator=Q?(SOT-23-3_BC846)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=REL?(Rel_THT_1x 2)
+Added Component: Designator=REL?(Rel_THT_1x 2)
+Added Component: Designator=T?(FL_4_Trafo)
+Added Component: Designator=U?(SO-8)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ACS712ELCTR-20A-T/Allegro+Industries/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Allegro"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ACS712ELCTR-20A-T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOIC-8 Allegro MicroSystems LLC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/ACS712ELCTR-20A-T/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ACS712ELCTR-20A-T/Allegro+Industries/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U?(TO220-5V)
+Added Component: Designator=U?(TO-220-3V)
+Added Pin To Net: NetName=3,3V Pin=J?-3
+Added Pin To Net: NetName=3,3V Pin=J?-8
+Added Pin To Net: NetName=3,3V Pin=R?-2
+Added Net: Name=3,3V
+Added Pin To Net: NetName=5V Pin=C?-1
+Added Pin To Net: NetName=5V Pin=D?-1
+Added Pin To Net: NetName=5V Pin=J?-5
+Added Pin To Net: NetName=5V Pin=J?-6
+Added Pin To Net: NetName=5V Pin=U?-2
+Added Pin To Net: NetName=5V Pin=U?-8
+Added Net: Name=5V
+Added Pin To Net: NetName=12V Pin=C?-1
+Added Pin To Net: NetName=12V Pin=C?-1
+Added Pin To Net: NetName=12V Pin=D?-2
+Added Pin To Net: NetName=12V Pin=D?-2
+Added Pin To Net: NetName=12V Pin=L?-1
+Added Pin To Net: NetName=12V Pin=R?-1
+Added Pin To Net: NetName=12V Pin=REL?-1
+Added Pin To Net: NetName=12V Pin=U?-1
+Added Net: Name=12V
+Added Pin To Net: NetName=18V Pin=C?-1
+Added Pin To Net: NetName=18V Pin=C?-1
+Added Pin To Net: NetName=18V Pin=C?-1
+Added Pin To Net: NetName=18V Pin=D?-2
+Added Pin To Net: NetName=18V Pin=D?-2
+Added Pin To Net: NetName=18V Pin=U?-1
+Added Net: Name=18V
+Added Pin To Net: NetName=AC18_1 Pin=D?-1
+Added Pin To Net: NetName=AC18_1 Pin=D?-2
+Added Pin To Net: NetName=AC18_1 Pin=T?-5
+Added Net: Name=AC18_1
+Added Pin To Net: NetName=AC18_2 Pin=D?-1
+Added Pin To Net: NetName=AC18_2 Pin=D?-2
+Added Pin To Net: NetName=AC18_2 Pin=T?-8
+Added Net: Name=AC18_2
+Added Pin To Net: NetName=AC230_1 Pin=F?-1
+Added Pin To Net: NetName=AC230_1 Pin=F?-1
+Added Pin To Net: NetName=AC230_1 Pin=F?-1
+Added Pin To Net: NetName=AC230_1 Pin=F?-1
+Added Pin To Net: NetName=AC230_1 Pin=J?-1
+Added Net: Name=AC230_1
+Added Pin To Net: NetName=AC230_2 Pin=J?-2
+Added Pin To Net: NetName=AC230_2 Pin=J?-2
+Added Pin To Net: NetName=AC230_2 Pin=T?-4
+Added Net: Name=AC230_2
+Added Pin To Net: NetName=FB   Pin=R?-1
+Added Pin To Net: NetName=FB   Pin=R?-2
+Added Pin To Net: NetName=FB   Pin=U?-4
+Added Net: Name=FB  
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=D?-1
+Added Pin To Net: NetName=GND Pin=D?-1
+Added Pin To Net: NetName=GND Pin=D?-1
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=GND Pin=J?-7
+Added Pin To Net: NetName=GND Pin=Q?-E
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=GND Pin=U?-3
+Added Pin To Net: NetName=GND Pin=U?-3
+Added Pin To Net: NetName=GND Pin=U?-5
+Added Pin To Net: NetName=GND Pin=U?-5
+Added Net: Name=GND
+Added Pin To Net: NetName=IP+ Pin=F?-2
+Added Pin To Net: NetName=IP+ Pin=F?-2
+Added Pin To Net: NetName=IP+ Pin=U?-1
+Added Pin To Net: NetName=IP+ Pin=U?-2
+Added Net: Name=IP+
+Added Pin To Net: NetName=IP- Pin=REL?-3
+Added Pin To Net: NetName=IP- Pin=U?-3
+Added Pin To Net: NetName=IP- Pin=U?-4
+Added Net: Name=IP-
+Added Pin To Net: NetName=NetC?_1 Pin=C?-1
+Added Pin To Net: NetName=NetC?_1 Pin=D?-2
+Added Pin To Net: NetName=NetC?_1 Pin=J?-10
+Added Net: Name=NetC?_1
+Add Net: Net with name "NetC?_1" already exists
+Added Pin To Net: NetName=NetD?_1 Pin=D?-1
+Added Pin To Net: NetName=NetD?_1 Pin=R?-1
+Added Pin To Net: NetName=NetD?_1 Pin=R?-1
+Added Net: Name=NetD?_1
+Add Net: Net with name "NetD?_1" already exists
+Added Pin To Net: NetName=NetD?_2 Pin=D?-2
+Added Pin To Net: NetName=NetD?_2 Pin=L?-2
+Added Pin To Net: NetName=NetD?_2 Pin=U?-2
+Added Net: Name=NetD?_2
+Added Pin To Net: NetName=NetF?_2 Pin=F?-2
+Added Pin To Net: NetName=NetF?_2 Pin=F?-2
+Added Pin To Net: NetName=NetF?_2 Pin=T?-1
+Added Net: Name=NetF?_2
+Added Pin To Net: NetName=NetJ?_1 Pin=J?-1
+Added Pin To Net: NetName=NetJ?_1 Pin=REL?-4
+Added Net: Name=NetJ?_1
+Added Pin To Net: NetName=NetJ?_9 Pin=J?-9
+Added Pin To Net: NetName=NetJ?_9 Pin=R?-1
+Added Pin To Net: NetName=NetJ?_9 Pin=R?-2
+Added Net: Name=NetJ?_9
+Added Pin To Net: NetName=NetJ?_11 Pin=J?-11
+Added Pin To Net: NetName=NetJ?_11 Pin=Q?-B
+Added Net: Name=NetJ?_11
+Added Pin To Net: NetName=NetJ?_12 Pin=J?-12
+Added Net: Name=NetJ?_12
+Added Pin To Net: NetName=NetJ?_13 Pin=J?-13
+Added Net: Name=NetJ?_13
+Added Pin To Net: NetName=NetJ?_14 Pin=J?-14
+Added Net: Name=NetJ?_14
+Added Pin To Net: NetName=NetJ?_15 Pin=J?-15
+Added Net: Name=NetJ?_15
+Added Pin To Net: NetName=NetR?_2 Pin=R?-2
+Added Pin To Net: NetName=NetR?_2 Pin=U?-7
+Added Net: Name=NetR?_2
+Added Pin To Net: NetName=NetT?_2 Pin=T?-2
+Added Pin To Net: NetName=NetT?_2 Pin=T?-3
+Added Net: Name=NetT?_2
+Added Pin To Net: NetName=NetT?_6 Pin=T?-6
+Added Pin To Net: NetName=NetT?_6 Pin=T?-7
+Added Net: Name=NetT?_6
+Added Pin To Net: NetName=V_BAT Pin=J?-1
+Added Net: Name=V_BAT
+Added Pin To Net: NetName=VBUS Pin=J?-2
+Added Net: Name=VBUS
+Added Class: Name=Sheet1

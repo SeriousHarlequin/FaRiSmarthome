@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=IP+ Pin=F2-2
+Removed Pin From Net: NetName=IP+ Pin=F2-2
+Removed Pin From Net: NetName=IP- Pin=REL1-3
+Added Pin To Net: NetName=IP- Pin=F2-2
+Added Pin To Net: NetName=IP- Pin=F2-2
+Added Pin To Net: NetName=IP+ Pin=REL1-3

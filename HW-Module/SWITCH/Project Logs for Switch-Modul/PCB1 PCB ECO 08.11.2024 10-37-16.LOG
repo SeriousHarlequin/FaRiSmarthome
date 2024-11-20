@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=J1 Old Footprint=Sip-3 New Footprint=J_THT_Printklemme 3x
+Change Component Footprint: Designator=J2 Old Footprint=Sip-3 New Footprint=J_THT_Printklemme 3x
+Added Member To Class: ClassName=Sheet1 Member=Component C5 10µF
+Added Member To Class: ClassName=Sheet1 Member=Component C6 10µF

@@ -1,0 +1,34 @@
+Removed Pin From Net: NetName=V_BAT Pin=J3-1
+Removed Pin From Net: NetName=VBUS Pin=J3-2
+Removed Pin From Net: NetName=3,3V Pin=J3-3
+Removed Pin From Net: NetName=GND Pin=J3-4
+Removed Pin From Net: NetName=5V Pin=J3-5
+Removed Pin From Net: NetName=5V Pin=J3-6
+Removed Pin From Net: NetName=GND Pin=J3-7
+Removed Pin From Net: NetName=3,3V Pin=J3-8
+Removed Pin From Net: NetName=NetJ3_9 Pin=J3-9
+Removed Pin From Net: NetName=NetC3_1 Pin=J3-10
+Removed Pin From Net: NetName=NetJ3_11 Pin=J3-11
+Removed Pin From Net: NetName=NetJ3_12 Pin=J3-12
+Removed Pin From Net: NetName=NetJ3_13 Pin=J3-13
+Removed Pin From Net: NetName=NetJ3_14 Pin=J3-14
+Removed Pin From Net: NetName=NetJ3_15 Pin=J3-15
+Change Component Footprint: Designator=U2 Old Footprint=TO-220-3H New Footprint=TO-220-3V
+Added Component: Designator=J3(SIP-15_Node_V2)
+Added Pin To Net: NetName=V_BAT Pin=J3-1
+Added Pin To Net: NetName=VBUS Pin=J3-2
+Added Pin To Net: NetName=3,3V Pin=J3-3
+Added Pin To Net: NetName=GND Pin=J3-4
+Added Pin To Net: NetName=GND Pin=J3-4
+Added Pin To Net: NetName=GND Pin=J3-4
+Added Pin To Net: NetName=5V Pin=J3-5
+Added Pin To Net: NetName=5V Pin=J3-6
+Added Pin To Net: NetName=GND Pin=J3-7
+Added Pin To Net: NetName=3,3V Pin=J3-8
+Added Pin To Net: NetName=NetJ3_9 Pin=J3-9
+Added Pin To Net: NetName=NetC3_1 Pin=J3-10
+Added Pin To Net: NetName=NetJ3_11 Pin=J3-11
+Added Pin To Net: NetName=NetJ3_12 Pin=J3-12
+Added Pin To Net: NetName=NetJ3_13 Pin=J3-13
+Added Pin To Net: NetName=NetJ3_14 Pin=J3-14
+Added Pin To Net: NetName=NetJ3_15 Pin=J3-15
