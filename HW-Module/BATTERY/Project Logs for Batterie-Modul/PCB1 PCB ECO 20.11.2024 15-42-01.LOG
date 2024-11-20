@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=VBUS Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Added Component: Designator=C3(C_SMD_0603)
+Add component (AddParameter): Name = "Bauform"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Typ"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBUS Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
