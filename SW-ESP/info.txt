@@ -1,1 +1,2 @@
-This subdirectory is meant for the ESP-Sourcecode of the various modules
+macWR: b0:b2:1c:97:8e:88
+macS3: d8:3b:da:a4:94:84

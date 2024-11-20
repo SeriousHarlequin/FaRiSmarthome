@@ -1,1 +1,4 @@
 This subdirectory is meant for all the sourcecode related to the Raspberry Pi MQTT broker
+
+ssh fabian@192.168.13.211
+    141592
