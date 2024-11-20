@@ -2,3 +2,5 @@
 Es wurden zwei Datenpins des USB-C Ports nicht am PCB geroutet. Fehler => Design Rule Check wurde nicht durchgeführt. 
 
 Idee zu der Modul-Erkennung: Spannungsteiler am Module. Wenn das Modul aufgesteckt wurde, wird dieser über einen Analog-Pin ausgelesen.
+
+13.11.2024: Freier Port-Pin am ESP32-C3, könnte man als Input Pin für z.B. einen Magentschalter verwenden, oder als Taster zum fernsteuern.
