@@ -8,6 +8,8 @@
 \usepackage{float}%positionierung von bildern
 %\usepackage[official]{eurosym} %eurozeichen
 \usepackage{subcaption}
+\usepackage{fancyhdr} %header and footer
+\usepackage{zref-totpages} %total pages
 
 \makeatletter % for not having to define path in input
 \def\input@path{{inputfiles/}}
@@ -15,3 +17,11 @@
 \graphicspath{ {./images/} }
 
 \bibliographystyle{plain}
+
+\pagestyle{fancy} %NOT WORKING
+\fancyfoot{} % clear all footer fields
+\fancyhead{}
+\fancyfoot[LE,RO]{\thepage}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{}
+
