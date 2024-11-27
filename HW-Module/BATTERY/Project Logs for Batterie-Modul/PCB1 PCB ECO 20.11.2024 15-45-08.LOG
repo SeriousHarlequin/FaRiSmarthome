@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=VBUS Pin=D1-1
+Removed Pin From Net: NetName=NetC4_1 Pin=D1-2
+Removed Pin From Net: NetName=VBAT_M Pin=D2-1
+Removed Pin From Net: NetName=NetC4_1 Pin=D2-2
+Added Component: Designator=D1(D_DO-221)
+Add component (AddParameter): Name = "Spannung For."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D2(D_DO-221)
+Add component (AddParameter): Name = "Spannung For."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = "0,4V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBUS Pin=D1-1
+Added Pin To Net: NetName=NetC4_1 Pin=D1-2
+Added Pin To Net: NetName=VBAT_M Pin=D2-1
+Added Pin To Net: NetName=NetC4_1 Pin=D2-2
