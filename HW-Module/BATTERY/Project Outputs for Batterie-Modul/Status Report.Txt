@@ -10,6 +10,7 @@ From  : Variant [[No Variations]] of Project [Batterie-Modul.PrjPcb]
    Generated File[PCB1_Soldermask_Bot.gbr]
    Generated File[PCB1_Paste_Top.gbr]
    Generated File[PCB1_Paste_Bot.gbr]
+   Generated File[PCB1_Legend_Bot.gbr]
    Generated File[PCB1_Keep-out.gbr]
    Generated File[PCB1_Profile.gbr]
    Generated File[PCB1_NPTH_Drill.gbr]
@@ -20,7 +21,7 @@ From  : Variant [[No Variations]] of Project [Batterie-Modul.PrjPcb]
    Generated File[PCB1.REP]
 
 
-Files Generated   : 17
+Files Generated   : 18
 Documents Printed : 0
 
-Finished Output Generation At 09:27:45 On 15.09.2024
+Finished Output Generation At 12:37:39 On 04.12.2024
