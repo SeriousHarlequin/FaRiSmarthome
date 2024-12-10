@@ -4,28 +4,32 @@
 #include <ui.h>
 #include "FaRiLib.h"
 
-
-
-
-TFT_eSPI tft = TFT_eSPI();       // Invoke custom library
+TFT_eSPI tft = TFT_eSPI(displayWidth, displayHeight);       // Invoke custom library
 
 void setup() {
   Serial.begin(115200);
-
+  
   initTFT(&tft);
-  lv_init();
-  ui_init();
-
+  // lv_task_handler();
   Serial.println("Setup done");
 }
 
 /***********************************************************************************************************************************/
 void loop() {
 
+  lv_obj_add_state(ui_Checkbox1, LV_STATE_CHECKED);
+  lv_timer_handler();
+  delay(1000);
+  lv_timer_handler();
+  // lv_checkbox_set_text(ui_Checkbox1, "Hello");
+  // lv_label_set_text(ui_Label1, "Hello");
+  lv_obj_clear_state(ui_Checkbox1, LV_STATE_CHECKED);
+  lv_timer_handler();
+  delay(1000);
+  lv_obj_add_state(ui_Checkbox2, LV_STATE_CHECKED);
+  delay(1000);
 
-  // ui_Checkbox1->state = LV_STATE_DEFAULT;
-  lv_timer_handler(); /* let the GUI do its work */
-  delay(100);
+
 
 }
 
