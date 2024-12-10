@@ -1,0 +1,33 @@
+Removed Pin From Net: NetName=5V Pin=J1-6
+Removed Pin From Net: NetName=GND Pin=J1-7
+Removed Pin From Net: NetName=3,3V Pin=J1-8
+Removed Pin From Net: NetName=NetJ1_9 Pin=J1-9
+Removed Pin From Net: NetName=NetJ1_10 Pin=J1-10
+Removed Pin From Net: NetName=NetJ1_9 Pin=R1-1
+Removed Pin From Net: NetName=NetJ1_9 Pin=R2-2
+Removed Pin From Net: NetName=NetJ1_10 Pin=R3-2
+Removed Pin From Net: NetName=NetJ1_10 Pin=U1-2
+Added Component: Designator=B1(B_Schraube-M3 PAD)
+Added Component: Designator=J1(SIP-10)
+Added Pin To Net: NetName=GND Pin=B1-1
+Added Pin To Net: NetName=5V Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=3,3V Pin=J1-3
+Added Pin To Net: NetName=NetJ1_9 Pin=J1-9
+Added Pin To Net: NetName=NetJ1_10 Pin=J1-10
+Added Pin To Net: NetName=NetJ1_4 Pin=J1-4
+Added Pin To Net: NetName=NetJ1_4 Pin=R1-1
+Added Pin To Net: NetName=NetJ1_4 Pin=R2-2
+Added Net: Name=NetJ1_4
+Added Pin To Net: NetName=NetJ1_5 Pin=J1-5
+Added Pin To Net: NetName=NetJ1_5 Pin=R3-2
+Added Pin To Net: NetName=NetJ1_5 Pin=U1-2
+Added Net: Name=NetJ1_5
+Added Pin To Net: NetName=NetJ1_6 Pin=J1-6
+Added Net: Name=NetJ1_6
+Added Pin To Net: NetName=NetJ1_7 Pin=J1-7
+Added Net: Name=NetJ1_7
+Added Pin To Net: NetName=NetJ1_8 Pin=J1-8
+Added Net: Name=NetJ1_8
+Added Member To Class: ClassName=Sheet1 Member=Component B1 Schraube
+Added Member To Class: ClassName=Sheet1 Member=Component J1 MODULE_COM

@@ -1,0 +1,52 @@
+Added Component: Designator=J?(SIP-15_Node_V2)
+Added Component: Designator=R1(R_SMD_0805)
+Added Component: Designator=R2(R_SMD_0805)
+Added Component: Designator=R?(R_SMD_0805)
+Added Component: Designator=U?(EKMB1305111K)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "EKMB1305111K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/ekmb1305111k/panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://datasheet.datasheetarchive.com/originals/distributors/DKDS41/DSANUWW0039436.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "16.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "EKMB1305111K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "667-EKMB1305111K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Panasonic/EKMB1305111K?qs=YCa%2FAAYMW02Pb%252BcF%2FXXwVw%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3,3V Pin=J?-3
+Added Pin To Net: NetName=3,3V Pin=J?-8
+Added Pin To Net: NetName=3,3V Pin=R1-2
+Added Pin To Net: NetName=3,3V Pin=U?-3
+Added Net: Name=3,3V
+Added Pin To Net: NetName=5V Pin=J?-5
+Added Pin To Net: NetName=5V Pin=J?-6
+Added Net: Name=5V
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=GND Pin=J?-7
+Added Pin To Net: NetName=GND Pin=R2-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Net: Name=GND
+Added Pin To Net: NetName=NetJ?_9 Pin=J?-9
+Added Pin To Net: NetName=NetJ?_9 Pin=R1-1
+Added Pin To Net: NetName=NetJ?_9 Pin=R2-2
+Added Net: Name=NetJ?_9
+Added Pin To Net: NetName=NetJ?_10 Pin=J?-10
+Added Pin To Net: NetName=NetJ?_10 Pin=R?-2
+Added Pin To Net: NetName=NetJ?_10 Pin=U?-2
+Added Net: Name=NetJ?_10
+Added Pin To Net: NetName=NetJ?_11 Pin=J?-11
+Added Net: Name=NetJ?_11
+Added Pin To Net: NetName=NetJ?_12 Pin=J?-12
+Added Net: Name=NetJ?_12
+Added Pin To Net: NetName=NetJ?_13 Pin=J?-13
+Added Net: Name=NetJ?_13
+Added Pin To Net: NetName=NetJ?_14 Pin=J?-14
+Added Net: Name=NetJ?_14
+Added Pin To Net: NetName=NetJ?_15 Pin=J?-15
+Added Net: Name=NetJ?_15
+Added Pin To Net: NetName=V_BAT Pin=J?-1
+Added Net: Name=V_BAT
+Added Pin To Net: NetName=VBUS Pin=J?-2
+Added Net: Name=VBUS
+Added Class: Name=Sheet1
