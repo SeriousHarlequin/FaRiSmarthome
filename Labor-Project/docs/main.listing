@@ -1,4 +1,0 @@
-##define CS_PIN  10
-
-                XPT2046_Touchscreen ts(CS_PIN);
-                TS_Point p;

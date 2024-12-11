@@ -1,30 +1,46 @@
-\documentclass[12pt, twoside]{report}
-\usepackage{preamble}
+\documentclass[paper=a4, 12pt,oneside]{scrbook}
+\usepackage{rdp}
+\usepackage[scale=0.72, twoside, bindingoffset]{geometry}
+\usepackage{graphicx}
 
+\school{HTBLuVA St. Pölten}
+\department{Higher Institute for Electronics and Technical Informatics}
+\subdepartment{Specializations in Embedded and Wireless Systems}
+\session{2025/26}
 \title{Modular Smart Home System}
-\author{Fabian Schätzschock \\ Richard Krammer}
-
+\note{Licensed under ___}
+\subtitle{Add subtitle}
+\supervisor{Supervisor 1}
+\supervisor{Supervisor 2}
+\candidate{Fabian Schätzschock}{Task 1}
+\candidate{Richard Krammer}{Task 2}
+\place{St. Pölten}
+\handindate{04.04.2025}
 
 \begin{document}
-    \maketitle \newpage
-    \tableofcontents \newpage
-    
-    \input{introduction}
-    
-    \input{summary}
-    
-    \input{requirements}
-    
-    \input{networkingStructure}
-    
-    \input{ESP32}
-    \cite{Wikipedia}
-    
-    \input{RaspberryPi}
-    
-    \listoffigures
-    
-    \bibliography{sources}
+\frontmatter
+\maketitle
 
+\affidavit
+
+\tableofcontents
+
+\mainmatter
+\include{introduction}
+
+    
+\input{summary}
+
+\input{requirements}
+
+\input{networkingStructure}
+
+\input{ESP32}
+
+\input{RaspberryPi}
+
+\include{results}
+\include{time}
+\include{bibliography}
 
 \end{document}

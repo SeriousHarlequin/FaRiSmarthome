@@ -1,14 +1,7 @@
 {
-    "spellright.language": [
-        "German_de_AT",
-        "en-US-10-1."
-    ],
+    "spellright.language": [],
     "spellright.documentTypes": [
         "markdown",
-        "latex",
         "plaintext"
-    ],
-    "cSpell.enableFiletypes": [
-        "!latex"
     ]
 }

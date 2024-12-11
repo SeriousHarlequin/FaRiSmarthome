@@ -11,6 +11,8 @@ void setup() {
   
   initTFT(&tft);
   // lv_task_handler();
+  pinMode(48, OUTPUT);
+  digitalWrite(48, HIGH);
   Serial.println("Setup done");
 }
 

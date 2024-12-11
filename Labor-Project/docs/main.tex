@@ -1,20 +1,46 @@
-\documentclass[a4paper]{scrreport}
-\usepackage{preamble}
+\documentclass[paper=a4, 12pt,oneside]{scrbook}
+\usepackage{rdp}
+\usepackage[scale=0.72, twoside, bindingoffset]{geometry}
+\usepackage{graphicx}
 
-\title{MQTT-Control-Panel}          
-\author{Fabian Schätzschock \\ Richard Krammer}
+\school{HTBLuVA St. Pölten}
+\department{Higher Institute for Electronics and Technical Informatics}
+\subdepartment{Specializations in Embedded and Wireless Systems}
+\session{2025/26}
+\title{Modular Smart Home System}
+\note{Licensed under ___}
+\subtitle{Add subtitle}
+\supervisor{Supervisor 1}
+\supervisor{Supervisor 2}
+\candidate{Fabian Schätzschock}{Task 1}
+\candidate{Richard Krammer}{Task 2}
+\place{St. Pölten}
+\handindate{04.04.2025}
 
+\begin{document}
+\frontmatter
+\maketitle
 
-\begin{document}    
-    \maketitle \newpage
-    \tableofcontents \newpage
-            
-    \input{einfuehrung}
+\affidavit
+
+\tableofcontents
+
+\mainmatter
+\include{introduction}
+
+    
+% \input{summary}
+
+\input{einfuehrung}
     \input{konzept}
     \input{anforderungen} 
     \input{software}
 
     \input{Ergebnisse}
-    
+
+
+
+\include{time}
+\include{bibliography}
 
 \end{document}

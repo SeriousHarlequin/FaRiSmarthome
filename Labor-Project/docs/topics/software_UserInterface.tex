@@ -1,0 +1,108 @@
+\section{User Interface}
+        \subsection{SquarelineStudio}
+        SquarelineStudio ist eine Software, die es ermöglicht, ein 
+        User Interface mithilfe eines Drag-and-Drop-Editors zu erstellen und
+        in C-Code zu exportieren. Dieser Code kann dann dann zusammen mit den 
+        beiden Libraries \textit{TFT\_eSPI} und \textit{lvgl} in PlatformIO
+        integriert werden.
+
+            \subsubsection{TFT\_eSPI}
+            TFT\_eSPI ist eine Library für Grafik und Fonts auf einem TFT-Display.
+            Sie ist mit vielen verschiedenen Controllern kompatibel und bietet
+            viele Funktionen, um verschiedene TFT-Display anzusteuern.
+            Sie ist eine Hälfte des Grundgerüsts für die Darstellung von Grafiken 
+            in SquarelineStudio.
+
+            \subsubsection{lvgl}
+            lvgl ist eine Library für die Darstellung von flexiblen Grafiken
+            auf vielen Platformen, darunter auch dem Arduino Framework.
+            Zusammen mit TFT\_eSPI bildet sie das Grundgerüst für die Darstellung
+            von Grafiken in SquarelineStudio.
+        \subsection{Touch Control}
+        Die \textit{TFT\_eSPI} Library bietet auch die Möglichkeit, Touch-Events
+        zu registrieren und für das \textit{SquarelineStudio} User Interface zu
+        verarbeiten. Diese Funktion ist allerdings nur für über SPI angesteuerte
+        Displays verfügbar.
+            \subsubsection{XPT2046\_Touchscreen Library}
+            Um den Touch seriell einzulesen, wird die \textit{XPT2046\_Touchscreen}
+            Library verwendet. 
+
+            \begin{lstlisting}
+    #define CS_PIN  10
+
+    XPT2046_Touchscreen ts(CS_PIN);
+    TS_Point p;
+            \end{lstlisting}
+
+            \subsubsection{Connecting Touch to tft\_eSPI} \label{touch_to_tft}
+            Um die Touch-Events an tft\_eSPI weiterzuleiten, muss die library grundliegend umgeschrieben werden.
+            zunächst muss das User\_Setup.h folgender Maßen bearbeitet werden:
+
+            \begin{lstlisting}
+    //Einkommentieren
+    #define TOUCH_CS 10 
+            \end{lstlisting}
+
+            
+            \begin{minipage}{\linewidth}
+            Ebenso muss im "tft\_eSPI.h" folgendes editiert werden:
+            \begin{lstlisting}   
+    #ifdef TOUCH_CS
+    //CHANGE THIS LINE
+    #if 0
+        #if !defined(DISABLE_ALL_LIBRARY_WARNINGS)
+        #error >>>>------>> ...
+        #endif
+    #else
+        #include "Extensions/Touch.h"
+    #endif
+    #else
+        #if !defined(DISABLE_ALL_LIBRARY_WARNINGS)
+        #warning >>>>------>> ...
+        #endif
+    #endif
+            \end{lstlisting}\end{minipage}
+            
+            
+
+            \begin{minipage}{\linewidth}
+            Nun kann der Touch in der my\_touchpad\_read() Funktion der tft\_eSPI Library
+            übergeben werden.
+            \begin{lstlisting}
+    void my_touchpad_read
+    ( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )
+    {
+        uint16_t touchX = 0, touchY = 0;
+    
+        if( !ts.touched() || p.z < 1950 )
+        {
+            data->state = LV_INDEV_STATE_REL;
+        }
+        else
+        {
+            data->state = LV_INDEV_STATE_PR;
+    
+            p = ts.getPoint();
+
+            /*Set the coordinates*/
+            data->point.x = p.x;
+            data->point.y = p.y;
+    
+            Serial.print( "Data x " );
+            Serial.println(data->point.x-700);
+    
+            Serial.print( "Data y " );
+            Serial.println(data->point.y);
+        }
+    }
+            \end{lstlisting}\end{minipage}
+
+            \subsubsection{Touch wurde nicht implementiert}
+            Die tft\_eSPI Library verhindert duch die in section \ref{touch_to_tft} 
+            beschriebenen \lstinline{#if} Makros, die Implementierung des Touches.
+            Trotz mehrerer Versuche, die Library zu modifizieren, wirf die library
+            immer wieder \lstinline{include-Fehler} in dem dann inkludierem Touch.h file. \\~\\
+            
+
+            
+

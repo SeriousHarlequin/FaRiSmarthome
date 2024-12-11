@@ -540,7 +540,7 @@ void TFT_eSPI::initBus(void) {
 #endif
 
 // Configure chip select for touchscreen controller if present
-#if 1
+#if 0
   if (TOUCH_CS >= 0) {
     pinMode(TOUCH_CS, OUTPUT);
     digitalWrite(TOUCH_CS, HIGH); // Chip select high (inactive)
@@ -6128,7 +6128,7 @@ void TFT_eSPI::getSetup(setup_t &tft_settings)
   tft_settings.pin_tft_led_on = TFT_BACKLIGHT_ON;
 #endif
 
-#if 1
+#if 0
   tft_settings.pin_tch_cs   = TOUCH_CS;
   tft_settings.tch_spi_freq = SPI_TOUCH_FREQUENCY/100000;
 #else
@@ -6139,9 +6139,9 @@ void TFT_eSPI::getSetup(setup_t &tft_settings)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// #ifdef TOUCH_CS
+#ifdef TOUCH_CS
   #include "Extensions/Touch.cpp"
-// #endif
+#endif
 
 #include "Extensions/Button.cpp"
 
