@@ -24,8 +24,8 @@
         \newpage
         \subsubsection{Display}
         Das Display wird parralel im 8-BIT Modus angesteuert, die Pins mit denen 
-        kommuniziert wird sind fix in der Libary festgelegt und können am Esp32-S3 
-        frei auswählbar. 
+        kommuniziert wird sind nicht fix in der Libary festgelegt und können am Esp32-S3 
+        frei ausgewählt werden. 
 
             \begin{figure}[h!]
                 \centering
@@ -43,5 +43,7 @@
         Die Berührung am Resisivtouch-Panel wird vom XPT2046 erfasst und mittels 
         SPI-BUS vom µC ausgelesen. Da es bei der Implementierung von Touch softwareseitig
         Probleme gab, wurde sich für eine Eingabe mit einem Rotary Encoder entschieden.
-        Dafür wurden die in der Abbildung \ref{fig:sch2} gezeigten Pins mit dem prefix "Touch" 
+        Dafür wurden die in der Abbildung \ref{fig:sch2} gezeigten Pins mit dem Prefix "Touch" 
         für das Einlesen des Drehgebers verwendet.
+
+        \subsubsection{Rotary Encoder}
