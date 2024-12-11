@@ -7,6 +7,24 @@
     aufgeteilt, diese ist in ein \textit{src} und \textit{include} 
     Directory aufgegliedert.
 
+    \section{ESP32-S3 Konfiguration}
+    Die Eigenschaften des ESP32-S3 werden in dem \textit{platformio.ini}
+    File konfiguriert. Als Basis der Konfiguration dient
+    das \textit{esp32-s3-devkitc-1.json} File, welches die
+    Basiskofiguration für ein ESP32-S3 Devkit bereitstellt
+    und standardmäßig von PlatformIO verfügbar ist. \par
+    
+    Nun müssen folgende Flags im \textit{platformio.ini} File
+    überschrieben werden:
+
+    \begin{lstlisting}
+    board_upload.flash_size = 16MB
+    board_build.partitions = default_16MB.csv
+    \end{lstlisting}
+
+    Nun sollte der Upload eines Programms auf den 
+    ESP-Chip möglich sein.
+
     \input{software_UserInterface}
     \input{software_kommunikation}
 

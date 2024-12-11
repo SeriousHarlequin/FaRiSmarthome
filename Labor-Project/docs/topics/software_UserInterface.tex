@@ -34,8 +34,9 @@
     TS_Point p;
             \end{lstlisting}
 
-            \subsubsection{Connecting Touch to tft\_eSPI} \label{touch_to_tft}
-            Um die Touch-Events an tft\_eSPI weiterzuleiten, muss die library grundliegend umgeschrieben werden.
+            \subsubsection{Touch mit tft\_eSPI kuppeln} \label{touch_to_tft}
+            Um die Touch-Events an tft\_eSPI weiterzuleiten, muss die library grundliegend \\ 
+            umgeschrieben werden.
             zunächst muss das User\_Setup.h folgender Maßen bearbeitet werden:
 
             \begin{lstlisting}
@@ -70,7 +71,7 @@
             übergeben werden.
             \begin{lstlisting}
     void my_touchpad_read
-    ( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )
+    (lv_indev_drv_t*indev_driver, lv_indev_data_t*data)
     {
         uint16_t touchX = 0, touchY = 0;
     

@@ -7,7 +7,8 @@
 TFT_eSPI tft = TFT_eSPI(displayWidth, displayHeight);       // Invoke custom library
 
 void setup() {
-  Serial.begin(115200);
+  Serial1.begin(115200);
+  Serial2.begin(115200);
   
   initTFT(&tft);
   // lv_task_handler();
@@ -30,6 +31,10 @@ void loop() {
   delay(1000);
   lv_obj_add_state(ui_Checkbox2, LV_STATE_CHECKED);
   delay(1000);
+  Serial2.println("2");
+  Serial1.println("1");
+  // Serial0.println("0");  
+  Serial.println("Hello");
 
 
 
