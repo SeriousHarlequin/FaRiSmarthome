@@ -1,18 +1,18 @@
 <template>
     <header>
         <h1>FaRiSmarhome</h1>
+        <select v-model="$colorMode.preference">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="sepia">Sepia</option>
+        </select>
     </header>
 </template>
 
 <style>
-    header {
-        background-color: #2E236C;
+    
 
-        margin: 20px 5px;
-        
-        border: 2px solid #45369b;
-        border-radius: 20px;
-
-        padding: 1px 30px;
+    select {
+        margin-left: auto;
     }
 </style>
