@@ -6,31 +6,38 @@
   </div>
 </template>
 
+<script>
+  import '~/colorModes.css'
+</script>
+
 <style>
-  body {
-    background-color: #17153B;
-    color: #C8ACD6;
-  }
-  .dark-mode body {
-    background-color: #091a28;
-    color: #ebf4f1;
-  }
-  .sepia-mode body {
-    background-color: #f1e7d0;
-    color: #433422;
-  }
-
   header {
-    background-color: #2E236C;
-
-    margin: 20px 5px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
     
-    border: 2px solid #45369b;
+    border: 2px solid;
     border-radius: 20px;
 
     padding: 1px 30px;
 
     display: flex; /* Use flexbox */
     align-items: center; /* Align items vertically */
-    }
+}
+  footer {
+    margin: 0px -7px;
+
+    border-top: 2px solid;
+
+    padding: 1px 30px;
+
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+  }
+  select {
+    border-style: solid;
+    border-width: 2px;
+  }
 </style>
