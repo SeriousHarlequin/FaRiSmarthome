@@ -8,8 +8,9 @@
     \subsection{V1}
         \subsubsection{Versorgung}
         Das Board wird mit 5V über USB-C versorgt, um den ESP32-S3 mit 3V3 zu 
-        versorgung, wird ein AMS1117 Spannungswandler verwenden. Dieser wurde ausgewählt
-        da das Gerät ohnehin mit dem Strometz verwendet wird. 
+        versorgung, wird ein AMS1117 Spannungswandler verwenden. Dieser wurde ausgewählt, 
+        aufgrund der einfachen Implementierung. Die Verluste bei der Umwandlung können vernachlässigt werden, da 
+        es sich nicht um ein batteriebetribenes Gerät handelt.
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=8cm]{powersupply}
@@ -18,12 +19,13 @@
                 
             \end{figure}
 
-        Auf beiden Seiten einen Glättungskondensator. Die Diode wurde hinzugefügt um zu verhindern das am Ausgang eine größere Spannung
+        Ein- und Ausgangsseitig liegt jeweils ein Glättungskondensator. Die Diode wurde hinzugefügt 
+        um zu verhindern, dass am Ausgang eine größere Spannung
         anliegt als beim Eingang - wie z.B. beim Abstecken von dem Gerät.
 
         \newpage
         \subsubsection{Display}
-        Das Display wird parralel im 8-BIT Modus angesteuert, die Pins mit denen 
+        Das Display wird parallel im 8-BIT Modus angesteuert, die Pins mit denen 
         kommuniziert wird sind nicht fix in der Libary festgelegt und können am Esp32-S3 
         frei ausgewählt werden. 
 
