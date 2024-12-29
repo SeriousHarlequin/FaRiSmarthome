@@ -1,12 +1,27 @@
 \chapter{Einführung}
-    \section{Software}
-        Das Control-Panel soll mit dem Netzwerk eines Smarthomes
-        verbunden werden und in der Lage sein, über die im Smarthome 
-        bereits integrierte Schnittstelle mit integrierten Geräten zu 
-        kommunizieren und den Status dieser Geräte abzufragen und anzupassen.
+
+Das Control-Panel soll als Erweiterung eines Smarthomes dienen, also
+mit einem bereits aufgebauten System verbunden werden und in der Lage sein, 
+über die im Smarthome bereits integrierte ESP-NOW Schnittstelle mit 
+integrierten Geräten zu kommunizieren und den Status dieser Geräte 
+abzufragen und anzupassen.
+
+    \section{Motivation}
+    Der Sinn des Control-Panels ist es, die Bedienung des Smarthomes zu vereinfachen.
+    Es soll eine Anlaufstelle für die Steuerung des Smarthomes sein, die kein
+    herkömmliches Heimnetzwerk benötigt, sondern direkt mit den Geräten kommuniziert.
+    Des Weiteren muss so kein Browser oder App geöffnet werden, um das Smarthome zu 
+    steuern.
+
+    \section{Das Smarthome}
+    Das Smarthome, mit dem das Control-Panel kommuniziert, ist ein bereits 
+    bestehendes System, das als Diplomarbeit derselben Autoren entwickelt wurde.
+    Es besteht aus mehreren ESP32-Mikrocontrollern, die über ein ESP-NOW-Netzwerk
+    miteinander kommunizieren. Die Geräte sind in der Lage, verschiedene 
+    Sensor-Daten zu erfassen, sowie Aktoren zu steuern. Als Alternative zum
+    Control-Panel kann das Smarthome auch über eine Web-Oberfläche gesteuert werden.
 
 
-    \section{Hardware}
         
         
         
