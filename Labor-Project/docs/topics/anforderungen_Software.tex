@@ -1,42 +1,30 @@
-        \section{Software}
-        Zur effizienten Realisierung des Panels sind zwei 
-        Hauptfunktionalitäten zu implementieren.
+\section{Software}
+Zur Implementierung der Funktionalitäten des Control-Panels werden
+verschiedene Software-Komponenten benötigt. Diese sind in den 
+folgenden Abschnitten beschrieben.
 
-            \subsection{MQTT}
-            MQTT ist ein Protokoll, welches über TCP/IP arbeitet
-            und besonders für IoT Anwendungen geeignet ist. Der 
-            Raspberry Pi fungiert als Broker, welcher die
-            Kommunikation zwischen den verschiedenen Geräten
-            ermöglicht.
-
-            
-
-            \subsection{ESP-NOW}
-            Eine mögliche Alternative zu MQTT ist ESP-NOW.
-            Hierbei handelt es sich um ein Protokoll, welches
-            speziell für die Kommunikation zwischen ESP-Chips
-            entwickelt wurde. Da die Chips selber als Access-Points
-            fungieren, ist kein bestehendes Netzwerk notwendig. Unter 
-            idealen Bedingungen ist eine Reichweite von bis zu 200m 
-            möglich.
-            
-            \subsection{Display}
-            Bei der Umsetzung des Displays sind zwei Funktionalitäten,
-            die es zu implementieren gilt. Zum einen die Anzeige von
-            Informationen und zum anderen die Interaktion mit dem
-            User Interface. 
-            \subsection{UI-Library}
-            Für die Ansteuerung des Displays wurde die "TFT\_eSPI"
-            \space Library von "Bodmer" verwendet. Diese Library bietet
-            Support für den am Display verwendeten Controller.
-            
-                \subsubsection{Input}
-                Die Library bietet die Möglichkeit, Touch-Events zu
-                registrieren und zu verarbeiten. Da das Registrieren
-                des Touches nur über SPI möglich ist, wird die
-                "XPT2046\_Touchscreen" Library verwendet. Der Output
-                soll anschließend an die "TFT\_eSPI" Library weitergeleitet
-                werden.
-
-            
-        
+    \subsection{ESP-NOW}
+    Hierbei handelt es sich um ein Protokoll, welches
+    speziell für die Kommunikation zwischen ESP-Chips
+    entwickelt wurde. Da die Chips selber als Access-Points
+    fungieren, ist kein bestehendes Netzwerk notwendig. Unter 
+    idealen Bedingungen ist eine Reichweite von bis zu 200m 
+    möglich.
+    
+    \subsection{Display} 
+    Bei der Umsetzung des Displays sind zwei Funktionalitäten,
+    die es zu implementieren gilt. Zum einen die Anzeige von
+    Informationen und zum anderen die Interaktion mit dem
+    User Interface. 
+    \subsection{UI-Library}
+    Für die Ansteuerung des Displays wurde die "TFT\_eSPI"
+    \space Library von "Bodmer" verwendet. Diese Library bietet
+    Support für den am Display verwendeten Controller.
+    
+        \subsubsection{Input}
+        Die Library bietet die Möglichkeit, Touch-Events zu
+        registrieren und zu verarbeiten. Da das Registrieren
+        des Touches nur über SPI möglich ist, wird die
+        "XPT2046\_Touchscreen" Library verwendet. Der Output
+        soll anschließend an die "TFT\_eSPI" Library weitergeleitet
+        werden.
