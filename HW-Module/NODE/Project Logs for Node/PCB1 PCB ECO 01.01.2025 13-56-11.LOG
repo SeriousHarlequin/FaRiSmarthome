@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Change Net Name : Old Net Name=NetJ?_3 New Net Name=NetJ3_3
+Change Net Name : Old Net Name=NetJ?_4 New Net Name=NetJ3_4
+Change Net Name : Old Net Name=NetJ?_6 New Net Name=NetJ3_6
+Added Member To Class: ClassName=Sheet1 Member=Component U2 ESP32-C3-WROOM-02-N4

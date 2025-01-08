@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=NetJ3_11 Pin=Q1-B
+Change Component Footprint: Designator=C9 Old Footprint=C_SMD_0603 New Footprint=C_SMD_0805
+Change Component Comment : Designator=R6 Old Comment=2k New Comment=2k2
+Change Component Comment : Designator=R5 Old Comment=2k New Comment=20k
+Added Component: Designator=R8(R_SMD_0805)
+Added Pin To Net: NetName=NetJ3_11 Pin=R8-1
+Added Pin To Net: NetName=NetQ1_B Pin=Q1-B
+Added Pin To Net: NetName=NetQ1_B Pin=R8-2
+Added Net: Name=NetQ1_B
+Added Member To Class: ClassName=Sheet1 Member=Component B1 Schraube
+Added Member To Class: ClassName=Sheet1 Member=Component B2 Schraube
+Added Member To Class: ClassName=Sheet1 Member=Component R8 1k
