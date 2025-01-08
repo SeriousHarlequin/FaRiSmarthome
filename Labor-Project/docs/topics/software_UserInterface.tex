@@ -2,7 +2,7 @@
         \subsection{SquarelineStudio}
         SquarelineStudio ist eine Software, die es ermöglicht, ein 
         User Interface mithilfe eines Drag-and-Drop-Editors zu erstellen und
-        in C-Code zu exportieren. Dieser Code kann dann dann zusammen mit den 
+        in C-Code zu exportieren. Dieser Code kann dann zusammen mit den 
         beiden Libraries \textit{TFT\_eSPI} und \textit{lvgl} in PlatformIO
         integriert werden.
 
@@ -15,10 +15,10 @@
 
             \subsubsection{lvgl}
             lvgl ist eine Library für die Darstellung von flexiblen Grafiken
-            auf vielen Platformen, darunter auch dem Arduino Framework.
+            auf vielen Plattformen, darunter auch dem Arduino Framework.
             Zusammen mit TFT\_eSPI bildet sie das Grundgerüst für die Darstellung
             von Grafiken in SquarelineStudio.
-        \subsection{Touch Control}
+        \subsection{Touch Control} \label{sec:touch}
         Die \textit{TFT\_eSPI} Library bietet auch die Möglichkeit, Touch-Events
         zu registrieren und für das \textit{SquarelineStudio} User Interface zu
         verarbeiten. Diese Funktion ist allerdings nur für über SPI angesteuerte
@@ -27,27 +27,27 @@
             Um den Touch seriell einzulesen, wird die \textit{XPT2046\_Touchscreen}
             Library verwendet. 
 
-            \begin{lstlisting}
+\begin{lstlisting}
     #define CS_PIN  10
 
     XPT2046_Touchscreen ts(CS_PIN);
     TS_Point p;
-            \end{lstlisting}
+\end{lstlisting}
 
             \subsubsection{Touch mit tft\_eSPI kuppeln} \label{touch_to_tft}
-            Um die Touch-Events an tft\_eSPI weiterzuleiten, muss die library grundliegend \\ 
-            umgeschrieben werden.
-            zunächst muss das User\_Setup.h folgender Maßen bearbeitet werden:
+            Um die Touch-Events an tft\_eSPI weiterzuleiten, muss die Library grundlegend \\ 
+            umgeschrieben werden.\\
+            Zunächst muss das User\_Setup.h folgendermaßen bearbeitet werden:
 
-            \begin{lstlisting}
+\begin{lstlisting}
     //Einkommentieren
     #define TOUCH_CS 10 
-            \end{lstlisting}
+\end{lstlisting}
 
             
             \begin{minipage}{\linewidth}
             Ebenso muss im "tft\_eSPI.h" folgendes editiert werden:
-            \begin{lstlisting}   
+\begin{lstlisting}   
     #ifdef TOUCH_CS
     //CHANGE THIS LINE
     #if 0
@@ -62,7 +62,7 @@
         #warning >>>>------>> ...
         #endif
     #endif
-            \end{lstlisting}\end{minipage}
+\end{lstlisting}\end{minipage}
             
             
 
@@ -101,8 +101,8 @@
             \subsubsection{Touch wurde nicht implementiert}
             Die tft\_eSPI Library verhindert duch die in section \ref{touch_to_tft} 
             beschriebenen \lstinline{#if} Makros, die Implementierung des Touches.
-            Trotz mehrerer Versuche, die Library zu modifizieren, wirf die library
-            immer wieder \lstinline{include-Fehler} in dem dann inkludierem Touch.h file. \\~\\
+            Trotz mehrerer Versuche, die Library zu modifizieren, wirf die Library
+            immer wieder \lstinline{include-Fehler} in dem dann inkludiertem Touch.h File. \\~\\
             
 
             

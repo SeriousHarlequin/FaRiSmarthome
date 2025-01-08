@@ -1,17 +1,48 @@
 \chapter{Software}
 
     \section{Projektstruktur}
-    Die grundliegende Struktur des Projekts folgt der von PlatformIO 
-    normalisierten Projetstruktur. Die Funktionen werden nach ihrer
-    Verwendung in verschiedene Dateien in der \textit{FaRiLib} Library
-    aufgeteilt, diese ist in ein \textit{src} und \textit{include} 
-    Directory aufgegliedert.
+    Die Projektstruktur orientiert sich an PlatformIO:
+    
+    \vspace{0.5cm}
+    \begin{minipage}{0.48\linewidth}
+            \centering
+            \includegraphics[width=8cm]{projDir}
+            \label{fig:projDir}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\linewidth}
+        \raggedright
+        \begin{itemize}
+            \item custom Libraries werden im \lstinline{lib/} 
+            Verzeichnis abgelegt
+            \item Libery-unabhängige Header-Dateien 
+            werden im \lstinline{include/} Verzeichnis abgelegt
+            \item Libery-unabhängige Source-Dateien 
+            werden im \lstinline{src/} Verzeichnis abgelegt
+        \end{itemize}
+    \end{minipage}
+    \vspace{0.5cm}
+
+    Während Libraries, die speziell für das Projekt entwickelt oder abgeändert wurden,
+    im \lstinline{lib/} Verzeichnis abgelegt werden, werden Libraries,
+    die von PlatformIO bereitgestellt werden, automatisch heruntergeladen
+    und im verstecktem \lstinline{.pio/} Verzeichnis abgelegt. Diese sind im
+    \lstinline{platformio.ini} File spezifiziert.
+
+    \section{FaRiLib}
+    Die Libary soll als Grundgerüst für die Implementierung aller Smarthome-Geräte
+    dienen. Daher ist der größte Teil der geschriebenen Funktionen Teil der 
+    \textit{FaRiLib} Library. Diese Funktionen werden nach Kategorien in verschiedene
+    Dateien aufgeteilt (Zum Beispiel: \lstinline{FaRiLib/src/Display.cpp} und 
+    \lstinline{FaRiLib/src/ESP-NOW.cpp}). Die selbe Gliederung gilt für die 
+    dazugehörigen Header-Dateien (Zum Beispiel: \\ \lstinline{FaRiLib/include/Display.h} und 
+    \lstinline{FaRiLib/include/ESP-NOW.h}).
 
     \section{ESP32-S3 Konfiguration}
-    Die Eigenschaften des ESP32-S3 werden in dem \textit{platformio.ini}
+    Die Eigenschaften des ESP32-S3 werden in dem \lstinline{platformio.ini}
     File konfiguriert. Als Basis der Konfiguration dient
-    das \textit{esp32-s3-devkitc-1.json} File, welches die
-    Basiskofiguration für ein ESP32-S3 Devkit bereitstellt
+    das \lstinline{esp32-s3-devkitc-1.json} File, welches die
+    Basiskonfiguration für ein ESP32-S3 Devkit bereitstellt
     und standardmäßig von PlatformIO verfügbar ist. \par
     
     Nun müssen folgende Flags im \textit{platformio.ini} File
@@ -27,6 +58,7 @@
 
     \input{software_UserInterface}
     \input{software_kommunikation}
+
 
 
 

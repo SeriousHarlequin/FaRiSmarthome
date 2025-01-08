@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=C2 Old Footprint=C_SMD_0603 New Footprint=C_SMD_0805
+Change Component Footprint: Designator=C3 Old Footprint=C_SMD_0603 New Footprint=C_SMD_0805
+Change Component Footprint: Designator=R3 Old Footprint=R_SMD_0603 New Footprint=R_SMD_0805
+Change Component Footprint: Designator=R4 Old Footprint=R_SMD_0603 New Footprint=R_SMD_0805

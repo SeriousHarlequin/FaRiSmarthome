@@ -2,23 +2,23 @@
 
 
     \subsection{MCU}
-    Es wurde sich für einen ESP-32 S3 als Microcontroller entschieden.
-    Dieser ist mit diveresers Funktionien(Bluetooth, WLAN, ESPNOW ...) 
-    sowie genügend Port-Pins ausgestattet um die Information aus dem 
-    Server auf den Bildschirm anzuzeigen.
+    Es wurde entschieden einen ESP32-S3 als Microcontroller zu verwenden.
+    Dieser ist mit diversen Funktionien(Bluetooth, WLAN, ESPNOW ...) 
+    sowie genügend Port-Pins ausgestattet um den Bildschirm parallel mit 8-Bit anzusteuern.
 
     \subsection{Eingabemöglichkeit}
-    Um mit dem Pordukt zu interagieren wurde versucht das Resistive Touch-Panel,
-    welches bereits auf dem Display vormontiert war, zu verwenden. Durch Schwerigkeiten 
-    bei der Implementierung in der Software, wurde sich jetzt für einen Rotary-Encoder 
-    als Input entschieden. Es wird dann durch Drehen und Drücken durch das Menü navigiert.
+    Um mit dem Produkt zu interagieren wurde versucht, das Resistive Touch-Panel,
+    welches bereits auf dem Display vormontiert war, zu verwenden. Durch Schwierigkeiten 
+    bei der Implementierung in der Software, kam es dazu, dass stattdessen ein Drehgeber verwendet
+    wurde. Auf diesen kann dann durch Drehen und Drücken durch das Menü navigiert werden.
 
     \subsection{Display}
-    Das Display ist mit dem SDD1963 Controller bestückt und kann über 
-    einen 16-Bit oder 8-Bit Bus angesteuert werden, letzteres wurde in der 
-    im Projekt implementiert. Das Display wurde für seine Größe(7 Zoll) und wegen der Farbdarstellungen ausgewählt.
+    Das Display ist mit dem SSD1963 Controller bestückt und kann über 
+    einen 16-Bit oder 8-Bit Bus angesteuert werden. Letzteres wurde
+    im Projekt implementiert. Das Display wurde wegen dessen Größe(7 Zoll) und weil es Farben
+    darstellen kann ausgewählt.
 
     \subsection{ARGB}
-    Für eine intuitive Benutzung wird zusätzlich ein Piezo fur Aukustische Signale 
-    sowie ARGB Leds für Optische Signale eingeplant. Diese Sollen den Anwender durch 
+    Für eine intuitive Benutzung wird zusätzlich ein Piezo-Buzzer für akustische Signale 
+    sowie ARGB Leds für optische Signale eingeplant. Diese sollen durch 
     Licht/Audio einen groben Überblick geben, auch wenn das Control-Panel weiter entfernt ist.

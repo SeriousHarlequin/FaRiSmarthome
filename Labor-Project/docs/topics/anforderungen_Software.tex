@@ -1,46 +1,36 @@
-        \section{Software}
-        Zur effizienten Realisierung des Panels sind zwei 
-        Hauptfunktionalitäten zu implementieren.
+\section{Software}
+Zur Implementierung der Funktionalitäten des Control-Panels werden
+verschiedene Software-Komponenten benötigt. Diese sind in den 
+folgenden Abschnitten beschrieben.
 
-            \subsection{MQTT}
-            MQTT ist ein Protokoll, welches über TCP/IP arbeitet
-            und besonders für IoT Anwendungen geeignet ist. Der 
-            Raspberry Pi fungiert als Broker, welcher die
-            Kommunikation zwischen den verschiedenen Geräten
-            ermöglicht.
+    \subsection{ESP-NOW}
+    Hierbei handelt es sich um ein Protokoll, welches
+    speziell für die Kommunikation zwischen ESP-Chips
+    entwickelt wurde. Da die Chips selber als Access-Points
+    fungieren, ist kein bestehendes Netzwerk notwendig. Unter 
+    idealen Bedingungen ist eine Reichweite von bis zu 200m 
+    möglich, allerdings nimmt diese in geschlossenen Räumen
+    deutlich ab. Im Notfall muss also ein ESP32 als Repeater
+    eingesetzt werden. \cite{ESP-NOW-Reliability}
+    
+    \subsection{Display} 
+    Zum Anzeigen der Benutzeroberfläche, sowie um Eingaben zu 
+    registrieren, wird der \textit{SquarLineStudio}-UI Editor verwendet.
+    Dieser ermöglicht es, die Oberfläche des Control-Panels zu
+    designen und anschließend in C-Code zu exportieren.
+    Der Code basiert sowohl auf der "TFT\_eSPI" \space Library, welche die
+    Ansteuerung des Displays übernimmt, als auch der "lvgl" \space Library,
+    welche die Darstellung komplexerer UI-Elemente ermöglicht.
 
-            
-
-            \subsection{ESP-NOW}
-            Eine mögliche Alternative zu MQTT ist ESP-NOW.
-            Hierbei handelt es sich um ein Protokoll, welches
-            speziell für die Kommunikation zwischen ESP-Chips
-            entwickelt wurde. Da die Chips selber als Access-Points
-            fungieren, ist kein bestehendes Netzwerk notwendig. Unter 
-            idealen Bedingungen ist eine Reichweite von bis zu 200m 
-            möglich.
-            
-            \subsection{Display}
-            Bei der Umsetzung des Displays sind zwei Funktionalitäten
-            die es zu implementieren gilt. Zum einen die Anzeige von
-            Informationen und zum anderen die Interaktion mit dem
-            User Interface. 
-            \subsection{UI-Library}
-            Für die Ansteuerung des Displays wurde die "TFT\_eSPI"
-            \space Library von "Bodmer" verwendet. Diese Library bietet
-            Support für den am Display verwendeten Controller.
-            
-                \subsubsection{Input}
-                Die Library bietet die Möglichkeit, Touch-Events zu
-                zu registrieren und zu verarbeiten. Da das registrieren
-                des Touches nur über SPI möglich ist, wird die
-                "XPT2046\_Touchscreen" Library verwendet. Der Output
-                soll anschließend an die "TFT\_eSPI" Library weitergeleitet
-                werden.
-
-            \subsection{Display}
-            Bei der Umsetzung des Displays sind zwei Funktionalitäten
-            die es zu implementieren gilt. Zum einen die Anzeige von
-            Informationen und zum anderen die Interaktion mit dem
-            User Interface. 
-        
+    \subsubsection{Input}
+    Die Möglichkeit, Touch-Events zu registrieren und zu verarbeiten ist 
+    in der "TFT\_eSPI" \space Library integriert. 
+    Da das Registrieren des Touches bei seriellen Schnittstellen nicht unterstützt 
+    ist, wird stattdessen die "XPT2046\_Touchscreen" Library verwendet. 
+    Der Output dieser soll anschließend an die "TFT\_eSPI" Library weitergeleitet
+    werden.
+    \\~\\
+    Da die Touch-Eingabe letztlich nicht implementiert wurde 
+    (siehe Kapitel \ref{sec:touch}), ist stattdessen ein Rotary-Encoder
+    zur Navigation durch die Oberfläche vorgesehen. Dieser wurde manuell 
+    mit dem generierten Code integriert.

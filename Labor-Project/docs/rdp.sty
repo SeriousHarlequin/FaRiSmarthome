@@ -2,7 +2,7 @@
 \RequirePackage[automark]{scrlayer-scrpage}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
-\RequirePackage[backend=bibtex,style=numeric]{biblatex}
+\RequirePackage[backend=bibtex,style=ieee]{biblatex}
 \RequirePackage[colorlinks=true,
 linkcolor=black,
 filecolor=magenta,      
@@ -93,7 +93,7 @@ plainpages=false]
 
         \begin{center}
             \vskip 10em
-            {\bfseries\Huge DIPLOMA THESIS\par \vskip 1em}
+            {\bfseries\Huge DIPLOMARBEIT\par \vskip 1em}
             {\huge \@title\par}
             \vskip 1em
             {\ifx\@subtitle\@empty\else\@subtitle\par\fi}%
@@ -104,19 +104,19 @@ plainpages=false]
         \vfill\vfill
         {\tabcolsep 0pt
             \begin{tabular}[t]{l}
-                Performed in \@session\ by:\\[2ex]
+                Geschrieben in \@session\ von:\\[2ex]
                 \candidatelist
             \end{tabular}
             \hfill
             \begin{tabular}[t]{l}
-                Supervisors:\\[2ex]
+                Betreuer:\\[2ex]
                 \supervisorlist
             \end{tabular}
         }
 
         \vskip 2em
         \vspace*{15mm}
-        {\@place, on \@handindate}
+        {\@place, am \@handindate}
 
         \rule{\textwidth}{0.2pt}
         \vskip 2em
@@ -126,11 +126,11 @@ plainpages=false]
             \begin{minipage}[t]{0.8\textwidth}
                 \begin{tabular}[t]{l}
                     Submission Statement:\\
-                    Date:
+                    Datum:
                 \end{tabular}
                 \hfill
                 \begin{tabular}[t]{l}
-                    Supervisors:
+                    Betreuer:
                 \end{tabular}
             \end{minipage}
         \end{minipage}
