@@ -1,0 +1,43 @@
+Removed Pin From Net: NetName=NetQ2_B Pin=Q3-C
+Removed Pin From Net: NetName=NetQ2_B Pin=R4-1
+Removed Pin From Net: NetName=Touch_CS Pin=UC1-18
+Removed Pin From Net: NetName=Touch_DI Pin=UC1-19
+Removed Pin From Net: NetName=Touch_CLK Pin=UC1-20
+Removed Pin From Net: NetName=Touch_DO Pin=UC1-21
+Change Component Footprint: Designator=S1 Old Footprint=S_SMD_Pad-NO New Footprint=S_SMD_Pad-NC
+Change Component Comment : Designator=U2 Old Comment=AM1117 New Comment=AMS1117
+Added Component: Designator=J6(SIP-5)
+Added Component: Designator=J7(SIP-6)
+Added Component: Designator=R7(R_SMD_0805)
+Added Pin To Net: NetName=3V3 Pin=J6-4
+Added Pin To Net: NetName=GND Pin=J6-5
+Added Pin To Net: NetName=3V3 Pin=J7-1
+Added Pin To Net: NetName=GND Pin=J7-2
+Added Pin To Net: NetName=NetR3_1 Pin=J7-3
+Added Pin To Net: NetName=NetQ2_B Pin=R7-1
+Change Net Name : Old Net Name=NetR3_1 New Net Name=EN
+Added Pin To Net: NetName=E_A Pin=J6-1
+Added Pin To Net: NetName=E_A Pin=UC1-18
+Added Net: Name=E_A
+Added Pin To Net: NetName=E_B Pin=J6-2
+Added Pin To Net: NetName=E_B Pin=UC1-19
+Added Net: Name=E_B
+Added Pin To Net: NetName=E_BUT Pin=J6-3
+Added Pin To Net: NetName=E_BUT Pin=UC1-20
+Added Net: Name=E_BUT
+Added Pin To Net: NetName=GPI0 Pin=J7-4
+Added Pin To Net: NetName=GPI0 Pin=UC1-27
+Added Net: Name=GPI0
+Added Pin To Net: NetName=NetQ3_C Pin=Q3-C
+Added Pin To Net: NetName=NetQ3_C Pin=R4-1
+Added Pin To Net: NetName=NetQ3_C Pin=R7-2
+Added Net: Name=NetQ3_C
+Added Pin To Net: NetName=RX Pin=J7-5
+Added Pin To Net: NetName=RX Pin=UC1-36
+Added Net: Name=RX
+Added Pin To Net: NetName=TX Pin=J7-6
+Added Pin To Net: NetName=TX Pin=UC1-37
+Added Net: Name=TX
+Added Member To Class: ClassName=Sheet1 Member=Component J6 ENCODER_KY-040
+Added Member To Class: ClassName=Sheet1 Member=Component J7 SERIAL
+Added Member To Class: ClassName=Sheet1 Member=Component R7 1k
