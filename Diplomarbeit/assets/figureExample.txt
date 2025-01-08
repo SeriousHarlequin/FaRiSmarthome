@@ -1,0 +1,22 @@
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.4\textwidth} %picture 1
+    \centering
+    \includegraphics[width=\linewidth]{ThinkCorrectly.jpg} \\
+    \caption{1}
+\end{subfigure}
+
+\begin{subfigure}{.4\textwidth} %picture 2
+    \centering
+    \includegraphics[width=\linewidth]{ThinkCorrectly.jpg} \\
+    \caption{2}
+\end{subfigure}
+\hfill%
+\begin{subfigure}{.4\textwidth} %picture 3
+    \centering
+    \includegraphics[width=\linewidth]{ThinkCorrectly.jpg} \\
+    \caption{3}
+    \label{fig:sub3}
+\end{subfigure}
+\caption{Figure}
+\end{figure}

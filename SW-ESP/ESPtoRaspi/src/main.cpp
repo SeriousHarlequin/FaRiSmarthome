@@ -5,7 +5,7 @@
 #define TEMP_SENSOR 0
 
 OneWire oneWire(TEMP_SENSOR);
-float temperatureC;
+extern float temperatureC;
 bool measureTemp = false;
 
 // Pass our oneWire reference to Dallas Temperature sensor 
@@ -20,7 +20,7 @@ void setup() {
   initWebServer(&server);
 
   sensors.begin();
-  Serial.println("Temperature Sensor is ready");
+  temperatureC = -1;
 }
 
 void loop() {
@@ -45,8 +45,8 @@ void ISRHandler(){
     measureTemp = false;
     sensors.requestTemperatures(); 
     temperatureC = sensors.getTempCByIndex(0);
-    // Serial.print("Temperature: ");
-    // Serial.println(temperatureC);
+    if (temperatureC = DEVICE_DISCONNECTED_C)
+      temperatureC = -100; //means no sensor
 
   }
 

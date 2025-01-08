@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>FaRiSmarhome</h1>
+        <h1>FaRiSmarthome</h1>
         <select v-model="$colorMode.preference">
             <option value="light">Light</option>
             <option value="dark">Dark</option>

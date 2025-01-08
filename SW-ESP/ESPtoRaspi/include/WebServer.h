@@ -2,7 +2,7 @@
 #include <WiFi.h>
 #include <ESPAsyncWebServer.h>
 
-extern bool ledstate;
+extern float temperatureC;
 
 void isr();
 void initISR();

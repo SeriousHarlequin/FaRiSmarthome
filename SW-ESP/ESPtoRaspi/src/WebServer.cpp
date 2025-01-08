@@ -1,5 +1,5 @@
 #include "WebServer.h"
-bool ledstate = 0;
+float temperatureC;
 
 void initISR(){
   hw_timer_t *timer = timerBegin(0,80, true);
@@ -20,10 +20,9 @@ void initWebServer(AsyncWebServer* server){
   // Serial.println(WiFi.localIP());
 
   // Define a route to handle fetch requests
-  server->on("/fetch", HTTP_GET, [](AsyncWebServerRequest *request){
+  server->on("/fetchTemp", HTTP_GET, [](AsyncWebServerRequest *request){
     // Process the request and send a response
-    String response = "Hello from ESP32!";
-    request->send(200, "text/plain", response);
+    request->send(200, "text/plain", String(temperatureC, 2));
   });
 
   // Start the server

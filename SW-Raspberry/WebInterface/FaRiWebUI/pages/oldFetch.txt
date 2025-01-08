@@ -1,0 +1,49 @@
+<template>
+    <div id="Page">
+        <h1>Hello World</h1>
+        <!-- <p v-if="loading">Loading...</p>
+        <p v-else-if="error">Error: {{ error.message }}</p>
+        <p v-else>Data: {{ temperature }}</p> -->
+        <p>Data: {{ temperature }}</p>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
+// const temperature = ref<number | null>(null);
+// const error = ref<Error | null>(null);
+const loading = ref(true);
+
+
+const temperature = await $fetch('http://192.168.143.28/fetchTemp')
+// onMounted(async () => {
+
+    // const { temperature} = await $fetch<number>('http://192.168.143.28/fetchTemp')
+
+    // const { data: temperature, error } = await useFetch('http://192.168.143.28/fetchTemp')
+
+    // try {
+    //     const { data, error: fetchError } = await useFetch<string>('http://192.168.143.28/fetchTemp');
+    //     if (fetchError) {
+    //         throw fetchError;
+    //     }
+    //     if (data && data.value) {
+    //         temperature.value = parseFloat(data.value);
+    //     } 
+    //     else {
+    //         throw new Error('Invalid data');
+    //     }
+    // } catch (err) {
+    //     console.error('Fetch error:', err);
+    //     error.value = err as Error;
+    // } finally {
+    //     loading.value = false;
+    // }
+// });
+
+</script>
+
+<!-- <script setup lang="ts">
+const { data: temperature, error } = await useFetch('http://192.168.143.28/fetchTemp')
+</script> -->
