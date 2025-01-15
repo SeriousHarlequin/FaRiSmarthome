@@ -1,0 +1,6 @@
+Change Component Description : Designator=U3 Old Description=Temperature Sensor Digital, Local -55°C ~ 125°C 12 b 8-uMAX-EP New Description=Temperature Sensor Digital, Local -55°C ~ 125°C 12 b 8-uMAX-EP|8-uSOP-EP
+Added Component: Designator=R10(R_SMD_0805)
+Added Pin To Net: NetName=NetJ3_6 Pin=R10-1
+Added Pin To Net: NetName=3,3V Pin=R10-2
+Added Member To Class: ClassName=Sheet1 Member=Component R10 4k7
+Added Member To Class: ClassName=Sheet1 Member=Component U2 ESP32-C3-WROOM-02-N4
