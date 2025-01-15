@@ -2,7 +2,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include "WebServer.h"
-#include "Led.h"
+// #include "Led.h"
 #define TEMP_SENSOR 0
 
 OneWire oneWire(TEMP_SENSOR);
@@ -14,7 +14,7 @@ DallasTemperature sensors(&oneWire);
 
 AsyncWebServer server(80);
 
-CRGB leds[NUM_LEDS];
+// CRGB leds[NUM_LEDS];
 
 void setup() {
 
@@ -24,7 +24,7 @@ void setup() {
   sensors.begin();
   temperatureC = -1;
 
-  initLeds(leds);
+  // initLeds(leds);
 }
 
 void loop() {
