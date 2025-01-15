@@ -1,0 +1,3 @@
+Change Component Comment : Designator=R9 Old Comment=10k New Comment=100k
+Change Component Designator: OldDesignator=U2 NewDesignator=U3
+Added Member To Class: ClassName=Sheet1 Member=Component U3 U_DS18B20

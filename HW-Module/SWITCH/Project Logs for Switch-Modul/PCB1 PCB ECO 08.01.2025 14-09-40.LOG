@@ -1,0 +1,12 @@
+Added Component: Designator=D10(D_THT_LED-3)
+Add component (AddParameter): Name = "Spannung For."; Value = "1,8V-3,6V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Spannung Rev."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Strom"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R4(R_SMD_0805)
+Added Pin To Net: NetName=18V Pin=D10-1
+Added Pin To Net: NetName=GND Pin=R4-2
+Added Pin To Net: NetName=NetD10_2 Pin=D10-2
+Added Pin To Net: NetName=NetD10_2 Pin=R4-1
+Added Net: Name=NetD10_2
+Added Member To Class: ClassName=Sheet1 Member=Component D10 RED
+Added Member To Class: ClassName=Sheet1 Member=Component R4 2k2

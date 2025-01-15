@@ -3,10 +3,12 @@
 
 \chapter{Hardware}
 
-    \section{Umsetzung}
+    \section{Umsetzung - V1}
     
-    \subsection{V1}
-        \subsubsection{Versorgung}
+    In diesem Kapitel werden die unterschiedlichen Hardwarerevisionen des Projektes
+    beschrieben. 
+
+        \subsection{Versorgung}
         Das Board wird mit 5V über USB-C versorgt, um den ESP32-S3 mit 3V3 zu 
         versorgung, wird ein AMS1117 Spannungswandler verwenden. Dieser wurde ausgewählt, 
         aufgrund der einfachen Implementierung. Die Verluste bei der Umwandlung können vernachlässigt werden, da 
@@ -38,7 +40,7 @@
 
         \newpage
 
-        \subsubsection{Mikrocontroller}
+        \subsection{Mikrocontroller}
         Der ESP32-S3-WROOM-2 ist das Herzstück des Gerätes. Dieser verfügt über eine On-board PCB Antenne
         und kommuniziert darüber mit dem Smart-Home System. 
 
@@ -50,7 +52,7 @@
 
             \end{figure}
 
-        \subsubsection{Display}
+        \subsection{Display}
         Das Display wird parallel im 8-BIT Modus angesteuert. Die Pins mit denen 
         kommuniziert wird sind nicht fix in der Libary festgelegt und können am Esp32-S3 
         frei ausgewählt werden. 
@@ -67,7 +69,7 @@
         über SPI ausgelesen(Gelb markiert), ist aber für dieses Projekt nicht in verwendung. 
 
 
-        \subsubsection{Touch}
+        \subsection{Touch}
         Die Berührung am Resisivtouch-Panel wird vom XPT2046 erfasst und mittels 
         SPI-BUS vom µC ausgelesen. Da es bei der Implementierung von Touch softwareseitig
         Probleme gab, wurde stattdessen ein Drehgeber mit Taste verwendet.
@@ -75,10 +77,23 @@
         dem Prefix "Touch" für das Einlesen des Drehgebers verwendet.
 
  
+    \newpage
+    \section{V1.1 (Finale)}       
+    In diesem Finalen Kapitel der Hardware werden nur die Ändereungen zur V1 beschrieben. 
 
-    \subsection{V1.1 (Finale)}        
+        \subsection{Rotary Encoder}
+        Der Touch wurde durch einen Drehgeber ersetzt. Dieser hat eine Taste und zwei Ausgänge für die Drehrichtung. 
+        Der Drehgeber wird über die Pins "Touch" am ESP32-S3 angeschlossen. 
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=8cm]{connector.png}
+                \caption{Drehgeber mit Taste.}
+                \label{fig:sch5}
+
+            \end{figure}
         
-    \subsubsection{Rotary Encoder}
         Der Inkrementalgeber hat einen relativen Ausgang mit A und B Signalen. Diese geben beide
         eine definierte Menge Impulse ab. Beide Signale sind zueinander 90° Phasenverschoben. Somit
-        kann die Drehrichtung bestimmt werden.
+        kann die Drehrichtung bestimmt werden. Da je nach Drehrichtung die positive Flanke entweder
+        zuerst bei A oder B erfasst wird.
