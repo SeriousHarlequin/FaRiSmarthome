@@ -1,6 +1,40 @@
 \chapter{Networking}
+\section{Communication Protocols}
+    \subsection{MQTT}
+    MQTT is an OASIS standard messaging protocol for 
+    IoT-Applications that builds on top of TCP/IP and 
+    works on a publish/subscribe model, which makes it easy
+    to set up communication between devices without knowing
+    their IP-Addresses. It requires a dedicated broker to
+    function, that can be set up as a service on the 
+    Raspberry Pi \cite{mqtt_nodate}.
+    One mayor upside of using MQTT is that it is compatible
+    with every, in this smart home involved, device.
+
+
+    \subsection{ESP NOW} 
+    ESP-NOW is a wireless communication protocol capable of
+    working with Wi-Fi and Bluetooth. It supports a 
+    multitude of Espressif microcontrollers and is widely 
+    used in IoT-Applications. The main advantage of using
+    ESP-NOW is that is requires no router or existing
+    network to function meaning it's not dependent on
+    a good Wi-Fi coverage. While indoor use drastically
+    reduces the range of 200m per unit depending on various
+    factors \cite{esp-now-reach_2024} 
+    the integrated multihop feature that allows the devices 
+    to relay messages to each other can be used to extend 
+    the range to hard-to-reach locations.\\~\\
+    Due to the listed advantages, ESP-NOW is the \textbf{preferred
+    communication protocol} for this project.
+
 \section{Networking Structure}
+The Nuxt.js Webserver will function as a main broker between
+the Database and a dedicated ESP32 device that  acts
+as a bridge between every ESP32 and the Nuxt.js Webserver.
+This is done because a single ESP32 device can only handle
+either ESP-NOW or a standard Wi-Fi connection, but not both
+simultaneously. This dedicated bridge is a special 
+ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
+enabling it to do both at the same time. 
 
-\subsection{MQTT}
-
-\subsection{ESP NOW}
