@@ -26,5 +26,6 @@ void initWebServer(AsyncWebServer* server){
   });
 
   // Start the server
+  DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
   server->begin();
 }

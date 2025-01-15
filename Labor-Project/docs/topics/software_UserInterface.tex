@@ -27,7 +27,7 @@
             Um den Touch seriell einzulesen, wird die \textit{XPT2046\_Touchscreen}
             Library verwendet. 
 
-\begin{lstlisting}
+\begin{lstlisting}[style=cppCode]
     #define CS_PIN  10
 
     XPT2046_Touchscreen ts(CS_PIN);
@@ -39,7 +39,7 @@
             umgeschrieben werden.\\
             Zunächst muss das User\_Setup.h folgendermaßen bearbeitet werden:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=cppCode]
     //Einkommentieren
     #define TOUCH_CS 10 
 \end{lstlisting}
@@ -47,7 +47,7 @@
             
             \begin{minipage}{\linewidth}
             Ebenso muss im "tft\_eSPI.h" folgendes editiert werden:
-\begin{lstlisting}   
+\begin{lstlisting}[style=cppCode]
     #ifdef TOUCH_CS
     //CHANGE THIS LINE
     #if 0
@@ -69,7 +69,7 @@
             \begin{minipage}{\linewidth}
             Nun kann der Touch in der my\_touchpad\_read() Funktion der tft\_eSPI Library
             übergeben werden.
-            \begin{lstlisting}
+            \begin{lstlisting}[style=cppCode]
     void my_touchpad_read
     (lv_indev_drv_t*indev_driver, lv_indev_data_t*data)
     {

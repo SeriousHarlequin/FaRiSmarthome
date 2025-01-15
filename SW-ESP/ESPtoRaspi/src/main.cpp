@@ -14,8 +14,7 @@ DallasTemperature sensors(&oneWire);
 AsyncWebServer server(80);
 
 void setup() {
-  Serial.begin(115200);
-  delay(1000);
+
   initISR();
   initWebServer(&server);
 
@@ -45,8 +44,6 @@ void ISRHandler(){
     measureTemp = false;
     sensors.requestTemperatures(); 
     temperatureC = sensors.getTempCByIndex(0);
-    if (temperatureC = DEVICE_DISCONNECTED_C)
-      temperatureC = -100; //means no sensor
 
   }
 
