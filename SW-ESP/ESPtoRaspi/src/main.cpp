@@ -2,6 +2,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include "WebServer.h"
+#include "Led.h"
 #define TEMP_SENSOR 0
 
 OneWire oneWire(TEMP_SENSOR);
@@ -13,14 +14,17 @@ DallasTemperature sensors(&oneWire);
 
 AsyncWebServer server(80);
 
+CRGB leds[NUM_LEDS];
+
 void setup() {
-  Serial.begin(115200);
-  delay(1000);
+
   initISR();
   initWebServer(&server);
 
   sensors.begin();
   temperatureC = -1;
+
+  initLeds(leds);
 }
 
 void loop() {
@@ -45,8 +49,6 @@ void ISRHandler(){
     measureTemp = false;
     sensors.requestTemperatures(); 
     temperatureC = sensors.getTempCByIndex(0);
-    if (temperatureC = DEVICE_DISCONNECTED_C)
-      temperatureC = -100; //means no sensor
 
   }
 

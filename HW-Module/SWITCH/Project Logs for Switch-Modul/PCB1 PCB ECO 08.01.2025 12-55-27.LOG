@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GND Pin=R4-1
+Removed Pin From Net: NetName=NetJ3_9 Pin=R4-2
+Removed Member From Class: ClassName=Sheet1 Member=R4
+Change Component Comment : Designator=R3 Old Comment=100K New Comment=10K

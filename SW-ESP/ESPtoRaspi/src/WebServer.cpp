@@ -1,4 +1,5 @@
 #include "WebServer.h"
+#include <ESPmDNS.h> //temp
 float temperatureC;
 
 void initISR(){
@@ -9,6 +10,7 @@ void initISR(){
 }
 
 void initWebServer(AsyncWebServer* server){
+  WiFi.setHostname("farismart");
   WiFi.begin("FaRiSmart", "87654321");
   // Serial.println("Connecting");
   while(WiFi.status() != WL_CONNECTED) {
@@ -26,5 +28,7 @@ void initWebServer(AsyncWebServer* server){
   });
 
   // Start the server
+  DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
   server->begin();
+  MDNS.begin("farismart");
 }

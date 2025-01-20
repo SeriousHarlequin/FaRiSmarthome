@@ -1,6 +1,0 @@
-Library
-SquarelineStudio
-ESP-NOW
-tfteSPI
-lvgl
-TFTeSPI

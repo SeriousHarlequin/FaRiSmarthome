@@ -14,5 +14,15 @@ export default defineNuxtConfig({
     storage: 'localStorage', // or 'sessionStorage' or 'cookie'
     storageKey: 'nuxt-color-mode'
   }
+  // nitro: {
+  //   serverHandlers: [
+  //     {
+  //       route: '/fetchTemp',
+  //       handler: '~/server/middleware/proxy.js'
+  //     }
+  //   ]
+  // }
   
 })
+
+//run to setup:

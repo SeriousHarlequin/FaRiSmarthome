@@ -235,3 +235,17 @@ The undersigned candidates have chosen to prepare a diploma thesis with the foll
     morecomment=[l][\color{mymagenta}]{\#},
     backgroundcolor=\color{background}
 }
+
+\lstdefinestyle{cppCode}{
+    belowcaptionskip=1\baselineskip, % Adds space below the caption of the listing
+    breaklines=true, % Enables line breaking within the code
+    frame=single, frame=L, % Adds a frame on the left side of the listing
+    xleftmargin=\parindent, % Sets the left margin of the listing to the paragraph indentation
+    language=C++, % Sets the language for syntax highlighting to C++
+    showstringspaces=true, % Hides the spaces within strings
+    basicstyle=\footnotesize\ttfamily, % Sets the basic font style to a small, monospaced font
+    keywordstyle=\bfseries\color{green!40!black}, % Sets the style for keywords to bold and a dark green color
+    commentstyle=\itshape\color{purple!40!black}, % Sets the style for comments to italic and a dark purple color
+    identifierstyle=\color{blue}, % Sets the style for identifiers (e.g., variable names) to blue
+    stringstyle=\color{orange}, % Sets the style for strings to orange
+}

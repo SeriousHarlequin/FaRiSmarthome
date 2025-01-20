@@ -1,8 +1,8 @@
 \chapter{Software}
 
     \section{Projektstruktur}
-    Die Projektstruktur orientiert sich an PlatformIO:
-    
+    Die Projektstruktur orientiert sich an PlatformIO: \\
+    \(\rightarrow\) Command: \texttt{tree -L 2} \\
     \vspace{0.5cm}
     \begin{minipage}{0.48\linewidth}
             \centering
@@ -48,13 +48,38 @@
     Nun müssen folgende Flags im \textit{platformio.ini} File
     überschrieben werden:
 
-    \begin{lstlisting}
+    \begin{lstlisting}[style=cppCode]
     board_upload.flash_size = 16MB
     board_build.partitions = default_16MB.csv
     \end{lstlisting}
 
     Nun sollte der Upload eines Programms auf den 
     ESP-Chip möglich sein.
+
+        \subsection{Serielle Kommunikation}
+        Für Entwicklungszwecke ist es sinnvoll, die 
+        serielle Kommunikation zu aktivieren. Hierfür
+        muss, mithilfe spezieller \texttt{build\_flags}
+        im \texttt{platformio.ini}, die serielle Kommunikation über die USB-Schnittstelle
+        aktiviert werden:
+
+        \begin{lstlisting}[style=cppCode]
+    build_flags =
+        -DARDUINO_USB_MODE=0
+        -DARDUINO_USB_CDC_ON_BOOT=1
+        \end{lstlisting}
+
+            \subsubsection{Problematik}
+            Obwohl die serielle Kommunikation aktiviert ist,
+            funktioniert die Kommunikation nicht auf jedem
+            ESP32-S3. Da PlatformIO's offizielle 
+            Dokumentation \cite{PlatformIO_build_flags}
+            unzureichende Informationen bereitstellt und
+            Debugging auch über das angeschlossene Display
+            möglich ist, wurde die serielle Kommunikation
+            nicht weiter verfolgt.
+
+
 
     \input{software_UserInterface}
     \input{software_kommunikation}
