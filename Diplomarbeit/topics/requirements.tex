@@ -2,5 +2,22 @@
     \section{Hardware}
     \section{Software}
         \subsection{Microcontroller}
+        For developing purposes a tool supporting multiple types of microcontrollers
+        as well as the Arduino framework is required. In addition, libraries
+        for the following purposes are needed:
+        \begin{itemize}
+            \item ESP-NOW communication
+            \item HTTPS fetch and post requests
+            \item reading and controlling various actuators and sensors
+        \end{itemize}
+
         \subsection{Backend}
+        To record and read previous data, a database is needed, it should ideally be 
+        working with time series data and be able to handle a large amount of data, 
+        as it will mainly be used for storing sensor data.
+
         \subsection{Frontend}
+        The frontend should be able to visualize the data stored in the database,
+        control the actuators and sensors, and display the current state of the 
+        system. To implement this, a high-level web framework is preferred to 
+        simplify the development process. 
