@@ -2,14 +2,32 @@
     \section{Hardware}
     \section{Software}
         \subsection{Microcontroller}
-        For developing purposes a tool supporting multiple types of microcontrollers
-        as well as the Arduino framework is required. In addition, libraries
-        for the following purposes are needed:
-        \begin{itemize}
-            \item ESP-NOW communication
-            \item HTTPS fetch and post requests
-            \item reading and controlling various actuators and sensors
-        \end{itemize}
+            \subsubsection{IDE}
+            For developing purposes an IDE fulfilling the following criteria is needed:
+            \begin{itemize}
+                \item \textbf{Integrates the Arduino framework:}
+                Needs to integrate Arduino as most of the code will be written using it.
+                \item \textbf{Support for different microcontrollers:}
+                Supporting different microcontrollers, to allow for flexibility
+                in developing new Nodes.
+                \item \textbf{Manages Library integration:}
+                Streamlines installing and managing libraries used in the project.
+                \item \textbf{Free and Open Source:}
+                To allow anyone to easily modify  or create their own smart home
+                using this project as a base.
+                \item \textbf{Compiling and uploading code:} 
+                Simplifying the process of uploading code to the microcontroller.
+            \end{itemize} 
+
+        \subsection{Communication between Nodes}
+        
+            \subsubsection{Note-to-Note}
+            Communication between nodes should be possible between any two nodes
+            both ways.
+
+            \subsubsection{Note-to-Server}
+            Communication between the nodes and the web server, as well as the 
+            database, should be possible both ways.
 
         \subsection{Backend}
         To record and read previous data, a database is needed, it should ideally be 

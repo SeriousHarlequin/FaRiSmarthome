@@ -1,6 +1,74 @@
 \chapter{Networking}
 \section{Networking Structure}
 
-\subsection{MQTT}
 
-\subsection{ESP NOW}
+\section{Node-to-Node Communication}
+    \subsection{MQTT}
+    MQTT is an open source broker-based protocol built on top of TCP/IP. It
+    requires a dedicated broker to function. Once set up a client can simply 
+    publish or subscribe to a topic, and receive/send messages to/from other 
+    clients.
+    
+        \subsubsection{Advantages}
+        \begin{itemize}
+            \item Compatible with most microcontrollers as well as the Web server.
+            \item IP or MAC addresses do not need to be exchanged for communication.
+        \end{itemize}
+
+        \subsubsection{Disadvantages}
+        \begin{itemize}
+            \item Requires a dedicated broker.
+            \item Requires a preexisting network.
+            \item Note position is limited by the range of the network.
+        \end{itemize}
+
+    \subsection{ESP-NOW}
+    ESP-NOW is a protocol developed by Espressif Systems for the ESP32 and ESP8266
+    microcontrollers. It is a peer-to-peer protocol, meaning that it does not require
+    a dedicated server to function.
+
+        \subsubsection{Advantages}
+        \begin{itemize}
+            \item No need for a dedicated broker.
+            \item No need for a preexisting network.
+            \item Range can be extended by creating a mesh network.
+        \end{itemize}
+
+        \subsubsection{Disadvantages}
+        \begin{itemize}
+            \item Limited to ESP32 and ESP8266 microcontrollers.
+            \item Limited to a range of 200 meters.
+        \end{itemize}
+
+    \vspace{1cm}
+    \textbf{For this project, ESP-NOW is the preferred protocol for 
+    node-to-node communication.}
+
+\section{Node-to-Server Communication}
+Due to the fact that ESP-NOW is exclusive to Espressif microcontrollers,
+a bridge between the nodes and the server is needed. This bridge can be 
+routed through a preexisting Network as the Web server requires 
+one anyway.
+
+    \subsection{MQTT}
+    MQTT can be used to bridge the gap between the nodes and the server.
+    The server can subscribe to the same topics as the nodes, and the nodes
+    can publish to the same topics as the server.
+
+        \subsubsection{Disadvantages}
+        Unfortunately, MQTT integration for the Web server as well as the database
+        is not as straightforward as the alternative and would require a lot more 
+        overhead.
+
+    \subsection{HTTP}
+    HTTP can be used to bridge the gap between the nodes and the server.
+    This way a dedicated Node can be set up to handle the communication
+    with both the Web server and the database and distribute it to the 
+    rest of the nodes.
+
+    \vspace{1cm}
+    \textbf{For this project, HTTP is the preferred protocol for 
+    node-to-server communication.}
+
+
+
