@@ -28,16 +28,6 @@
     Due to the listed advantages, ESP-NOW is the \textbf{preferred
     communication protocol} for this project.
 
-\section{Networking Structure}
-The Nuxt.js Webserver will function as a main broker between
-the Database and a dedicated ESP32 device that  acts
-as a bridge between every ESP32 and the Nuxt.js Webserver.
-This is done because a single ESP32 device can only handle
-either ESP-NOW or a standard Wi-Fi connection, but not both
-simultaneously. This dedicated bridge is a special 
-ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
-enabling it to do both at the same time. 
-
 
 \section{Node-to-Server Communication}
 Due to the fact that ESP-NOW is exclusive to Espressif microcontrollers,
@@ -65,5 +55,13 @@ one anyway.
     \textbf{For this project, HTTP is the preferred protocol for 
     node-to-server communication.}
 
-
+    \section{Networking Structure}
+    The Nuxt.js Web server will function as a main broker between
+    the Database and a dedicated ESP32 device that  acts
+    as a bridge between every ESP32 and the Nuxt.js Web server.
+    This is done because a single ESP32 device can only handle
+    either ESP-NOW or a standard Wi-Fi connection, but not both
+    simultaneously. This dedicated bridge is a special 
+    ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
+    enabling it to do both at the same time. 
 
