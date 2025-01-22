@@ -35,6 +35,7 @@ a bridge between the nodes and the server is needed. This bridge can be
 routed through a preexisting Network as the Web server requires 
 one anyway.
 
+
     \subsection{MQTT}
     MQTT can be used to bridge the gap between the nodes and the server.
     The server can subscribe to the same topics as the nodes, and the nodes
@@ -55,13 +56,32 @@ one anyway.
     \textbf{For this project, HTTP is the preferred protocol for 
     node-to-server communication.}
 
-    \section{Networking Structure}
-    The Nuxt.js Web server will function as a main broker between
-    the Database and a dedicated ESP32 device that  acts
-    as a bridge between every ESP32 and the Nuxt.js Web server.
-    This is done because a single ESP32 device can only handle
-    either ESP-NOW or a standard Wi-Fi connection, but not both
-    simultaneously. This dedicated bridge is a special 
-    ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
-    enabling it to do both at the same time. 
+    \subsection{Communication in different Networks}
+    For discovering the Raspberry Pi on the ESP and vice versa,
+    IP's need to be exchanged. This was tried in two ways:
+        \subsubsection{By Hostname}
+        The First approach was to set a hostname for the 
+        ESP32 and fetch data through it. While this worked
+        in most networks, it isn't possible or needs to 
+        configured in some, which would make the average 
+        consumer unable to make use of the system.
 
+        \subsubsection{Manually}
+        Due to the absence of a better alternative, the
+        IP-Address of the Raspberry Pi needs to be manually
+        entered through a Terminal-Node inside the ESP-NOW
+        network. After that a 
+
+        \textbf{NEEDS TO BE COMPLETED!!}
+
+\section{Networking Structure}
+The Nuxt.js Web server will function as a main broker between
+the Database and a dedicated ESP32 device that  acts
+as a bridge between every ESP32 and the Nuxt.js Web server.
+This is done because a single ESP32 device can only handle
+either ESP-NOW or a standard Wi-Fi connection, but not both
+simultaneously. This dedicated bridge is a special 
+ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
+enabling it to do both at the same time. 
+
+    

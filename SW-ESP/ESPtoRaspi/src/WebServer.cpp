@@ -10,7 +10,7 @@ void initISR(){
 }
 
 void initWebServer(AsyncWebServer* server){
-  WiFi.setHostname("farismart");
+  // WiFi.setHostname("farismart");
   WiFi.begin("FaRiSmart", "87654321");
   // Serial.println("Connecting");
   while(WiFi.status() != WL_CONNECTED) {
@@ -20,6 +20,10 @@ void initWebServer(AsyncWebServer* server){
   // Serial.println("");
   // Serial.print("Connected to WiFi network with IP Address: ");
   // Serial.println(WiFi.localIP());
+  if(!MDNS.begin("farismart")) {
+    Serial.println("Error starting mDNS");
+    return;
+  }
 
   // Define a route to handle fetch requests
   server->on("/fetchTemp", HTTP_GET, [](AsyncWebServerRequest *request){
@@ -30,5 +34,4 @@ void initWebServer(AsyncWebServer* server){
   // Start the server
   DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
   server->begin();
-  MDNS.begin("farismart");
 }
