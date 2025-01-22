@@ -1,0 +1,1 @@
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QCommunication between the nodes and the web server, as well as the database, should be possible.\\E$"}

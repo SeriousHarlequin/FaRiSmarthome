@@ -38,3 +38,32 @@ simultaneously. This dedicated bridge is a special
 ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
 enabling it to do both at the same time. 
 
+
+\section{Node-to-Server Communication}
+Due to the fact that ESP-NOW is exclusive to Espressif microcontrollers,
+a bridge between the nodes and the server is needed. This bridge can be 
+routed through a preexisting Network as the Web server requires 
+one anyway.
+
+    \subsection{MQTT}
+    MQTT can be used to bridge the gap between the nodes and the server.
+    The server can subscribe to the same topics as the nodes, and the nodes
+    can publish to the same topics as the server.
+
+        \subsubsection{Disadvantages}
+        Unfortunately, MQTT integration for the Web server as well as the database
+        is not as straightforward as the alternative and would require a lot more 
+        overhead.
+
+    \subsection{HTTP}
+    HTTP can be used to bridge the gap between the nodes and the server.
+    This way a dedicated Node can be set up to handle the communication
+    with both the Web server and the database and distribute it to the 
+    rest of the nodes.
+
+    \vspace{1cm}
+    \textbf{For this project, HTTP is the preferred protocol for 
+    node-to-server communication.}
+
+
+
