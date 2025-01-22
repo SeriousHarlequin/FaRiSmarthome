@@ -8,3 +8,6 @@
 *.blg
 *.fls
 *.synctex.gz
+*.fdb_latexmk
+*.pdf
+*.xml
