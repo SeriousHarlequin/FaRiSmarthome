@@ -66,8 +66,31 @@
 
             \end{figure}
 
-        Das zugekaufte Display hat ebenfalls einen SD-Kartenleser eingebaut. Dieser wird 
-        über SPI ausgelesen(Gelb markiert), ist aber für dieses Projekt nicht in verwendung. 
+        Das Display wird über einen 40-Pin Stecker angeschlossen. Die Pins sind in der Abbildung \ref{fig:sch4}.
+        Das zugekaufte Display hat eine Auflösung von 800x480 Pixeln und nutzt den SSD1963 Controller.
+        Es ist ebenfalls ein SD-Kartenleser eingebaut. Dieser kann über SPI ausgelesen(Gelb markiert), ist 
+        aber für dieses Projekt nicht in verwendung. 
+
+        \newpage
+        Das Display wurde über Amazon erworben.
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=8cm]{TBD.png}
+                \caption{Vorderseite des Displays.}
+                \label{fig:displayfront}
+            
+            \end{figure}
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=8cm]{TBD.png}
+                \caption{Rückseite des Displays.}
+                \label{fig:displayback}
+            
+            \end{figure}
+
+        
 
         \newpage
         \subsection{Touch}
@@ -85,7 +108,7 @@
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=10cm]{TBD.png}
+                \includegraphics[width=10cm]{rgb.png}
                 \caption{Anschluss und Beschaltung der LED-Streifen.}
                 \label{fig:led_strip}
             \end{figure}
@@ -170,8 +193,28 @@
         
         Dieser Anschluss ist nur zum Programmieren und Debuggen gedacht.
     \newpage
+    
     \section{PCB}
+
+    In diesem Kapitel werden die unterschiedlichen PCBs beschrieben.
+
+
+        \subsection{ARGB-Print}
+        Dieser Print hat einen Eingang und einen Ausgang um mehrer von diesen 
+        Platten in Reihe zu schalten.
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=8cm]{pcb-argb.png}
+            \caption{PCB-ARGB wird blieb für V1.1 unverändert.}
+            \label{fig:pcbargb}
+
+        \end{figure}
+
         \subsection{V1}
+
+        Das PCB ist so entworfen worden, was es auf der Rückseite des Displays augesteckt 
+        werden kann.
 
             \begin{figure}[h!]
                 \centering
@@ -181,13 +224,17 @@
 
             \end{figure}
 
+        \newpage
         \subsection{V1.1}
+
+        Das PCB wurde für die finale Version angepasst. Der Rotary Encoder und das Serial-Interface
+        haben jetzt einen eigenen Pin-Header.
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=7cm]{TBD2.png}
+                \includegraphics[width=12cm]{pcb-v1.1.png}
                 \caption{PCB V1.1}
-                \label{fig:pcb2}
+                \label{fig:pcb1.1}
 
             \end{figure}
             
@@ -218,7 +265,7 @@
 
     
     Der untere Teil des Gehäuses ist so gestaltet, dass der Oberteil sicher darauf sitzt und alle internen
-    Komponenten schützt. Es bietet auch Öffnungen für die Stromversorgung. In dieses Teil wird der 
+    Komponenten schützt. Es bietet auch Öffnungen für die Stromversorgung. In dieses Teil wird
     die Strombuchse sowie der Encoder verbaut.
    
 
