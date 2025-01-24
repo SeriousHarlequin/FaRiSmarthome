@@ -24,7 +24,10 @@
     factors \cite{esp-now-reach_2024} 
     the integrated multihop feature that allows the devices 
     to relay messages to each other can be used to extend 
-    the range to hard-to-reach locations.\\~\\
+    the range to hard-to-reach locations. One mayor downside
+    of the protocol is that one peer can only communicate with
+    up to 20 other peers.
+    \\~\\
     Due to the listed advantages, ESP-NOW is the \textbf{preferred
     communication protocol} for this project.
 
@@ -56,7 +59,7 @@ one anyway.
     \textbf{For this project, HTTP is the preferred protocol for 
     node-to-server communication.}
 
-    \subsection{Communication in different Networks}
+    \subsection{Network Discovery}
     For discovering the Raspberry Pi on the ESP and vice versa,
     IP's need to be exchanged. This was tried in two ways:
         \subsubsection{By Hostname}
@@ -76,6 +79,19 @@ one anyway.
         unintended traffic, the broadcast is only sent once when the
         button is pressed.
         
+
+\section{Node-to-Node Communication}
+    \subsection{ESP NOW Discovery}
+    To discover other ESP-NOW devices, a broadcast can be sent
+    from the Bridge-Node to all other ESP-NOW devices. This
+    Way every ESP-NOW device can discover the bridge and send
+    their MAC-Address in return.
+
+    \subsection{Circumventing the Peer Limit}
+    To circumvent the 20 peer limit, the bridge can dynamically
+    dedicate another peer to act as a second bridge should the
+    need arise. 
+
 
 \section{Networking Structure}
 The Nuxt.js Web server will function as a main broker between
