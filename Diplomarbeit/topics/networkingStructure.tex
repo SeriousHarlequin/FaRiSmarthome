@@ -60,19 +60,22 @@ one anyway.
     For discovering the Raspberry Pi on the ESP and vice versa,
     IP's need to be exchanged. This was tried in two ways:
         \subsubsection{By Hostname}
-        The First approach was to set a hostname for the 
+        The first approach was to set a hostname for the 
         ESP32 and fetch data through it. While this worked
         in most networks, it isn't possible or needs to 
         configured in some, which would make the average 
         consumer unable to make use of the system.
 
-        \subsubsection{Manually}
-        Due to the absence of a better alternative, the
-        IP-Address of the Raspberry Pi needs to be manually
-        entered through a Terminal-Node inside the ESP-NOW
-        network. After that a 
-
-        \textbf{NEEDS TO BE COMPLETED!!}
+        \subsubsection{Via Broadcast}
+        The second approach was to broadcast the IP of the ESP32
+        at the press of a button. This would then send an 
+        HTTP-GET-Request into the network and the Raspberry Pi
+        would respond with its IP. While sending a broadcast is
+        a lot of network traffic, it is the most reliable way
+        to discover the Raspberry Pi in any network. To minimize
+        unintended traffic, the broadcast is only sent once when the
+        button is pressed.
+        
 
 \section{Networking Structure}
 The Nuxt.js Web server will function as a main broker between
