@@ -1,4 +1,28 @@
 \chapter{Networking}
+
+\section{Overview}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ThinkCorrectly.jpg}
+    \caption{Networking Structure}
+\end{figure}
+    \subsection{Web Server}
+    A Nuxt.js Web server will function as the main interface
+    for the user. It will communicate with the database and the
+    dedicated Bridge-Node via HTTP. It should be capable of displaying
+    and changing the state of the devices in the smart home.
+    \subsection{Database}
+    The database will store device states and measurements.
+    Is can be read and written to by both the Web server and the
+    Bridge-Node. 
+    \subsection{Bridge-Node}
+    The Bridge-Node will act as a bridge between everything running
+    on the Raspberry Pi (Web server, database) and the ESP-NOW devices.
+    It will be capable of receiving and sending data via both HTTP and
+    ESP-NOW. It will also be responsible for discovering new ESP-NOW
+    devices.
+
 \section{Communication Protocols}
     \subsection{MQTT}
     MQTT is an OASIS standard messaging protocol for 
@@ -93,14 +117,6 @@ one anyway.
     need arise. 
 
 
-\section{Networking Structure}
-The Nuxt.js Web server will function as a main broker between
-the Database and a dedicated ESP32 device that  acts
-as a bridge between every ESP32 and the Nuxt.js Web server.
-This is done because a single ESP32 device can only handle
-either ESP-NOW or a standard Wi-Fi connection, but not both
-simultaneously. This dedicated bridge is a special 
-ESP32-Board with both a Wi-Fi antenna and an Ethernet port,
-enabling it to do both at the same time. 
+
 
     
