@@ -1,11 +1,9 @@
 #include <Arduino.h>
-#include <WiFi.h>
-#include "espnow_send.h"
+#include "espnow.h"
 
-uint8_t broadcastAddress[] = {0xd8,0x3b,0xda,0xa4,0x94,0x84};
-
+uint8_t FirstHost[] = {0xd8,0x3b,0xda,0xa4,0x94,0x84};
+uint8_t Broadcast[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 struct_message myData;
-
 esp_now_peer_info_t peerInfo; 
 
 //------------------- RECV -------------------
@@ -28,38 +26,45 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 }
 //--------------------------------------------
 
+//------------------- SEND -------------------
+// callback when data is sent
+void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
+  Serial.print("\r\nLast Packet Send Status:\t");
+  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+}
+//--------------------------------------------
 
 void setup() {
   Serial.begin(9600);
+  delay(200);
 
-  WiFi.mode(WIFI_STA);
-  // WiFi.begin();
   Serial.print("[DEFAULT] ESP32 Board MAC Address: ");
   readMacAddress();
 
-  if (esp_now_init() != ESP_OK) {
+  while(!espNowInit()){
     Serial.println("Error initializing ESP-NOW");
-    return;
+    delay(2000);
   }
 
-  // Once ESPNow is successfully Init, we will register for Send CB to
+  // Once ESPNow is successfully Init, we will register for Send/Recv CB to
   // get the status of Trasnmitted packet
   esp_now_register_send_cb(OnDataSent);
+  esp_now_register_recv_cb(esp_now_recv_cb_t(OnDataRecv));
 
-  // Register peer
-  memcpy(peerInfo.peer_addr, broadcastAddress, 6);
-  peerInfo.channel = 0;  
-  peerInfo.encrypt = false;
-  
   // Add peer        
-  if (esp_now_add_peer(&peerInfo) != ESP_OK){
-    Serial.println("Failed to add peer");
-    return;
+  if (espNowAddPeer(FirstHost, 0, false) != ESP_OK){
+    Serial.print("Failed to add peer: ");
+    for (int i = 0; i < 6; i++){
+      Serial.print((char)FirstHost[i]);
+    }
   }
 
-  //------------------- RECV -------------------
-  esp_now_register_recv_cb(esp_now_recv_cb_t(OnDataRecv));
-  //--------------------------------------------
+  if (espNowAddPeer(Broadcast, 0, false) != ESP_OK){
+    Serial.print("Failed to add peer: ");
+    for (int i = 0; i < 6; i++){
+      Serial.print((char)FirstHost[i]);
+    }
+  }
 }
 
 void loop() {
@@ -70,7 +75,7 @@ void loop() {
   myData.d = false;
   
   // Send message via ESP-NOW
-  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
+  esp_err_t result = esp_now_send(FirstHost, (uint8_t *) &myData, sizeof(myData));
    
   if (result == ESP_OK) {
     Serial.println("Sent with success");

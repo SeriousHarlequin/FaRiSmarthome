@@ -2,13 +2,4 @@
 #include <esp_now.h>
 #include <esp_wifi.h>
 
-typedef struct struct_message {
-  char a[32];
-  int b;
-  float c;
-  bool d;
-} struct_message;
-
-void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status);
-
-void readMacAddress();
+int espNowAddPeer(const uint8_t *peerMac, const uint8_t channel, const bool encrypt);
