@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include "espnow.h"
 
-uint8_t FirstHost[] = {0x9c,0x9e,0x6e,0x04,0x54,0x1c};
+uint8_t FirstHost[] = {0x9c, 0x9e, 0x6e, 0x04, 0x54, 0x1c};
 uint8_t Broadcast[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 struct_message myData;
+struct_message mySend;
 esp_now_peer_info_t peerInfo; 
 
 //------------------- RECV -------------------
@@ -12,6 +13,7 @@ struct_message myRecv;
 // callback function that will be executed when data is received
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&myData, incomingData, sizeof(myData));
+  Serial.println("--------------------");
   Serial.print("Bytes received: ");
   Serial.println(len);
   Serial.print("Char: ");
@@ -22,6 +24,9 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   Serial.println(myData.c);
   Serial.print("Bool: ");
   Serial.println(myData.d);
+  Serial.print("Message: ");
+  Serial.println(myData.message);
+  Serial.println("--------------------");
   Serial.println();
 }
 //--------------------------------------------
@@ -69,20 +74,21 @@ void setup() {
 
 void loop() {
   // Set values to send
-  strcpy(myData.a, "THIS IS A CHAR");
-  myData.b = random(1,20);
-  myData.c = 1.2;
-  myData.d = false;
+  strcpy(mySend.a, "THIS IS A CHAR");
+  mySend.b = random(1,20);
+  mySend.c = 1.2;
+  mySend.d = false;
   
   // Send message via ESP-NOW
-  esp_err_t result = esp_now_send(FirstHost, (uint8_t *) &myData, sizeof(myData));
+  esp_err_t result = esp_now_send(Broadcast, (uint8_t *) &mySend, sizeof(mySend));
    
   if (result == ESP_OK) {
     Serial.println("Sent with success");
   }
   else {
     Serial.println("Error sending the data");
+    Serial.println(result);
   }
-  readMacAddress();
+  // readMacAddress();
   delay(2000);
 }

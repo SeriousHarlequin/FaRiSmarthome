@@ -7,6 +7,7 @@ typedef struct struct_message {
   int b;
   float c;
   bool d;
+  char message[50];
 } struct_message;
 
 bool espNowInit();
