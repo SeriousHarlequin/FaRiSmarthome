@@ -1,5 +1,6 @@
 #include "espnow_recv.h"
 #include "espnow_send.h"
+#include <WiFi.h>
 
 typedef struct struct_message {
   char a[32];

@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "espnow.h"
 
-uint8_t FirstHost[] = {0xd8,0x3b,0xda,0xa4,0x94,0x84};
+uint8_t FirstHost[] = {0x9c,0x9e,0x6e,0x04,0x54,0x1c};
 uint8_t Broadcast[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 struct_message myData;
 esp_now_peer_info_t peerInfo; 
@@ -83,5 +83,6 @@ void loop() {
   else {
     Serial.println("Error sending the data");
   }
+  readMacAddress();
   delay(2000);
 }

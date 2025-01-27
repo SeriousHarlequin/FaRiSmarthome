@@ -1,14 +1,11 @@
 #include <Arduino.h>
-#include <WiFi.h>
-#include <esp_wifi.h>
-#include <esp_now.h>
-#include "espnow_recv.h"
+#include "espnow.h"
 
 // Create a struct_message called myData
 struct_message myData;
 
 //------------------- SEND -------------------
-uint8_t broadcastAddress[] = {0xb0,0xb2,0x1c,0x97,0x8e,0x88};
+uint8_t broadcastAddress[] = {0xa0,0x85,0xe3,0xfb,0x63,0x5c};
 struct_message mySend;
 esp_now_peer_info_t peerInfo;
 
@@ -84,5 +81,6 @@ void loop() {
   else {
     Serial.println("Error sending the data");
   }
+  readMacAddress();
   delay(2000);
 }

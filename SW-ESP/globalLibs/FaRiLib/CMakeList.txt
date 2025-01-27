@@ -1,0 +1,7 @@
+project(FaRiLib)
+
+include_directories(include)
+
+set(SOURCE_FILES
+        src/*
+    )

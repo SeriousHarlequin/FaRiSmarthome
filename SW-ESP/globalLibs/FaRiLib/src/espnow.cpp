@@ -1,5 +1,4 @@
 #include "espnow.h"
-#include <WiFi.h>
 
 bool espNowInit(){
     WiFi.mode(WIFI_STA);
