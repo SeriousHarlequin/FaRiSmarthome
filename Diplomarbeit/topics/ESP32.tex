@@ -1,4 +1,7 @@
 \chapter{ESP32}
+This chapter discusses the software side of the ESP32,
+including the project structure, the FaRiLib library, and the
+implementation of different Nodes
 
 \section{Project Structure}
 
@@ -104,3 +107,9 @@ every node project placed in the \texttt{SW-ESP} directory.
     \end{lstlisting}
     Note that the path is relative, meaning it needs to be adjusted should the project
     be places outside the \texttt{SW-ESP} directory.
+
+\section{Node Implementation}
+    \subsection{Bridge Node}
+    The bridge node is the central node in the network. It is responsible for
+    handling all incoming messages from the nodes and distributing them to the
+    correct destination.
