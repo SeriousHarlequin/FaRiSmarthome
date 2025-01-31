@@ -1,3 +1,5 @@
+#ifndef ESPNOW_HEADER_GUARD
+#define ESPNOW_HEADER_GUARD
 #include "espnow_recv.h"
 #include "espnow_send.h"
 #include <WiFi.h>
@@ -13,3 +15,4 @@ typedef struct struct_message {
 bool espNowInit();
 void readMacAddress();
 void requestMACAddress();
+#endif
