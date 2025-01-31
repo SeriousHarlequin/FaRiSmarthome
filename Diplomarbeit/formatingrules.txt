@@ -1,0 +1,30 @@
+This document discribes some basic syntax and formatting rules as guidelines
+for editing this paper. With examples :)
+
+1. Basic formatting rules
+    - Use as few chapters as possible.
+    - Every chapter (or page if necessary) should set the name of the author
+      as the inner footer. This is achieved with the following syntax:
+      \setAuthor{<Author Name>}
+    - Pictures should always be wraped in a figure that containes a caption and a label. If that is not the case it
+      will not be shown in the List of Figures properly or cannot be referenced. Example of a figure:
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=<factor>\textwidth]{<filename>.jpg}
+            \caption{<description>}
+            \label{fig:<figname>}
+        \end{figure}
+    - Possible chapter divisions are: \section, \subsection, \subsubsection
+      A section that should not be numbered can be created like this:
+        \section*{<secname>}
+    - Lists can be created using the itemize environment:
+        \begin{itemize}
+            \item This is an item
+            \item This is another item
+        \end{itemize}
+    - Code should always be within a fitting \lstlisting enviroment:
+        \begin{lstlisting}[language=<lang>]
+            code goes here
+        \end{lstlisting}
+      If not already defined, this can be done within the rdp.txt file.
+    
