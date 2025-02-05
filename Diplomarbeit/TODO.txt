@@ -1,0 +1,7 @@
+future section - to be done - what isn't complete/part of the thesis?
+hardware insert - in Nodes section - HOW?
+meetings docs at the end
+pages from thesis template at the beginning
+abstract en,de - write at the end - convert from executive summary - in front of everything
+rename sec ESP32 and Rasberry Pi to Nodes/Server - maybe find better headlines
+See notes from RZEP corrections
