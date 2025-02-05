@@ -5,3 +5,4 @@ pages from thesis template at the beginning
 abstract en,de - write at the end - convert from executive summary - in front of everything
 rename sec ESP32 and Rasberry Pi to Nodes/Server - maybe find better headlines
 See notes from RZEP corrections
+Describe Personalized options - what can be different/adjusted/functionally the same -> replaced without much change
