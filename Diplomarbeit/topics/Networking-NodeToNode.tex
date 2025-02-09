@@ -1,0 +1,15 @@
+\section{Node-to-Node Communication}
+This section discusses important aspects or problems of the communication between
+the nodes. Note that the implementation of these aspects is discussed in section
+\ref{sec:farilib_espnow}.
+
+    \subsection{ESP NOW Discovery}
+    To discover other ESP-NOW devices, a broadcast can be sent
+    from the Bridge-Node to all other ESP-NOW devices. This
+    Way every ESP-NOW device can discover the bridge and send
+    their MAC-Address in return.
+
+    \subsection{Circumventing the Peer Limit}
+    To circumvent the 20 peer limit, the bridge can dynamically
+    dedicate another peer to act as a second bridge should the
+    need arise. 

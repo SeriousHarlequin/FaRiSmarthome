@@ -1,0 +1,27 @@
+\section{Node Implementation} \label{sec:node_implemtenation}
+This section describes the implementation of the different nodes and the ESP-NOW
+discovery process.
+    \subsection{Bridge Node} 
+    The bridge node is the central node in the network. It is responsible for
+    handling all incoming messages from the nodes and distributing them to the
+    correct destination.
+
+    %DESCRIBE CODE OF BRIDGE NODE
+
+    \subsection{Basic Node}
+    Every Node (except the bridge node) consists of the same base module. It's
+    capable of measuring the ambient temperature and controlling four RGB-LEDs.
+
+    %DESCRIBE CODE OF BASIC NODE
+
+    \subsection{ESP-NOW Discovery}
+    The ESP-NOW discovery process is a crucial part of the system. It allows the
+    bridge node to discover new nodes and allows the slave nodes to find the bridge
+    node. The process is as follows:
+    \begin{enumerate}
+        \item The bridge node sends a discovery message to all nodes.
+        \item The slave nodes receive the message, save the bridge's MAC address, and
+        send a response message to the bridge node.
+        \item The bridge node receives the response message and saves the MAC address
+        of the slave nodes.
+    \end{enumerate}

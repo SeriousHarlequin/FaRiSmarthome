@@ -1,0 +1,22 @@
+\section{Operating System}
+In order to find a suitable operating system for the Raspberry Pi, a few options
+were considered. The requirements for the operating system are as follows:
+\begin{itemize}
+    \item \textbf{Lightweight:} Should require as little resources as possible
+    and not come with unnecessary software preinstalled. This includes a Desktop 
+    Environment.
+    \item \textbf{Software Support:} Has to support the software needed for the
+    project, such as a \texttt{Nuxt.js} web server (section \ref{sec:webServer})
+    and an \texttt{InfluxDB} database (section \ref{sec:database}).
+    \item \textbf{ARM Based:} As the Raspberry Pi uses an ARM processor, the
+    operating system needs to be compatible with it.
+    \item \textbf{Reproducibility:} Should offer a way to replicate the operating
+    system on other Raspberry Pi's.
+\end{itemize}
+    \subsection{Raspberry Pi OS Lite}
+    Raspberry Pi OS Lite is a lightweight version of the Raspberry Pi OS. It
+    comes without many packages including but not limited to a Desktop Environment.
+    It supports all the software needed for the project and offers extensive documentation.
+    \subsection{Other ARM-based OS}
+    Many other Linux distros offer a version for ARM processors. For the purpose of
+    this project, there was no need to look further than the Raspberry Pi OS Lite.

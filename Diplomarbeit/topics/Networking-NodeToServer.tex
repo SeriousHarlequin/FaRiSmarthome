@@ -1,0 +1,52 @@
+\section{Node-to-Server Communication}
+This section discusses important aspects or problems of the communication between
+the nodes and the server. Note that the implementation of these aspects is discussed in section
+\ref{sec:farilib_espnow}.
+
+\vspace{0.5cm}
+
+Due to the fact that ESP-NOW is exclusive to Espressif microcontrollers,
+a bridge between the nodes and the server is needed. This bridge can be 
+routed through a preexisting Network as the Web server requires 
+one anyway.
+
+
+    \subsection{MQTT}
+    MQTT can be used to bridge the gap between the nodes and the server.
+    The server can subscribe to the same topics as the nodes, and the nodes
+    can publish to the same topics as the server.
+
+        \subsubsection{Disadvantages}
+        Unfortunately, MQTT integration for the Web server as well as the database
+        is not as straightforward as the alternative and would require a lot more 
+        overhead.
+
+    \subsection{HTTP}
+    HTTP can be used to bridge the gap between the nodes and the server.
+    This way a dedicated Node can be set up to handle the communication
+    with both the Web server and the database and distribute it to the 
+    rest of the nodes.
+
+    \vspace{1cm}
+    \textbf{For this project, HTTP is the preferred protocol for 
+    node-to-server communication.}
+
+    \subsection{Network Discovery}
+    For discovering the Raspberry Pi on the ESP and vice versa,
+    IP's need to be exchanged. This was tried in two ways:
+        \subsubsection{By Hostname}
+        The first approach was to set a hostname for the 
+        ESP32 and fetch data through it. While this worked
+        in most networks, it isn't possible or needs to 
+        configured in some, which would make the average 
+        consumer unable to make use of the system.
+
+        \subsubsection{Via Broadcast}
+        The second approach was to broadcast the IP of the ESP32
+        at the press of a button. This would then send an 
+        HTTP-GET-Request into the network and the Raspberry Pi
+        would respond with its IP. While sending a broadcast is
+        a lot of network traffic, it is the most reliable way
+        to discover the Raspberry Pi in any network. To minimize
+        unintended traffic, the broadcast is only sent once when the
+        button is pressed.

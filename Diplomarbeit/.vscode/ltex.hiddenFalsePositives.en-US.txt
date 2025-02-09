@@ -1,1 +1,2 @@
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QCommunication between the nodes and the web server, as well as the database, should be possible.\\E$"}
+{"rule":"UNIT_SPACE","sentence":"^\\QWhile indoor use drastically reduces the range of 200m per unit depending on various factors \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q the integrated multihop feature that allows the devices to relay messages to each other can be used to extend the range to hard-to-reach locations.\\E$"}
