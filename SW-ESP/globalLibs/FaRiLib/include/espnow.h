@@ -5,11 +5,11 @@
 #include <esp_wifi.h>
 
 typedef struct espnow_message {
+  bool master;
+  char message[50];
   char a[32];
   int b;
-  float c;
   bool d;
-  char message[50];
 } espnow_message;
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len);

@@ -1,3 +1,6 @@
+#ifndef ESPNOW_SLAVE_HEADER_GUARD
+#define ESPNOW_SLAVE_HEADER_GUARD
+
 #include "espnow.h"
 
 class EspNowSlave : public EspNow {
@@ -6,3 +9,5 @@ public:
 
     bool lookForMaster();
 };
+
+#endif

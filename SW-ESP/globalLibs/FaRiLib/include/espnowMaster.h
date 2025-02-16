@@ -1,3 +1,6 @@
+#ifndef ESPNOW_MASTER_HEADER_GUARD
+#define ESPNOW_MASTER_HEADER_GUARD
+
 #include "espnow.h"
 #include <vector>
 
@@ -7,3 +10,5 @@ public:
 
     bool addPeer(const uint8_t * mac);
 };
+
+#endif

@@ -10,6 +10,7 @@ bool EspNow::init(){
   }
   if(!esp_now_register_recv_cb(OnDataRecv) == ESP_OK) return false;
   if(!esp_now_register_send_cb(OnDataSent) == ESP_OK) return false;
+  
   return true;
 }
 

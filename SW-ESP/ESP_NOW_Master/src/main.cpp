@@ -25,7 +25,9 @@ void loop() {
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&espnow.msgReceived, incomingData, sizeof(espnow.msgReceived));
 
-  espnow.addPeer(mac);
+  espnow.addPeer(mac); //checks for duplicates
+
+  Serial.println("HELL YEAH!");
 
   //if a broadcast from a slave is received, send mac and verification
 }

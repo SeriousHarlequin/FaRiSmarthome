@@ -13,13 +13,17 @@ void setup() {
 }
 
 void loop() {
-
+  if(espnow.macMaster[0] == 0){
+    espnow.lookForMaster();
+  }
   delay(2000);
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&espnow.msgReceived, incomingData, sizeof(espnow.msgReceived));
 
+  if (!espnow.msgReceived.master) return;
+  
   if(espnow.macMaster[0] == 0){
     //See if it is a master and store its MAC
   }
