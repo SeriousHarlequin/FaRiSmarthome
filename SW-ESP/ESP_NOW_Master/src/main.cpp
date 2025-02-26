@@ -29,5 +29,9 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
   Serial.println("HELL YEAH!");
 
+  espnow.msgToSend.master = true;
+  strcpy(espnow.msgToSend.message, "Answer from master");
+  esp_now_send(mac, (uint8_t *) &espnow.msgToSend, sizeof(espnow.msgToSend));
+
   //if a broadcast from a slave is received, send mac and verification
 }
