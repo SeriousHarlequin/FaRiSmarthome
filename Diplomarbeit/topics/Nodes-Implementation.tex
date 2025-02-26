@@ -19,9 +19,10 @@ discovery process.
     bridge node to discover new nodes and allows the slave nodes to find the bridge
     node. The process is as follows:
     \begin{enumerate}
-        \item The bridge node sends a discovery message to all nodes.
-        \item The slave nodes receive the message, save the bridge's MAC address, and
-        send a response message to the bridge node.
-        \item The bridge node receives the response message and saves the MAC address
-        of the slave nodes.
+        \item A activating slave Node sends periodic discovery broadcasts.
+        \item The bridge node listens for these broadcasts and saves the
+        sender's MAC address.
+        \item The bridge node sends a response to the slave node with its 
+        MAC address.
+         
     \end{enumerate}

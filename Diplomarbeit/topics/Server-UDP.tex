@@ -1,0 +1,37 @@
+\section{UDP Process}
+The Raspberry Pi runs a python process starting at boot with
+the purpose of listening to a UDP broadcast sent by the bridge
+node. It then communicates the IP address of the bride to the
+web server when requested.
+
+    \subsection{on boot}
+    The UDP process is started on boot by a systemd service.
+    This section describes how to add a systemd service to the
+    Raspberry Pi.
+
+    \begin{enumerate}
+        \item To add an systemd entry first create a systemd service file: \\
+        \texttt{\$ sudo vi /etc/systemd/system/upd\_discovery.service}
+
+        \item Then add the following in the file:
+        \begin{lstlisting}[style=cppCode]
+[Unit]
+Description=udp discovery
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/fabian/farismart/Main.py
+WorkingDirectory=/home/fabian
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=fabian
+
+[Install]
+WantedBy=multi-user.target
+        \end{lstlisting}
+
+        \item Enable the service: \\
+        \texttt{\$ sudo systemctl enable udp\_discovery.service}
+    \end{enumerate}
+    

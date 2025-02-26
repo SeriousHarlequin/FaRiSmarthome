@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     componentName: 'ColorScheme',
     classPrefix: '',
     classSuffix: '-mode',
-    storage: 'localStorage', // or 'sessionStorage' or 'cookie'
+    storage: 'localStorage', // or 'sessionStorage' or 'cookie'farismart
     storageKey: 'nuxt-color-mode'
-  }
+  },
   // nitro: {
   //   serverHandlers: [
   //     {
@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   //   ]
   // }
   
+
 })
 
 //run to setup:

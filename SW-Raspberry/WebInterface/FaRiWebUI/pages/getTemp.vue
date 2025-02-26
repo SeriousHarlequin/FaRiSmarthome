@@ -28,7 +28,7 @@
     methods: {
       async fetchData() {
         try {
-          const response = await fetch('http://farismart/fetchTemp')
+          const response = await fetch('http://192.168.243.28/fetchTemp')
           if (!response.ok) {
             throw new Error(`Error: ${response.status} ${response.statusText}`)
           }
