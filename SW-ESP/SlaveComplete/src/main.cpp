@@ -13,8 +13,7 @@ Led leds;
 
 void setup() {
     Serial.begin(9600);
-    while (!Serial || millis() < 5000) { ; } //wait for serial connection with timeout
-
+    delay(2000);
     
     createTasks();
     vTaskSuspend(motionTask_handle);
