@@ -1,3 +1,6 @@
+#ifndef MODULES_DEFINITIONS_H
+#define MODULES_DEFINITIONS_H
+
 #include <Arduino.h>
 #include "FastLED.h"
 
@@ -12,11 +15,16 @@
 #define MOD_PIN 3
 #define BAT_PIN 1
 
-#define NIX 0
-#define SWITCH 1
-#define MOTION 2
 #define SWITCH_ADC 4060
 #define MOTION_ADC 3900
 #define TOLERANZ 80
 
 #define WAIT_ADC 500
+
+enum TaskState {
+    NONE,
+    SWITCH,
+    MOTION
+};
+
+#endif

@@ -1,9 +1,9 @@
 #include "slave.h"
 #include "modulesDefinitions.h"
 
-int checkConnectedModule(){
+TaskState checkConnectedModule(){
     static unsigned long timeADC = 0;
-    static int moduleSet = 0;
+    static TaskState moduleSet = NONE;
 
 
     if(millis() - timeADC > WAIT_ADC){
@@ -19,7 +19,7 @@ int checkConnectedModule(){
           moduleSet = SWITCH;
         } 
         else if(rawADC <= 100)
-          moduleSet = NIX;
+          moduleSet = NONE;
     }
     return moduleSet;
 }

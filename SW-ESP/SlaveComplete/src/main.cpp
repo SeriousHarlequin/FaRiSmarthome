@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include "espnowSlave.h"
-#include "modulesDefinitions.h"
 #include "slave.h"
 
 void createTasks();
@@ -10,45 +9,61 @@ void switchTask(void *pvParameters);
 TaskHandle_t switchTask_handle;
 
 EspNowSlave espnow;
+Led leds;
 
 void setup() {
     Serial.begin(9600);
-    while (!Serial || millis() < 5000) { ; } //wait for serial connection
+    while (!Serial || millis() < 5000) { ; } //wait for serial connection with timeout
+
     
     createTasks();
-    espnow.init();  
+    vTaskSuspend(motionTask_handle);
+    vTaskSuspend(switchTask_handle);
     
+    espnow.init();  
     while(espnow.macMaster[0] == 0) {
-        espnow.lookForMaster();
         Serial.println("Looking for master");
+        espnow.lookForMaster();
+        leds.showErrorNoMaster();
         delay(1000);
     }
-    
-    int active = checkConnectedModule();
+    leds.showMasterFound();
+        
+        
+    TaskState activeModule = checkConnectedModule();
+    Serial.printf("active Task: %d\n", activeModule);
+    leds.showModuleConnected();
+    switch (activeModule){
+        case SWITCH:
+            vTaskResume(switchTask_handle);
+            break;
 
-    switch (active)
-    {
-    case SWITCH:
-        /* code */
-        break;
-    
-    default:
-        break;
+        case MOTION:
+            vTaskResume(motionTask_handle);
+            break;
+        
+        case NONE:
+        default:
+            Serial.println("No module connected");
+            leds.showErrorNoModule();
+            break;
     }
+
+
 }
 
 void loop() {}
 
 void motionTask(void *pvParameters){
     for(;;){
-        Serial.println("Task 1");
+        Serial.println("Task MOTION");
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
 
 void switchTask(void *pvParameters){
     for(;;){
-        Serial.println("Task 2");
+        Serial.println("Task SWITCH");
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
