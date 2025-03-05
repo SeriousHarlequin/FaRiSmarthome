@@ -8,12 +8,13 @@
 
     \begin{itemize}
         \item Microcontroller
-        \item Temperature sensor
+        \item Temperature Sensor
         \item LED Indicator
         \item USB-C Connector
         \item 3.3V DC-DC Converter
         \item Module-Connector
     \end{itemize}
+    \newpage
 
     \subsubsection{Microcontroller}
         The basic node uses an ESP32 C3 microcontroller. It is a low-power, highly
@@ -23,11 +24,22 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.7\textwidth]{assets/HW/ESP32-C3-sheet.png}
+            \includegraphics[height = 6cm]{assets/HW/ESP32-C3-sheet.png}
             \caption{ESP-C3 Datasheet in mm}
+            
         \end{figure}
 
-    
+        It does not have as many GPIO pins compared to the ESP32-S3, however the abundance
+        of GPIO pins is not necessary for the basic node. The ESP32 C3 is also cheaper and 
+        alocates less space on the PCB.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[height = 7.5cm]{assets/HW/ESP32-C3-schematic.png}
+            \caption{ESP32-C3 implemented in the schematic.}
+        \end{figure}
+
+
     \subsubsection{Temperature sensor}
         The DS18B20 was chosen as the temperature sensor. It is a digital thermometer
         with an operating temperature range of -55°C to +125°C. The sensor is connected
@@ -48,7 +60,7 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.7\textwidth]{assets/HW/RGB-LED-schematic.png}
+            \includegraphics[width=0.4\textwidth]{assets/HW/RGB-LED-schematic.png}
             \caption{RGB-LEDs implemented in the schematic.}
         \end{figure}
 
@@ -56,11 +68,41 @@
 
     \subsubsection{3.3V DC-DC Converter}
 
+    The  step-down converter TLV62569 from Texas Instruments is used to convert 
+    the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
+    of up to 95\%, which is significant for battery operation. It powers the
+    microcontroller, temperature sensor and a module, if attached to the
+    Module-Connector.
+
     \subsubsection{Module-Connector}
+
+    The module connector is used to join additional modules to the basic module.
+    The connector has 15 pins, 8 for power and powermanagment and 7 for 
+    communication. 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{assets/HW/Module-Connector-schematic.png}
+        \caption{Module-Connector implemented in the schematic.}
+    \end{figure}
+
+    Pin 3-5 and 6-8 are symmetrical to each other. It was designed this way
+    to allow the battery module and motion module to be attached simultaneously.
+    The battery module is plugged into pin 1-5 and is connected to following 
+    voltages:
+    
+    \begin{itemize}
+        \item 1. VBAT - used to monitor the battery voltage
+        \item 2. VBUS - used to charge and disable the battery module when the USB-C is connected
+        \item 3. 3V3 - not used, but may be relavant for future modules/revisions
+        \item 4. GND
+        \item 5. 5V - The battery module powers the basic node over this pin
+    \end{itemize}
+     
+    
 
 \subsection{Hardware - V2.1}
 
 \subsection{Hardware - V2.0}
 
-\subsection{Hardware - V1.0}
         
