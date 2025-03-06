@@ -1,52 +1,100 @@
-\chapter{Requirements} \setAuthor{Fabian Schätzschock}
+\chapter{Used technologies} \setAuthor{Fabian Schätzschock}
 The following chapter will outline the requirements for the 
 project. It describes what concepts and technologies are needed
 to implement the project.
     \section{Hardware}
         \subsection{Microcontroller}
 
-    \section{Software}
-        \subsection{IDE}
-        For developing purposes an IDE fulfilling the following criteria is needed:
-        \begin{itemize}[itemsep=0em]
-            \item \textbf{Integrates the Arduino framework:}
-            Needs to integrate Arduino as most of the code will be written using it.
-            \item \textbf{Support for different microcontrollers:}
-            Supporting different microcontrollers, to allow for flexibility
-            in developing new Nodes.
-            \item \textbf{Manages Library integration:}
-            Streamlines installing and managing libraries used in the project.
-            \item \textbf{Free:}
-            To allow anyone to easily modify  or create their own smart home
-            using this project as a base.
-            \item \textbf{Compiling and uploading code:} 
-            Simplifying the process of uploading code to the microcontroller.
-            \item \textbf{Edit Code through SSH:}
-            Streamline the process of editing and executing code remotely
-        \end{itemize} 
+    \section{IDE}
+    For developing purposes an IDE fulfilling the following criteria is needed:
+    \begin{itemize}[itemsep=0em]
+        \item \textbf{Integrates the Arduino framework:}
+        Needs to integrate Arduino as most of the code will be written using it.
+        \item \textbf{Support for different microcontrollers:}
+        Supporting different microcontrollers, to allow for flexibility
+        in developing new Nodes.
+        \item \textbf{Manages Library integration:}
+        Streamlines installing and managing libraries used in the project.
+        \item \textbf{Free:}
+        To allow anyone to easily modify  or create their own smart home
+        using this project as a base.
+        \item \textbf{Compiling and uploading code:} 
+        Simplifying the process of uploading code to the microcontroller.
+        \item \textbf{Edit Code through SSH:}
+        Streamline the process of editing and executing code remotely
+    \end{itemize} 
 
-            \subsubsection{Visual Studio Code}
-            \subsubsection{PlatformIO}
+        \subsection{Visual Studio Code}
+        \subsection{PlatformIO}
 
-        \subsection{Microcontroller Framework and Tools}
-
-        \subsection{Communication between Nodes}
+    \section{Communication between Nodes}
+    
+        \subsection{Note-to-Note}
+        Communication between nodes should be possible between the bridge and
+        any node, all traffic should be routed through the bridge.
+        The following protocols are considered:
+            \subsubsection{MQTT}
+            MQTT is an OASIS standard messaging protocol for 
+            IoT-Applications that builds on top of TCP/IP and 
+            works on a publish/subscribe model, which makes it easy
+            to set up communication between devices without knowing
+            their IP-Addresses. It requires a dedicated broker to
+            function, that can be set up as a service on the 
+            Raspberry Pi \cite{mqtt_nodate}.
+            One mayor upside of using MQTT is that it is compatible
+            with every, in this smart home involved, device.
         
-            \subsubsection{Note-to-Note}
-            Communication between nodes should be possible between any two nodes
-            both ways.
+        
+            \subsubsection{ESP NOW} 
+            ESP-NOW is a wireless communication protocol capable of
+            working with Wi-Fi and Bluetooth. It supports a 
+            multitude of Espressif microcontrollers and is widely 
+            used in IoT-Applications. The main advantage of using
+            ESP-NOW is that is requires no router or existing
+            network to function meaning it's not dependent on
+            a good Wi-Fi coverage. While indoor use drastically
+            reduces the range of 200m per unit depending on various
+            factors \cite{esp-now-reach_2024} 
+            the integrated multihop feature that allows the devices 
+            to relay messages to each other can be used to extend 
+            the range to hard-to-reach locations. One mayor downside
+            of the protocol is that one peer can only communicate with
+            up to 20 other peers.
+            \\~\\
+            Due to the listed advantages, ESP-NOW is the \textbf{preferred
+            communication protocol} for this project.
 
-            \subsubsection{Note-to-Server}
-            Communication between the nodes and the web server, as well as the 
-            database, should be possible both ways.
+        \subsection{Note-to-Server}
+        Communication between the nodes and the web server, as well as the 
+        database, should be possible both ways.
 
-        \subsection{Backend}
-        To record and read previous data, a database is needed, it should ideally be 
-        working with time series data and be able to handle a large amount of data, 
-        as it will mainly be used for storing sensor data.
+            \subsubsection{MQTT}
+            MQTT can be used to bridge the gap between the nodes and the server.
+            The server can subscribe to the same topics as the nodes, and the nodes
+            can publish to the same topics as the server.
+        
+                \textbf{Disadvantages:}
+                Unfortunately, MQTT integration for the Web server as well as the database
+                is not as straightforward as the alternative and would require a lot more 
+                overhead.
+        
+            \subsubsection{HTTP}
+            HTTP can be used to bridge the gap between the nodes and the server.
+            This way a dedicated Node can be set up to handle the communication
+            with both the Web server and the database and distribute it to the 
+            rest of the nodes.
+        
+            \vspace{1cm}
+            \textbf{For this project, HTTP is the preferred protocol for 
+            node-to-server communication.}
 
-        \subsection{Frontend}
-        The frontend should be able to visualize the data stored in the database,
-        control the actuators and sensors, and display the current state of the 
-        system. To implement this, a high-level web framework is preferred to 
-        simplify the development process. 
+    \section{Backend}
+    To record and read previous data, a database is needed, it should ideally be 
+    working with time series data and be able to handle a large amount of data, 
+    as it will mainly be used for storing sensor data.
+
+    \section{Frontend}
+    The frontend should be able to visualize the data stored in the database,
+    control the actuators and sensors, and display the current state of the 
+    system. To implement this, a high-level web framework is preferred to 
+    simplify the development process. 
