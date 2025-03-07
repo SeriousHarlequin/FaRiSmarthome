@@ -44,7 +44,7 @@
         The DS18B20 was chosen as the temperature sensor. It is a digital thermometer
         with an operating temperature range of -55°C to +125°C. The sensor is connected
         to the microcontroller via GPIO0 and communicates over a 1-Wire bus.
-        It is fairly compact and would not take up much space on the PCB.
+        This sensor was used instead of the DHT11, for being smaller in size.
 
         \begin{figure}[H]
             \centering
@@ -66,6 +66,21 @@
 
     \subsubsection{USB-C Connector}
 
+    The USB-C connector is used to power the basic node. Thi sparticualr connector was
+    chosen, duo to being the new standard for USB connectors, therefor being widely spread.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{assets/HW/TBD2.png}
+        \caption{USB-C Connector implemented in the schematic.}
+    \end{figure}
+
+    The USB protocol interacts with the charger to determine the power output. In order to
+    power the basic node with 5V, a 5.1kOhm resistor is connected to the CC1 and CC2 pins.
+    The resistor tells the charger that the basic node is a default USB device and can draw
+    up to 3A of current. 
+    \cite{noauthor_fugen_2023}
+    
     \subsubsection{3.3V DC-DC Converter}
 
     The  step-down converter TLV62569 from Texas Instruments is used to convert 
@@ -93,13 +108,41 @@
     
     \begin{itemize}
         \item 1. VBAT - used to monitor the battery voltage
-        \item 2. VBUS - used to charge and disable the battery module when the USB-C is connected
+        \item 2. VBUS - used to charge and disable the battery module when the USB-C 
+        is connected
         \item 3. 3V3 - not used, but may be relavant for future modules/revisions
         \item 4. GND
         \item 5. 5V - The battery module powers the basic node over this pin
     \end{itemize}
-     
+
+    Pin 6-15 are used for communication between the modules. 
+
+
+    \subsubsection{Module-Detection}
     
+    The basic node regonizes the attached module by measuring the voltage on pin 9.
+    A 100kOhm resistor is installed on the base module pulling pin 9 to GND. 
+    When a module is attached, a voltage devider is created. The voltage on pin 9 is 
+    determinted by the second resistor on the module. The microcontroller reads the
+    voltage and can determine the attached module. 
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{assets/HW/Module-Detection-schematic.png}
+        \caption{Module-Detection implemented on the base module.}
+    \end{figure}
+
+    \subsubsection{PCB}
+
+    The PCB has a size of 30x75mm. The compenents used were mainly SMD components, 
+    to keep the PCB small. 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{assets/HW/TBD.png}
+        \caption{PCB of the basic node. [Blue - Backside, Red - Frontside]}
+    \end{figure}	
+
 
 \subsection{Hardware - V2.1}
 
