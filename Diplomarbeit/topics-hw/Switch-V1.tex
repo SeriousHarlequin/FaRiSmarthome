@@ -1,0 +1,29 @@
+\subsection{Hardware - V1.1}
+
+    The switch module allows to switch 230V devices on and off and measure the current draw. 
+    This module can not be compined with any other module. The switch module has two revisions,
+    V1.0 and V1.1.
+
+    \subsubsection{Relay}
+        The switch module uses a relay to switch the 230V devices on and off. The relay used is 
+        the JW1aFSN from Panasonic. The relay is controlled by a transistor and a flyback diode
+        to protect the transistor from the voltage spike when the relay is switched off. The relay
+        is rated for 10A at 250VAC.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{assets/HW/TBD.png}
+            \caption{Switch implemented in the schematic.}
+        \end{figure}
+    
+    \subsubsection{Current-Sensor}
+
+        The current sensor is used to measure the current draw of the switched device. The current
+        sensor used is the ACS712 from Allegro. The sensor is rated for 20A and has a sensitivity of 
+        185mV/A. The sensor is connected to the microcontroller over an analog pin. 
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{assets/HW/TBD.png}
+            \caption{Current-Sensor implemented in the schematic.}
+        \end{figure}
