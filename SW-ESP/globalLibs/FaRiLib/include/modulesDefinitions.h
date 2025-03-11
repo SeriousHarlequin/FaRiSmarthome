@@ -29,6 +29,8 @@
 #define ETH_RST_PIN                     9//14
 #define ETH_ADDR                        1
 
+#define TEMP_SENSOR 0
+
 enum TaskState {
     NONE,
     SWITCH,

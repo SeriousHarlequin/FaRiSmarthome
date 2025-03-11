@@ -10,4 +10,6 @@ public:
     bool lookForMaster();
 };
 
+extern EspNowSlave espnowSlave;
+
 #endif

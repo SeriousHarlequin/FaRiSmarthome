@@ -11,4 +11,6 @@ public:
     bool addPeer(const uint8_t * mac);
 };
 
+extern EspNowMaster espnowMaster;
+
 #endif

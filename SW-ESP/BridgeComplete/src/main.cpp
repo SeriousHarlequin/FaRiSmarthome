@@ -7,7 +7,6 @@ void createTasks();
 void udpBrodcast(void *pvParameters);
 TaskHandle_t udpBroadcast_handle;
 
-EspNowMaster espnow;
 AsyncWebServer server(80);
 AsyncUDP udp;
 bool eth_connected = false; //needed by library
@@ -16,7 +15,7 @@ void setup() {
     Serial.begin(9600);
     delay(1000);
 
-    espnow.init();
+    espnowMaster.init();
     ethernetInit();
     initWebServer(&server);
     createTasks();
@@ -35,15 +34,15 @@ void udpBrodcast(void *pvParameters) {
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
-    memcpy(&espnow.msgReceived, incomingData, sizeof(espnow.msgReceived));
+    memcpy(&espnowMaster.msgReceived, incomingData, sizeof(espnowMaster.msgReceived));
 
-    espnow.addPeer(mac); //checks for duplicates
+    espnowMaster.addPeer(mac); //checks for duplicates
 
     Serial.println("HELL YEAH!");
 
-    espnow.msgToSend.master = true;
-    strcpy(espnow.msgToSend.message, "Answer from master");
-    esp_now_send(mac, (uint8_t *) &espnow.msgToSend, sizeof(espnow.msgToSend));
+    espnowMaster.msgToSend.master = true;
+    strcpy(espnowMaster.msgToSend.message, "Answer from master");
+    esp_now_send(mac, (uint8_t *) &espnowMaster.msgToSend, sizeof(espnowMaster.msgToSend));
 
     //if a broadcast from a slave is received, send mac and verification
 }

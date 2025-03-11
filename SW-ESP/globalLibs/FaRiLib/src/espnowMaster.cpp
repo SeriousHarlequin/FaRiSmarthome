@@ -1,5 +1,7 @@
 #include "espnowMaster.h"
 
+EspNowMaster espnowMaster;
+
 bool EspNowMaster::addPeer(const uint8_t * mac) {
     std::array<uint8_t, 6> macAddress; //only conversion
     std::copy(mac, mac + 6, macAddress.begin());

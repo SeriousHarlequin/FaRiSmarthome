@@ -1,5 +1,7 @@
 #include "espnowSlave.h"
 
+EspNowSlave espnowSlave;
+
 bool EspNowSlave::lookForMaster() {
     uint8_t broadcast[] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
     //implement message for broadcast
