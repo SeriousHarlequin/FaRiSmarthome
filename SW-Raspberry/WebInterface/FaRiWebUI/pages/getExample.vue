@@ -24,7 +24,7 @@ const temp = ref('Not fetched yet')
 // Function to fetch temperature (can be executed multiple times)
 const fetchTempData = async () => {
   try {
-    const response = await fetch('http://192.168.103.119/fetchTemp')
+    const response = await fetch(`http://${ip.value}/fetchTemp`) //` not '
     const data = await response.text() // Read response as plain text
     console.log('Temperature received:', data)
     temp.value = data // Directly assign the received integer (as a string)
