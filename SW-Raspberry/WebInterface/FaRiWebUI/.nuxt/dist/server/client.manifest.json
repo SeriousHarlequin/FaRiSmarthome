@@ -7,12 +7,12 @@
     "module": true,
     "resourceType": "script"
   },
-  "/home/fabian/repos/FaRiSmarthome/SW-Raspberry/WebInterface/FaRiWebUI/node_modules/nuxt/dist/app/entry.js": {
+  "/home/fabian/FaRiSmarthome/SW-Raspberry/WebInterface/FaRiWebUI/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
     "isEntry": true,
-    "file": "/home/fabian/repos/FaRiSmarthome/SW-Raspberry/WebInterface/FaRiWebUI/node_modules/nuxt/dist/app/entry.js"
+    "file": "/home/fabian/FaRiSmarthome/SW-Raspberry/WebInterface/FaRiWebUI/node_modules/nuxt/dist/app/entry.js"
   }
 }

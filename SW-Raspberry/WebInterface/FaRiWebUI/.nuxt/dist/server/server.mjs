@@ -1,1 +1,1 @@
-export { default } from "file:///home/fabian/repos/FaRiSmarthome/SW-Raspberry/WebInterface/FaRiWebUI/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///home/fabian/FaRiSmarthome/SW-Raspberry/WebInterface/FaRiWebUI/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
