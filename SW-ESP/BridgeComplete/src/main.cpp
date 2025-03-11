@@ -38,8 +38,6 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
     espnowMaster.addPeer(mac); //checks for duplicates
 
-    Serial.println("HELL YEAH!");
-
     espnowMaster.msgToSend.master = true;
     strcpy(espnowMaster.msgToSend.message, "Answer from master");
     esp_now_send(mac, (uint8_t *) &espnowMaster.msgToSend, sizeof(espnowMaster.msgToSend));
