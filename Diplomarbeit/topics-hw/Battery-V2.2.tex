@@ -49,6 +49,28 @@
         basic node. The used IC is the TLV61070 from Texas Instruments, it is a high efficiency
         boost converter with a 95\% efficiency.
 
+        The inductor and the and the output voltage were calculated like stated in the
+        datasheet\cite{noauthor_tlv61070apdf_2022}. The inductor was calculated with the following formula:
+        
+        \begin{equation}
+            L = \frac{V_{OUT} \cdot I_{OUT}}{V_{IN} \cdot \eta}
+        \end{equation}  
+
+        The output voltage was set with a resistor divider to 5V:
+
+        \begin{equation}
+            R1 = ( \frac{V_{OUT}}{V_{REF}} - 1) \cdot R2
+        \end{equation}
+
+        Where $V_{REF}$ \cite{noauthor_tlv61070apdf_2022} is 500mV and $V_{OUT}$ is 5V. R2 was set to 100kOhm.
+
+        \begin{equation}
+            R1 = ( \frac{5V}{500mV} - 1) \cdot 100kOhm = 900kOhm \approx 1MOhm
+        \end{equation}
+
+        The closest value to 900kOhm was 1MOhm in the E12 series.
+        \newline
+        \newline
         To prevent the boost converter from being enabled when the USB-C port is connected, the
         VBUS voltage is used to disable the boost converter. When a charger is connected
         the VBUS signal(5V) is switches the transistor Q1 and pulls the enable pin to ground 
@@ -56,15 +78,14 @@
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=0.4\textwidth]{assets/HW/TBD.png}
+        \includegraphics[width=0.8\textwidth]{assets/HW/Boost-Converter.png}
         \caption{Boost-Converter implemented in the schematic.}
         \end{figure}
-
 
     \subsubsection{PCB}
 
         The PCB has a size of 30x41.5mm, it fits directly under the basic module. 
-        The compenents used were mainly SMD components, to keep the PCB small. 
+        The compenents used were mainly SMD components, in order to keep the PCB small. 
 
         \begin{figure}[H]
             \centering

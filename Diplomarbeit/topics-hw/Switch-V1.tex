@@ -12,18 +12,22 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.4\textwidth]{assets/HW/TBD.png}
+            \includegraphics[width=0.8\textwidth]{assets/HW/TBD.png}
             \caption{Switch implemented in the schematic.}
         \end{figure}
     
     \subsubsection{Current-Sensor}
 
         The current sensor is used to measure the current draw of the switched device. The current
-        sensor used is the ACS712 from Allegro. The sensor is rated for 20A and has a sensitivity of 
-        185mV/A. The sensor is connected to the microcontroller over an analog pin. 
+        sensor used is the ACS712ELCTR-20A-S from Allegro. The sensor is rated for 20A and has a sensitivity of 
+        100mV/A. The sensor is connected to the microcontroller over an analog pin.
+
+        The available versions of the sensor were +-5A, +-20A, and +-30A. The 20A version was 
+        chosen because it covers the current range of the relay.
+        
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.4\textwidth]{assets/HW/TBD.png}
+            \includegraphics[width=0.8\textwidth]{assets/HW/Current-Sensor-schematic.png}
             \caption{Current-Sensor implemented in the schematic.}
         \end{figure}
