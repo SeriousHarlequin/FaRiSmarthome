@@ -7,7 +7,7 @@
 typedef struct espnow_message {
   bool master;
   char message[50];
-  char a[32];
+  u_int8_t mac[6];
   int b;
   bool d;
 } espnow_message;

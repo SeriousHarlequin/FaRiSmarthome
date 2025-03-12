@@ -3,5 +3,6 @@
 #include <ESPAsyncWebServer.h>
 
 void initWebServer(AsyncWebServer*);
+void sendRequestAndWait();
 
 

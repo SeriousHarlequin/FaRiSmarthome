@@ -18,7 +18,8 @@ bool EspNow::init(){
 
 void EspNow::readMacAddress(){
   uint8_t baseMac[6];
-  esp_err_t ret = esp_wifi_get_mac(WIFI_IF_STA, baseMac);
+  esp_err_t ret = esp_read_mac(baseMac, ESP_MAC_WIFI_STA);
+
   if (ret == ESP_OK) {
     Serial.printf("%02x:%02x:%02x:%02x:%02x:%02x\n",
                   baseMac[0], baseMac[1], baseMac[2],

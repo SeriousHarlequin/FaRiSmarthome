@@ -78,7 +78,7 @@ void temperatureTask(void *pvParameters){
     for(;;){
         sensors.requestTemperatures(); 
         ambientTemp = sensors.getTempCByIndex(0);
-        Serial.printf("Temperature: %.2f\n", ambientTemp);
+        // Serial.printf("Temperature: %.2f\n", ambientTemp);
         vTaskDelay(10000 / portTICK_PERIOD_MS);
     }
 }
@@ -91,6 +91,31 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
     if(espnowSlave.macMaster[0] == 0){
         //See if it is a master and store its MAC
         memcpy(espnowSlave.macMaster, mac, 6);
+    }
+    Serial.println("Message received");
+    if(strcmp(espnowSlave.msgReceived.message, "req:temp") == 0){
+        espnowSlave.msgToSend.master = false;
+
+        // Convert ambientTemp to a C-style string
+        char tempStr[10];
+        dtostrf(ambientTemp, 6, 2, tempStr); // 6 is the minimum width, 2 is the number of decimal places
+
+        // Construct the message
+        snprintf(espnowSlave.msgToSend.message, sizeof(espnowSlave.msgToSend.message), "temp:%s", tempStr);
+        esp_err_t er = esp_now_send(
+            espnowSlave.msgReceived.mac, 
+            (uint8_t *) &espnowSlave.msgToSend, 
+            sizeof(espnowSlave.msgToSend));
+
+        if (er == ESP_OK) {
+            Serial.println("Temp Message sent");
+        } else {
+            Serial.printf("Temp Error sending message: %d\n", er);
+        }
+        for(int i = 0; i < 6; i++){
+            Serial.printf("%02X ", espnowSlave.macMaster[i]);
+        }
+        Serial.println();
     }
 }
 
