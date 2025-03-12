@@ -2,27 +2,27 @@
 #include "espnowMaster.h"
 #include "udpBroadcast.h"
 #include "WebServer.h"
+#include "globalVars.h"
 
 void createTasks();
 void udpBrodcast(void *pvParameters);
 TaskHandle_t udpBroadcast_handle;
 
-AsyncWebServer server(80);
-AsyncUDP udp;
-bool eth_connected = false; //needed by library
 
 void setup() {
     Serial.begin(9600);
     delay(1000);
 
-    espnowMaster.init();
     ethernetInit();
+    espnowMaster.init();
     initWebServer(&server);
     createTasks();
 
 }
 
-void loop() {}
+void loop() {
+
+}
 
 void udpBrodcast(void *pvParameters) {
     IPAddress broadcastIP(192, 168, 178, 255);
@@ -38,11 +38,23 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
     espnowMaster.addPeer(mac); //checks for duplicates
 
-    espnowMaster.msgToSend.master = true;
-    strcpy(espnowMaster.msgToSend.message, "Answer from master");
-    esp_now_send(mac, (uint8_t *) &espnowMaster.msgToSend, sizeof(espnowMaster.msgToSend));
+    if(strcmp(espnowMaster.msgReceived.message, "Slave looking") == 0){ //check if mac requ
+        espnowMaster.msgToSend.master = true;
+        strcpy(espnowMaster.msgToSend.message, "Answer from master");
+        memcpy(espnowMaster.msgToSend.mac, ETH.macAddress().c_str(), sizeof(espnowMaster.msgToSend.mac));
+        esp_now_send(mac, (uint8_t *) &espnowMaster.msgToSend, sizeof(espnowMaster.msgToSend));
+        Serial.println("Answered slave");
+    }
 
-    //if a broadcast from a slave is received, send mac and verification
+    if(strncmp(espnowMaster.msgReceived.message, "temp:", 5) == 0){//if temperature is received
+        temp = atof(espnowMaster.msgReceived.message + 5);
+        newTemp = true;
+
+        
+        
+    }
+
+
 }
 
 void createTasks() {
