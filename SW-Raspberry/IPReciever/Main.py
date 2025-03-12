@@ -1,5 +1,6 @@
 import socket
 from flask import Flask, jsonify
+from flask_cors import CORS  # Import flask-cors
 import threading
 
 # UDP settings
@@ -11,6 +12,7 @@ last_sender_ip = None
 
 # Create a Flask app
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 @app.route('/get_ip', methods=['GET'])
 def get_ip():

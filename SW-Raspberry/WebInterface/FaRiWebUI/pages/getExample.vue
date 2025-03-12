@@ -11,7 +11,7 @@ import { ref, computed } from 'vue'
 
 // IP fetching (runs once when the component is created)
 const { data: ipData } = await useAsyncData('ipData', async () => {
-  const response = await fetch('http://192.168.103.120:5000/get_ip')
+  const response = await fetch('http://127.0.0.1:5000/get_ip')
   const data = await response.json()
   return data.last_sender_ip
 })
