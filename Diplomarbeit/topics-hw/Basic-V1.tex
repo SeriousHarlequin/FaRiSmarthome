@@ -1,1 +1,35 @@
-\subsection{Hardware - V1.0}
+\subsection{Hardware - v1.0/V1.1}
+    Version 1.X of the basic module was inteeded to be a ruff prototype to test the concept of a 
+    plugable battery powered module. For this reason only the battery module was designed for this
+    version. Version 1.0 was never manifactured, but the design was used as a base for the
+    version 1.1. The version 1.1 was manifactured and tested.
+
+    \subsubsection{Module-Connector}
+        The module connector had three connectors, one for the battery and two for the
+        module. The battery connector has a 5 pin header. 
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{assets/HW/TBD2.png}
+            \caption{Module-Connector implemented in the schematic.}
+        \end{figure}
+
+
+        To connect a module there is a 10 pin header with IO-ports and a 6 pin header 
+        for suppling power. It was not inteeded to design a module, besides the battery module,
+        for this version. It was planned to be used in testing as an development board and connecting
+        the sensors over jumper wires.
+
+    \subsubsection{DC-DC Converter}
+        
+        To convert the 5V from the USB port to 3.3V a LM7805 linear regulator was used. This regulator
+        would then be bybassed by the battery module when connected. Then the 3.3V would be supplied by the
+        battery module. The 5V was also used to charge the battery.
+
+        The LM7805 was turned off by a P-Channel MOSFET when the battery module was connected.
+
+    \subsubsection{Seriel-To-USB Converter}
+        The Seriel-To-USB converter was deamed to be unnassary since the MCU could also be programmed 
+        over native USB, it was removed from later versions.
+
+    \subsubsection{PCB}
