@@ -1,4 +1,4 @@
-\subsection{Hardware - V2.2(Finale)}
+\subsection{Hardware - V2.2(Final)}
 \setAuthor{Richard Krammer}
 
 
@@ -69,6 +69,8 @@
         \end{figure}
 
 
+
+
     \subsubsection{Temperature sensor}
         The DS18B20 was chosen as the temperature sensor. It is a digital thermometer
         with an operating temperature range of -55°C to +125°C. The sensor is connected
@@ -95,20 +97,35 @@
 
     \subsubsection{USB-C Connector}
 
-    The USB-C connector is used to power the basic node. This particular connector was
-    chosen, duo to being the new standard for USB connectors, therefor being widely spread.
-    
+    The USB-C connector is used to power and programm the basic node. The connector can
+    be plugged in both ways, which makes it more user-friendly.
+
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.4\textwidth]{assets/HW/USB-C-schematic.png}
         \caption{USB-C Connector implemented in the schematic.}
     \end{figure}
 
+    This particular connector was chosen, duo to being the new standard for USB connectors, 
+    therefor being widely spread.
+    
     The USB protocol interacts with the charger to determine the power output. In order to
     power the basic node with 5V, a 5.1kOhm resistor is connected to the CC1 and CC2 pins.
     The resistor tells the charger that the basic node is a default USB device and can draw
-    up to 3A of current. 
-    \cite{noauthor_fugen_2023}
+    up to 3A of current.\cite{noauthor_fugen_2023}
+
+    A schottky diode is used to avoid backflow of current.
+
+    \subsubsection{Serial-Port}
+
+    This interface is used to programm the basic node. The interface is connected directly
+    with the UART of the ESP32-C3. 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{assets/HW/Serial-Port-schematic.png}
+        \caption{Serial-Port implemented in the schematic.}
+    \end{figure}
     
     \subsubsection{3.3V DC-DC Converter}
 
@@ -186,54 +203,3 @@
     \end{figure}	
 
 
-\subsection{Hardware - V2.1}
-
-    This version of the basic node had minor changes to the hardware. 
-
-    \subsubsection{Serial Port}
-
-        It lacked an laid out Serial Interface, which was added in V2.2.
-        During the software development of the basic node, it happened that the 
-        programming over the nativ USB of the ESP32 C3 was not possible. Duo to 
-        setting buildflags, that would disable USB programming. To make programming
-        easier and fix this issue, the serial interface laid out on the PCB. 
-
-
-    \subsubsection{Module-Detection}
-        While testing with this version, it was noticed that pin 3 was floating,
-        potentially causing the base module to regonize a module without one being attached.
-        To fix this issue in V2.2, the voltage divider on the modules were split up and
-        a 100kOhm resistor was added to pull the pin to GND on the base module.
-
-    \subsubsection{PCB}
-        The size of the PCB is identical to V2.2 with a footprint of 30x70mm. 
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth]{assets/HW/TBD.png}
-        \caption{PCB of the basic node V2.1. [Blue - Backside, Red - Frontside]}
-    \end{figure}
-
-
-\subsection{Hardware - V2.0}
-
-    This version of the basic node had major changes to the hardware. Following flaws
-    were disscovered in V2.0:
-
-    \subsubsection{Ground-Plane}
-        The ground-plane was removed underneath the ESP32-C3 to improve the
-        signal quality. 
-
-    \subsubsection{Button}
-        One GPIO of the MCU was not used, so it was decided to add a pinheader to the basic node.
-        Where a button or magnetic switch could be attached to. When pressed or triggered, the
-        button could be used to interact with the node or trigger a specific action.
-
-    \subsubsection{PCB}
-        The size of the PCB is identical to V2.1 with a footprint of 30x70mm.
-        
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth]{assets/HW/TBD.png}
-        \caption{PCB of the basic node V2.0. [Blue - Backside, Red - Frontside]}
-    \end{figure}
