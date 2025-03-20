@@ -28,9 +28,46 @@ to implement the project.
     \end{itemize} 
 
         \subsection{Visual Studio Code}
+        \begin{wrapfigure}[3]{tr}{0.13\textwidth} % 'r' for right, and width of the image
+            \vspace{-1.4cm}
+            \hspace{3cm}
+            \includegraphics[width=\linewidth]{VSCode.png}
+        \end{wrapfigure}
+        Visual Studio Code \cite{visualStudioCode} is a text editor developed by Microsoft that
+        offers a wide range of features, including a VSCode server that
+        allows for remote development. It also offers a wide range of 
+        extensions, including PlatformIO, which transforms it into a 
+        powerful IDE for developing microcontroller applications.
+
         \subsection{PlatformIO}
+        \begin{wrapfigure}[3]{tr}{0.13\textwidth} % 'r' for right, and width of the image
+            \vspace{-1.4cm}
+            \hspace{3cm}
+            \includegraphics[width=\linewidth]{PlatformIO.png}
+        \end{wrapfigure}
+        PlatformIO \cite{platformio} is an open-source ecosystem for microcontroller
+        development that supports a wide range of microcontrollers including
+        the ESP32 and ESP8266. It supports multiple frameworks like
+        Arduino or ESP-IDF and can be integrated into Visual Studio Code,
+        CLion or used through the command line. It also eases library inclusion
+        and streamlines the compiling and uploading process. 
 
     \section{FreeRTOS}
+        \begin{wrapfigure}[2]{tr}{0.13\textwidth} % 'r' for right, and width of the image
+            \vspace{-1.4cm}
+            \hspace{3cm}
+            \includegraphics[width=\linewidth]{freeRTOS.png}
+        \end{wrapfigure}
+    FreeRTOS \cite{freertos} is a market-leading open source embedded system RTOS supporting 
+    over 40 processor architectures including the ESP32 with a small memory 
+    footprint, fast execution times, and cutting-edge RTOS features.
+    \par
+    A RTOS is necessary for this project as there are a lot of asynchronous
+    tasks that need to be handled, like reading sensor data, controlling
+    actuators, and handling communication between the nodes. Using interrupts
+    would be to complex and error-prone, so the integrated RTOS is the
+    preferred solution.
+
     %mention that Interrupts and Webserver might be a problem on the bridge
 
     \section{Communication}
@@ -40,13 +77,13 @@ to implement the project.
         any node, all traffic should be routed through the bridge.
         The following protocols are considered:
             \subsubsection{MQTT}
-            MQTT is an OASIS standard messaging protocol for 
+            MQTT \cite{mqtt_nodate} is an OASIS standard messaging protocol for 
             IoT-Applications that builds on top of TCP/IP and 
             works on a publish/subscribe model, which makes it easy
             to set up communication between devices without knowing
             their IP-Addresses. It requires a dedicated broker to
             function, that can be set up as a service on the 
-            Raspberry Pi \cite{mqtt_nodate}.
+            Raspberry Pi.
             One mayor upside of using MQTT is that it is compatible
             with every, in this smart home involved, device.
         
