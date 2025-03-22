@@ -8,6 +8,7 @@ public:
     uint8_t macMaster[6];
 
     bool lookForMaster();
+    bool addMaster(const uint8_t*);
 };
 
 extern EspNowSlave espnowSlave;

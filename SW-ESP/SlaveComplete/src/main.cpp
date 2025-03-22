@@ -83,14 +83,19 @@ void temperatureTask(void *pvParameters){
     }
 }
 
-void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
-    memcpy(&espnowSlave.msgReceived, incomingData, sizeof(espnowSlave.msgReceived));
 
+void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
+
+    if(sizeof(espnowSlave.msgReceived) != len) return;
+    memcpy(&espnowSlave.msgReceived, incomingData, sizeof(espnowSlave.msgReceived));
+    
     if (!espnowSlave.msgReceived.master) return;
 
     if(espnowSlave.macMaster[0] == 0){
         //See if it is a master and store its MAC
         memcpy(espnowSlave.macMaster, mac, 6);
+        espnowSlave.addMaster(mac);
+
     }
     Serial.println("Message received");
     if(strcmp(espnowSlave.msgReceived.message, "req:temp") == 0){
@@ -103,7 +108,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
         // Construct the message
         snprintf(espnowSlave.msgToSend.message, sizeof(espnowSlave.msgToSend.message), "temp:%s", tempStr);
         esp_err_t er = esp_now_send(
-            espnowSlave.msgReceived.mac, 
+            espnowSlave.macMaster, 
             (uint8_t *) &espnowSlave.msgToSend, 
             sizeof(espnowSlave.msgToSend));
 
@@ -114,6 +119,9 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
         }
         for(int i = 0; i < 6; i++){
             Serial.printf("%02X ", espnowSlave.macMaster[i]);
+        } Serial.println();
+        for(int i = 0; i < 6; i++){
+            Serial.printf("%02X ", mac[i]);
         }
         Serial.println();
     }
