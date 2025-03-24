@@ -1,0 +1,22 @@
+\section{Project Structure} \label{sec:node_project_structure}
+
+This section describes the project structure of the nodes
+and how functionality is meant to be extended. Every Project
+should make use of the FaRiLib library (see section \ref{sec:farilib})
+and follow a similar structure.
+
+    \subsection{Slave Node}
+    Ideally there should only be one slave binary that is able to 
+    run on all slave Nodes. This means, unless there is a good 
+    reason, new functionality should be implemented into the preexisting
+    slave project.
+        \subsubsection{Adding new Functionality}
+        To add new functionality to the slave node, the following steps
+        should be taken:
+        \begin{enumerate}
+            \item Create a new task that handles the new functionality
+            \item Add the new case to the switch statement in the
+            \texttt{Setup} function choosing what tasks to activate
+            \item Adjust the Web server to display the data
+        \end{enumerate}
+    \subsection{Bridge Node}
