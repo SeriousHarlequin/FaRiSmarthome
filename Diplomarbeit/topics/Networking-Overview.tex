@@ -10,13 +10,16 @@
     for the user. It will communicate with the database and the
     dedicated Bridge-Node via HTTP. It should be capable of displaying
     and changing the state of the devices in the smart home.
-    \subsection{Database}
-    The database will store device states and measurements.
-    Is can be read and written to by both the Web server and the
-    Bridge-Node. 
     \subsection{Bridge-Node}
     The Bridge-Node will act as a bridge between everything running
     on the Raspberry Pi (Web server, database) and the ESP-NOW devices.
     It will be capable of receiving and sending data via both HTTP and
     ESP-NOW. It will also be responsible for discovering new ESP-NOW
     devices.
+    \subsection{Slave-Nodes}
+    The Slave-Nodes will be the ESP32 devices. They will be capable of
+    sending and receiving data via ESP-NOW to and from the Bridge-Node.
+    This only happens when a request is made by the Bridge-Node. Due to 
+    the fact that the Bridge only sends a request when the user interacts
+    with the Web server, all Slave traffic is triggered by the Webserver.
+    Note that this excludes the discovery process (see section \ref{sec:espnow_discovery}).

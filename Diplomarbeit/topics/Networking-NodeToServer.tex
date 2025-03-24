@@ -1,17 +1,7 @@
-\section{Node-to-Server Communication}
-This section discusses important aspects or problems of the communication between
-the nodes and the server. Note that the implementation of these aspects is discussed in section
-\ref{sec:farilib_espnow}.
+\section{Device Discovery}
+This section discusses important aspects or problems of the device discovery process.
+This refers to both the ESP-NOW discovery process and the network discovery process.
 
-\vspace{0.5cm}
-
-Due to the fact that ESP-NOW is exclusive to Espressif microcontrollers,
-a bridge between the nodes and the server is needed. This bridge can be 
-routed through a preexisting Network as the Web server requires 
-one anyway.
-
-
-    
 
     \subsection{Network Discovery}
     For discovering the Raspberry Pi on the ESP and vice versa,
@@ -34,3 +24,20 @@ one anyway.
         to discover the Raspberry Pi in any network. To minimize
         unintended traffic, the broadcast are only sent for a set
         period of time after boot.
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{topics/flowcharts/UDP-Discovery.drawio.png}
+            \caption{UDP Discovery Process}
+            \label{fig:udp_discovery}
+        \end{figure}
+
+        \subsection{ESP-NOW Discovery} \label{sec:espnow_discovery}
+        The ESP-NOW discovery process is a crucial part of the system. It allows the
+        bridge node to discover new nodes and allows the slave nodes to find the bridge
+        node. The process is as seen in the following flowchart:
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{topics/flowcharts/ESP-NOW-Discovery.drawio.png}
+            \caption{ESP-NOW Discovery Process}
+            \label{fig:espnow_discovery}
+        \end{figure}
