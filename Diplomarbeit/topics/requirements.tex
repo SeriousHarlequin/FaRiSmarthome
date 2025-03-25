@@ -6,6 +6,17 @@ to implement the project.
         \subsection{Microcontroller}
         
     \section{Arduino}\label{sec:arduino}
+    \begin{wrapfigure}[2]{tr}{0.13\textwidth} % 'r' for right, and width of the image
+        \vspace{-1.4cm}
+        \hspace{3cm}
+        \includegraphics[width=\linewidth]{Arduino_Logo.png}
+    \end{wrapfigure}
+    The Arduino framework is an open source platform that
+    provides a subset of C++ tailored for embedded systems
+    with a vast ecosystem of libraries. It is widely used
+    and beginner-friendly, making it the perfect choice for
+    this project, due to the fact that the smart home 
+    should be easy to extend and modify.
 
     \section{Development Environment}
     For developing purposes an Enviroment fulfilling the following criteria is needed:
@@ -26,7 +37,7 @@ to implement the project.
         \item \textbf{Edit Code through SSH:}
         Streamline the process of editing and executing code remotely
     \end{itemize} 
-
+        \vspace{1cm}
         \subsection{Visual Studio Code}
         \begin{wrapfigure}[3]{tr}{0.13\textwidth} % 'r' for right, and width of the image
             \vspace{-1.4cm}
@@ -77,6 +88,11 @@ to implement the project.
         any node, all traffic should be routed through the bridge.
         The following protocols are considered:
             \subsubsection{MQTT}
+            \begin{wrapfigure}[2]{tr}{0.18\textwidth} % 'r' for right, and width of the image
+                \vspace{-1cm}
+                \hspace{3cm}
+                \includegraphics[width=\linewidth]{mqtt-logo.png}
+            \end{wrapfigure}
             MQTT \cite{mqtt_nodate} is an OASIS standard messaging protocol for 
             IoT-Applications that builds on top of TCP/IP and 
             works on a publish/subscribe model, which makes it easy
@@ -89,6 +105,11 @@ to implement the project.
         
         
             \subsubsection{ESP NOW} 
+            \begin{wrapfigure}[2]{tr}{0.18\textwidth} % 'r' for right, and width of the image
+                \vspace{-1cm}
+                \hspace{3cm}
+                \includegraphics[width=\linewidth]{espnow-logo.png}
+            \end{wrapfigure}
             ESP-NOW is a wireless communication protocol capable of
             working with Wi-Fi and Bluetooth. It supports a 
             multitude of Espressif microcontrollers and is widely 
