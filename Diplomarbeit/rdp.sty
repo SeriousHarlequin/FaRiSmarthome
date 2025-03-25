@@ -233,9 +233,20 @@ The undersigned candidates have chosen to prepare a diploma thesis with the foll
 \ihead{\headmark} % chapter/section title in the inner header
 \ohead{} % clear outer header
 \chead{} % clear center header
-\KOMAoptions{headsepline=.5pt} % optional: add a line below the header
+\setlength{\footskip}{4cm}% drag footer down
+\setlength{\headsep}{2cm}% drag header up
 
+\RedeclareSectionCommand[ %to fix weird space before chapter
+  beforeskip=0cm, % Space before the section (negative removes space)
+  afterskip=1em  % Space after the section
+]{chapter}
 
+\usepackage{needspace}
+\let\oldsubsection\subsection
+\renewcommand{\subsection}[1]{\needspace{10\baselineskip}\oldsubsection{#1}}
+
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}[1]{\needspace{10\baselineskip}\oldsubsubsection{#1}}
 
 \definecolor{background}{rgb}{0.9, 0.9, 0.9} % light gray
 \definecolor{mygreen}{rgb}{0.1, 0.5, 0.1} % darker green
