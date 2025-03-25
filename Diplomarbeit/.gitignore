@@ -9,5 +9,5 @@
 *.fls
 *.synctex.gz
 *.fdb_latexmk
-*.pdf
+main.pdf
 *.xml
