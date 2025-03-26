@@ -14,7 +14,7 @@ web server when requested.
         \texttt{\$ sudo vi /etc/systemd/system/upd\_discovery.service}
 
         \item Then add the following in the file:
-        \begin{lstlisting}[style=cppCode]
+        \begin{minted}{cpp}
 [Unit]
 Description=udp discovery
 After=network.target
@@ -29,8 +29,7 @@ User=fabian
 
 [Install]
 WantedBy=multi-user.target
-        \end{lstlisting}
-
+        \end{minted}
         \item Enable the service: \\
         \texttt{\$ sudo systemctl enable udp\_discovery.service}
     \end{enumerate}

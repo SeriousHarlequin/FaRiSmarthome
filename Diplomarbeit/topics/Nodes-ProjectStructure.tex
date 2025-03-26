@@ -19,4 +19,24 @@ and follow a similar structure.
             \texttt{Setup} function choosing what tasks to activate
             \item Adjust the Web server to display the data
         \end{enumerate}
+
     \subsection{Bridge Node}
+    While it is possible to have more devices communicating with
+    the web server, the recommended course of action is to have
+    one bridge node that handles all communication.
+    This means only one binary is needed for the bridge node.
+        \subsubsection{Adding new Functionality}
+        For adding new Nodes communicating via ESP-NOW to the smart 
+        home system, there is only minimal restructuring of the
+        source code necessary. \\~\\
+        If the new Node is not a ESP32, a new communication protocol
+        needs to be implemented. While this is not a trivial task,
+        it is possible to extend the FaRiLib library without complete
+        refactoring. \\~\\
+        Basic functionality can be added in the following files:
+        \begin{itemize}
+            \item \texttt{main.cpp}: Add a task or process an 
+            incoming message
+            \item \texttt{WebServer.cpp}: Add a new HTTP endpoint
+        \end{itemize}
+        

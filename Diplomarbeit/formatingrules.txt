@@ -25,6 +25,6 @@ for editing this paper. With examples :)
     - Code should always be within a fitting \lstlisting enviroment:
         \begin{lstlisting}[language=<lang>]
             code goes here
-        \end{lstlisting}
+        \end{minted}
       If not already defined, this can be done within the rdp.txt file.
     

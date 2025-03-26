@@ -23,17 +23,19 @@ every node project placed in the \texttt{SW-ESP} directory.
         \subsubsection{CMakeLists.txt}
         For the inclusion to work properly, a \texttt{CMakeLists.txt} file is
         necessary. It should contain the following lines: 
-    \begin{lstlisting}[style=cppCode]
-    project(FaRiLib)
+    \begin{minted}{cmake}
+project(FaRiLib)
 
-    include_directories(include)
+include_directories(include)
 
-    set(SOURCE_FILES
-            src/*
-    )
-    \end{lstlisting}
+set(SOURCE_FILES
+    src/*
+)
+    \end{minted}
+    % \captionof{listing}{CMakeLists.txt Configuration for FaRiLib}
+
         In combination with the configuration done in section \ref{sec:farilib_include},
-        this enables an include as simple as \texttt{\#include <FaRiLib.h>} in all
+        this enables an include statement as simple as \texttt{\#include <FaRiLib.h>} in all
         node projects.
 
     \subsection{ESP NOW} \label{sec:farilib_espnow}
@@ -42,6 +44,7 @@ every node project placed in the \texttt{SW-ESP} directory.
     \texttt{espnowSlave.h}. The master node is the bridge node, while the slave
     nodes are the nodes that send data to the bridge node. Their exact implementation
     can be seen in section \ref{sec:node_implemtenation}.
+        
         \subsubsection{ESP-NOW Objects}
         The aforementioned header files contain the \texttt{EspNowMaster} and the
         \texttt{EspNowSlave} classes. They both inherit from the abstract 
@@ -51,5 +54,27 @@ every node project placed in the \texttt{SW-ESP} directory.
             \includegraphics[width=0.9\textwidth]{topics/flowcharts/ESP-NOW-Inheritence.drawio.png}
             \caption{ESP-NOW Object Inheritance}
         \end{figure}
-
+        
     \subsection{HTTP} \label{sec:farilib_http}
+    There is also a template for the HTTP communication and 
+    UDP-Discovery Process. To initialize the full HTTP functionality,
+    the following functions need to be called inside the \texttt{Setup()}
+    function of the bridge-node:
+
+    \needspace{11\baselineskip}
+    \begin{minted}{cpp}
+#include "udpBroadcast.h"
+#include "WebServer.h"
+
+void setup() {
+
+    ethernetInit();
+    initWebServer(&server);
+    createTasks();
+    //...
+}
+    \end{minted}
+
+    This initializes the Ethernet connection, the Webserver, and starts
+    a task that periodically sends UDP broadcasts until the task is 
+    suspended.
