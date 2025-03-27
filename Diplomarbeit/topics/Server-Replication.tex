@@ -1,3 +1,32 @@
 \section{Replicating the operating system}
-        \subsection{Setup Script}
-        \subsection{Containerization}
+This section discusses the process of replicating the
+operating system of the Raspberry Pi. There are three options
+to consider. 
+    \subsection{Image}
+    Making an image of the operating system is the most
+    straightforward method. The image can be created using
+    the following command:
+    \begin{minted}{bash}
+sudo dd if=/dev/sdX of=~/image.img bs=4M
+    \end{minted}
+    While this method is simple, it has some drawbacks. The
+    image will be the same size as the SD card, even if the
+    card is mostly empty. This can lead to large image files
+    that take up unnecessary space. Additionally, you are
+    locked into the same Raspberry Pi model and partition
+    size.
+
+    \subsection{Setup Script}
+    A setup script can be used to replicate the operating
+    system. This script can be written in any language, but
+    bash is the most common. The script will install all the
+    necessary packages and configurations. This method is
+    more flexible than creating an image, but it requires
+    more work.
+
+    \subsection{Containerization}
+    The best solution is to use containerization. Docker is
+    the most popular containerization tool, it allows
+    you to create a container that contains all the necessary
+    packages and configurations. This container can then be
+    run on any Computer that has Docker installed. 
