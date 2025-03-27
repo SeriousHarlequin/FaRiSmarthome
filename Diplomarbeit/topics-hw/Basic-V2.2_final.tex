@@ -84,10 +84,11 @@
         \end{figure}
 
     \subsubsection{LED Indicator}
-        The basic node has four WS2812b ARGB-LEDs. The LEDs are connected to the 
-        microcontroller via GPIO 2. The LEDs are used to indicate the status of the node. 
-        For example, the LEDs can be used to indicate the temperature range the node is in
-        or to display the charge-level of the battery, when attached.
+        The basic node has four addressable RGB-LEDs. Those LEDs have an integrated 
+        controller and can be controlled individually. The WS2812b need 5V, GND and a DATA-IN.
+        DATA-IN is connected to the microcontroller via GPIO 2. The LEDs are used to 
+        indicate the status of the node. For example, to indicate if it detected motion or 
+        to display the charge-level of the battery, when the corresponding module is attached.
 
         \begin{figure}[H]
             \centering
@@ -97,8 +98,8 @@
 
     \subsubsection{USB-C Connector}
 
-    The USB-C connector is used to power and programm the basic node. The connector can
-    be plugged in both ways, which makes it more user-friendly.
+        The USB-C connector is used to power and programm the basic node. The connector can
+        be plugged in both ways, which makes it more user-friendly.
 
     \begin{figure}[H]
         \centering
@@ -106,20 +107,20 @@
         \caption{USB-C Connector implemented in the schematic.}
     \end{figure}
 
-    This particular connector was chosen, duo to being the new standard for USB connectors, 
-    therefor being widely spread.
-    
-    The USB protocol interacts with the charger to determine the power output. In order to
-    power the basic node with 5V, a 5.1kOhm resistor is connected to the CC1 and CC2 pins.
-    The resistor tells the charger that the basic node is a default USB device and can draw
-    up to 3A of current.\cite{noauthor_fugen_2023}
+        This particular connector was chosen, duo to being the new standard for USB connectors, 
+        therefor being widely spread.
 
-    A schottky diode is used to avoid backflow of current.
+        The USB protocol interacts with the charger to determine the power output. In order to
+        power the basic node with 5V, a 5.1kOhm resistor is connected to the CC1 and CC2 pins.
+        The resistor tells the charger that the basic node is a default USB device and can draw
+        up to 3A of current.\cite{noauthor_fugen_2023}
+
+        A schottky diode is used to avoid backflow of current.
 
     \subsubsection{Serial-Port}
 
-    This interface is used to programm the basic node. The interface is connected directly
-    with the UART of the ESP32-C3. 
+        This interface is used to programm the basic node. The interface is connected directly
+        with the UART of the ESP32-C3. 
 
     \begin{figure}[H]
         \centering
@@ -129,14 +130,14 @@
     
     \subsubsection{3.3V DC-DC Converter}
 
-    The  step-down converter TLV62569 from Texas Instruments is used to convert 
-    the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
-    of up to 95\%, which is significant for battery operation. It powers the
-    microcontroller, temperature sensor and a module, if attached to the
-    Module-Connector.
+        The  step-down converter TLV62569 from Texas Instruments is used to convert 
+        the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
+        of up to 95\%, which is significant for battery operation. It powers the
+        microcontroller, temperature sensor and a module, if attached to the
+        Module-Connector.
 
-    To set the output-voltage, a voltage divider is used. With following formula
-    the output voltage can be calculated:
+        To set the output-voltage, a voltage divider is used. With following formula
+        the output voltage can be calculated:
 
     \begin{equation}
         V_{OUT} = V_{FB} \cdot (1 + \frac{R_1}{R_2}) 
@@ -146,8 +147,8 @@
         R_1 = (\frac{V_{OUT}}{V_{FB}} - 1) \cdot {R_2} 
     \end{equation}
 
-    The output voltage $V_{OUT}$ was set to 3.3V. The feedback voltage $V_{FB}$ 
-    of the converter is 0.6V. The resistor $R_2$ was set to 200kOhm.
+        The output voltage $V_{OUT}$ was set to 3.3V. The feedback voltage $V_{FB}$ 
+        of the converter is 0.6V. The resistor $R_2$ was set to 200kOhm.
 
     \begin{equation}
         R_1 = (\frac{3,3V}{0,6V} - 1) \cdot {200kOhm} = \textbf{900kOhm}
@@ -159,13 +160,13 @@
         \caption{TLV62569 Converter implemented in the schematic.}
     \end{figure}
 
-    The Power-Good feature is not used in this application. The EN-Pin is connected to
+        The Power-Good feature is not used in this application. The EN-Pin is connected to
 
     \subsubsection{Module-Connector}
 
-    The module connector is used to join additional modules to the basic module.
-    The connector has 15 pins, 8 for power and powermanagment and 7 for 
-    communication. 
+        The module connector is used to join additional modules to the basic module.
+        The connector has 15 pins, 8 for power and powermanagment and 7 for 
+        communication. 
 
     \begin{figure}[H]
         \centering
@@ -173,10 +174,10 @@
         \caption{Module-Connector implemented in the schematic.}
     \end{figure}
 
-    Pin 3-5 and 6-8 are symmetrical to each other. It was designed this way
-    to allow the battery module and motion module to be attached simultaneously.
-    The battery module is plugged into pin 1-5 and is connected to following 
-    voltages:
+        Pin 3-5 and 6-8 are symmetrical to each other. It was designed this way
+        to allow the battery module and motion module to be attached simultaneously.
+        The battery module is plugged into pin 1-5 and is connected to following 
+        voltages:
     
     \begin{itemize}
         \item 1. VBAT - used to monitor the battery voltage
@@ -187,16 +188,16 @@
         \item 5. 5V - The battery module powers the basic node over this pin
     \end{itemize}
 
-    Pin 6-15 are used for communication between the modules. 
+        Pin 6-15 are used for communication between the modules. 
 
 
     \subsubsection{Module-Detection}
     
-    The basic node regonizes the attached module by measuring the voltage on pin 9.
-    A 100kOhm resistor is installed on the base module pulling pin 9 to GND. 
-    When a module is attached, a voltage devider is created. The voltage on pin 9 is 
-    determinted by the second resistor on the module. The microcontroller reads the
-    voltage and can determine the attached module. 
+        The basic node regonizes the attached module by measuring the voltage on pin 9.
+        A 100kOhm resistor is installed on the base module pulling pin 9 to GND. 
+        When a module is attached, a voltage devider is created. The voltage on pin 9 is 
+        determinted by the second resistor on the module. The microcontroller reads the
+        voltage and can determine the attached module. 
     
     \begin{figure}[H]
         \centering
@@ -207,15 +208,15 @@
     
     
     \subsubsection{Schematic - V2.2}
-    The schematic of the basic node is shown in the following page.
+        The schematic of the basic node is shown in the following page.
     \includepdf[pages=1, angle=270, scale=1.0]{assets/HW/PDF-Schematic/Node-V2.2.pdf}
     
 
     \subsubsection{PCB - V2.2}
 
-    The PCB has a size of 30x75mm. The compenents used were mainly SMD components, 
-    to keep the PCB small. The PCB is a 2-layer board with a ground plane on the
-    both sides.
+        The PCB has a size of 30x75mm. The compenents used were mainly SMD components, 
+        to keep the PCB small. The PCB is a 2-layer board with a ground plane on the
+        both sides.
 
     \begin{figure}[H]
         \centering
@@ -226,6 +227,6 @@
     
 
 
-    The schematic of the basic node is shown in the following page.
+        The schematic of the basic node is shown in the following page.
     \includepdf[pages=1, angle=270, scale=1.0]{assets/HW/PDF-Schematic/Node-V2.2.pdf}
  
