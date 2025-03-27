@@ -1,0 +1,7 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"  # Nuxt.js default port (if needed)
+      - "5000:5000"  # Flask default port

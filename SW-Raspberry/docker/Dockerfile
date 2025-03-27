@@ -23,10 +23,13 @@ RUN python3 -m venv /opt/venv
 RUN /opt/venv/bin/pip install --upgrade pip
 
 # Copy the requirements file
-COPY requirements.txt .
+#COPY requirements.txt .
 
 # Install Python dependencies within the virtual environment
-RUN /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+#RUN /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+
+#copy webserver
+COPY ../ /app/
 
 # Set environment variables to use the virtual environment
 ENV PATH="/opt/venv/bin:$PATH"
@@ -36,4 +39,4 @@ EXPOSE 5000
 EXPOSE 3000
 
 # Define the command to run the application
-CMD ["python3", "app.py"]
+#CMD ["python3", "/app/FaRiSmarthome/SW-Raspberry/IPReciever/Main.py"]
