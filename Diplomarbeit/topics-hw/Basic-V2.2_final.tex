@@ -130,7 +130,7 @@
     
     \subsubsection{3.3V DC-DC Converter}
 
-        The  step-down converter TLV62569 from Texas Instruments is used to convert 
+        The  step-down converter TLV62569 \cite{noauthor_tlv62569_2017} from Texas Instruments is used to convert 
         the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
         of up to 95\%, which is significant for battery operation. It powers the
         microcontroller, temperature sensor and a module, if attached to the
@@ -160,7 +160,8 @@
         \caption{TLV62569 Converter implemented in the schematic.}
     \end{figure}
 
-        The Power-Good feature is not used in this application. The EN-Pin is connected to
+        The Power-Good feature is not used in this application. The EN-Pin is connected to 
+        to 5V to enable the converter.
 
     \subsubsection{Module-Connector}
 
@@ -227,6 +228,6 @@
     
 
 
-        The schematic of the basic node is shown in the following page.
+        The hole schematic of the basic node is shown in the following page.
     \includepdf[pages=1, angle=270, scale=1.0]{assets/HW/PDF-Schematic/Node-V2.2.pdf}
  
