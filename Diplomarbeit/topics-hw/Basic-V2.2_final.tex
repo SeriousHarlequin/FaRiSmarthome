@@ -191,6 +191,33 @@
 
         Pin 6-15 are used for communication between the modules. 
 
+    \subsubsection{Spare-Header}
+            
+        The basic node has a spare header, which can be used to attach a button or 
+        magnetic switch. The button can be used to interact with the node or trigger
+        a specific action. The header has 2 pins GND and GPIO 10.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{assets/HW/NodeV2.2-Input.png}
+            \caption{Spare-Header implemented in the schematic.}
+        \end{figure}
+
+
+    \subsubsection{Battery Monitoring}
+
+        The battery module has a voltage divider to monitor the battery voltage. 
+        The voltage is measured by the microcontroller and can be used to determine
+        the charge level of the battery. The voltage divider is connected to pin 1 of the 
+        module connector. The voltage divider is one to two, so the voltage is halved on pin 1.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{assets/HW/NodeV2.2-Battery-Check.png}
+            \caption{Battery Monitoring implemented in the schematic.}
+        \end{figure}
+
+        The 100nF capacitor is used to filter out noise from the battery.
 
     \subsubsection{Module-Detection}
     
