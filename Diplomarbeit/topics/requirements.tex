@@ -154,13 +154,54 @@ to implement the project.
             \textbf{For this project, HTTP is the preferred protocol for 
             node-to-server communication.}
 
-    \section{Backend}
-    To record and read previous data, a database is needed, it should ideally be 
-    working with time series data and be able to handle a large amount of data, 
-    as it will mainly be used for storing sensor data.
 
-    \section{Frontend}
+    \section{Nuxt.js}
     The frontend should be able to visualize the data stored in the database,
     control the actuators and sensors, and display the current state of the 
     system. To implement this, a high-level web framework is preferred to 
-    simplify the development process. 
+    simplify the development process. \npar
+
+    \begin{wrapfigure}[2]{tr}{0.18\textwidth} % 'r' for right, and width of the image
+        \vspace{-1cm}
+        \hspace{3cm}
+        \includegraphics[width=\linewidth]{nuxt-js-logo.jpeg}
+    \end{wrapfigure}
+    For this project, Nuxt.js \cite{nuxtjs} is used as the web framework.
+    Nuxt.js is a framework for creating universal Vue.js applications.
+    It is a high-level framework that simplifies the development of
+    Vue.js applications by providing a set of conventions and best practices.
+    It is built on top of Vue.js and provides a set of features that
+    make it easy to create a web application. 
+
+    \section{Flask}
+    \begin{wrapfigure}[5]{tr}{0.18\textwidth} % 'r' for right, and width of the image
+        \vspace{-1cm}
+        \hspace{3cm}
+        \includegraphics[width=\linewidth]{flask-logo.png}
+    \end{wrapfigure}
+    Flask is a lightweight WSGI web application framework. It is 
+    designed to make getting started quick and easy. \cite{flask}
+    In this thesis, Flask is not used in the traditional way,
+    as it is not used to serve the web application, but rather
+    to serve as a receiver of UDP packets from the bridge node
+    (see section \ref{sec:network_discovery}). This is done 
+    because Python offers a lot of libraries for listening to
+    UDP packets and parsing the data. This data is then accessed
+    through an HTTP-GET request from Nuxt.js when needed.
+
+    
+    \section{Docker}
+    \begin{wrapfigure}[4]{tr}{0.18\textwidth} % 'r' for right, and width of the image
+        \vspace{-1cm}
+        \hspace{3cm}
+        \includegraphics[width=\linewidth]{docker-logo.png}
+    \end{wrapfigure}
+    Docker is an open platform for developing, shipping, and running 
+    applications. Docker enables you to separate your applications 
+    from your infrastructure so you can deliver software quickly. 
+    With Docker, you can manage your infrastructure in the same ways 
+    you manage your applications. By taking advantage of Docker's 
+    methodologies for shipping, testing, and deploying code, you can 
+    significantly reduce the delay between writing code and running 
+    it in production. \cite{what_is_docker}
+

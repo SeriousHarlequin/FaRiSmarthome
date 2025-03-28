@@ -3,5 +3,5 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"  # Nuxt.js default port (if needed)
+      - "3000:3000"  # Nuxt.js default port
       - "5000:5000"  # Flask default port

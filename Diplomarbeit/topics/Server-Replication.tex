@@ -29,4 +29,78 @@ sudo dd if=/dev/sdX of=~/image.img bs=4M
     the most popular containerization tool, it allows
     you to create a container that contains all the necessary
     packages and configurations. This container can then be
-    run on any Computer that has Docker installed. 
+    run on any Computer that has Docker installed. \npar
+
+    This allows for easy replication of the operating system in
+    addition to the flexibility of not having to use specific
+    hardware. 
+
+        \subsubsection{Dockerfile}
+        A Dockerfile is a text document that contains all the 
+        commands a user could call on the command line to assemble 
+        an image. This section shows the most important aspects of the
+        Dockerfile. \cite{dockerfile_reference} \npar
+
+        \needspace{9\baselineskip}
+        The Dockerfile starts with a base image. In this case, the
+        base image is the latest version of Debian, then the
+        required packages are installed:
+
+        \begin{minted}{dockerfile}
+FROM debian:latest
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip nodejs npm \
+    python3-flask python3-flask-cors && \
+    rm -rf /var/lib/apt/lists/*
+        \end{minted}
+
+        \needspace{9\baselineskip}
+        The next step is to copy the files from the host
+        system to the container. This is done using the \texttt{COPY}
+        command. This copies the content of the \texttt{SW-Raspberry} 
+        directory to the \texttt{/app} directory in the container.
+
+        \begin{minted}{dockerfile}
+# Set the working directory
+WORKDIR /app
+
+# Copy project files into the container
+COPY ./ /app
+        \end{minted}
+
+        \needspace{10\baselineskip}
+        The contents of this directory includes a bash script
+        that will be executed once the updates are finished. This
+        script will start the Flask and Nuxt.js servers:
+
+        \begin{minted}{dockerfile}
+RUN chmod +x /app/start.sh
+
+# Expose ports (adjust as needed)
+EXPOSE 3000 5000
+
+# Start command 
+ENTRYPOINT ["/app/start.sh"]
+        \end{minted}
+
+        \needspace{12\baselineskip}
+        \subsubsection{Docker Compose}
+        In Docker, a Compose file (\texttt{docker-compose.yml}) is used to 
+        define and manage multi-container applications. It allows 
+        users to specify services, networks, and volumes in a 
+        structured YAML format. While this thesis only uses a single
+        container, the file is still needed to expose the ports and
+        is generally recommended for maintainability.
+
+        \begin{minted}{yaml}
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"  # Nuxt.js default port
+      - "5000:5000"  # Flask default port
+
+        \end{minted}

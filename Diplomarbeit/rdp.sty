@@ -219,6 +219,9 @@ The undersigned candidates have chosen to prepare a diploma thesis with the foll
 \usepackage{svg}
 \usepackage{wrapfig} %wrap around image
 \usepackage{pdfpages}%For inserting pdfs
+\usepackage{graphicx}
+\usepackage{pdfcolparallel}
+\usepackage{minted}%code highlighting
 
 \makeatletter % for not having to define path in input
 \def\input@path{{topics/}}
@@ -272,3 +275,5 @@ The undersigned candidates have chosen to prepare a diploma thesis with the foll
 \newcommand{\setAuthor}[1]{
     \ifoot{#1}
 }
+
+\newcommand{\npar}{\vspace{0.5em}\noindent} %for paragraph spacing

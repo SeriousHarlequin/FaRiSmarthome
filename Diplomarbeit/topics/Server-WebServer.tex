@@ -3,26 +3,30 @@ This section discusses the implementation of the web server
 on the Raspberry Pi. The web server is responsible for
 serving the web application to the user and for handling
 HTTP requests from the user.
-
-        \subsection{Frameworks}
-        To create a web server, a suitable framework needs
-        to be chosen. The following frameworks were considered:
-
-            \subsubsection{Flask}
-            Flask is a lightweight WSGI web application framework.
-            It's designed to make getting started quick and easy. 
-            It's one of the most popular Python web frameworks and
-            can virtually use any Python library including some
-            to control GPIO pins on the Raspberry Pi.
-
-            Compared to modern JavaScript frameworks such as Nuxt.js, 
-            Flask is considered to be less powerful and less 
-            feature-rich.
-
-            \subsubsection{Nuxt.js}
-            Nuxt.js is a higher-level framework built on top of Vue.js.
-            It's designed to make web development simple and powerful.
-            It abstracts away a lot of complexity when it comes to 
-            routing and UI rendering.
             
-        \subsection{Installing Nuxt.js}
+    \subsection{Installing Nuxt.js}
+    To execute the web application, we need to install
+    the npm package manager. This can be done by running
+    the following command:
+    \begin{minted}{bash}
+sudo apt install npm
+    \end{minted}
+    Note that this is only necessary if the server is set up
+    manually as the  docker compose file already includes the
+    installation of npm. After the installation of npm the
+    application can just be started as npm will automatically
+    install all dependencies.
+
+    \subsection{Requesting Data}
+    This thesis includes a prototype of a web page that
+    fetches temperature from a Slave node, this example exists
+    on \texttt{http://localhost:3000/getExample} and can be accessed
+    after the server has been set up. \npar
+
+    The rendering process of the page looks like this:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{topics/flowcharts/PageRender.png}
+        \caption{Rendering process of the web page}
+        \label{fig:webServer}
+    \end{figure}
