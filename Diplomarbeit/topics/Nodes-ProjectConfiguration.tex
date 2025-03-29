@@ -39,14 +39,9 @@
     useful tool for debugging. For older ESP32 boards no additional configuration 
     should be necessary, newer boards however, such as the \texttt{ESP32-S3} and the 
     \texttt{ESP32-C3}, require the following \texttt{build\_flags}: 
-    \begin{minted}{cpp}
-build_flags =
-    -DARDUINO_USB_MODE=1
-    -DARDUINO_USB_CDC_ON_BOOT=1
-    \end{minted}
     
     \begin{minted}{cpp}
-    build_flags =
+build_flags =
     -DARDUINO_USB_MODE=1
     -DARDUINO_USB_CDC_ON_BOOT=1
     \end{minted}

@@ -1,5 +1,6 @@
-\section{Replicating the operating system}
-This section discusses the process of replicating the
+\needspace{5\baselineskip}
+\section{Distibution}
+This section discusses the process of replicating and distributing the
 operating system of the Raspberry Pi. There are three options
 to consider. 
     \subsection{Image}
@@ -104,3 +105,35 @@ services:
       - "5000:5000"  # Flask default port
 
         \end{minted}
+
+
+        \subsubsection{Network Communication}
+        The approach described in the sections above does host the 
+        web server, but it does not allow for communication with the
+        nodes as the UDP discovery process (see section \ref{sec:network_discovery})
+        then saves the IP that bridges the communication between the container
+        and the rest of the network. To fix this, the container needs to be
+        run in host mode. This can be done by adding the following line to the
+        \texttt{docker-compose.yml} file:
+
+        \begin{minted}{yaml}
+    network_mode: "host"
+        \end{minted}
+
+        This allows the container to use the host's network stack, enabling
+        direct communication with the nodes.
+        This then makes the \texttt{ports} section obsolete, as the container will
+        use the host's ports directly. Therefore, it can be removed. The final
+        \texttt{docker-compose.yml} file looks like this:
+
+        \begin{minted}{yaml}
+version: '3'
+services:
+  app:
+    build: .
+    network_mode: "host"
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+
+      \end{minted}
