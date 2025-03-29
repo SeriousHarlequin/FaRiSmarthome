@@ -29,10 +29,10 @@ without the need to connect a USB-C cable.
     \subsubsection{DC-DC-Converter}
 
         A buck-boost converter is used to convert the 3.7V from the battery to 3.3V to power the
-        basic module. The used IC is the TPS63001 from Texas Instruments it is a high efficiency
-        buck-boost converter with a 96\% efficiency. The inductor and the output voltage were
-        calculated like stated in the datasheet\cite{}. The inductor was selected by calculating
-        the maximum inductor current:
+        basic module. The used IC is the TPS63000 from Texas Instruments it is a high efficiency
+        buck-boost converter with a efficiency of up to 96\%. The inductor and the output voltage were
+        calculated like stated in the datasheet\cite{noauthor_tps6300x_2015}. The inductor was selected 
+        by calculating the maximum inductor current:
 
         \begin{equation}
             D = \frac{V_{OUT} - V_{IN} }{V_{VOUT}}
@@ -50,7 +50,7 @@ without the need to connect a USB-C cable.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.4\textwidth]{assets/HW/TBD2.png}
+            \includegraphics[width=0.4\textwidth]{assets/HW/BatteryV1.0-Buck-Boost.png}
             \caption{DC-DC-Converter implemented in the schematic.}
         \end{figure}
 
@@ -62,6 +62,7 @@ without the need to connect a USB-C cable.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.4\textwidth]{assets/HW/TBD2.png}
-            \caption{Battery PCB.}
+            \includegraphics[width=0.8\textwidth]{assets/HW/PCB-BATTERY-V1.0.png}
+            \caption{PCB of the battery module V1.0. [Red - Frontside, Blue - Backside]}
+            \label{fig:battery-module-pcb-V1.0}
         \end{figure}
