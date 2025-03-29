@@ -7,4 +7,6 @@ python3 IPReciever/Main.py &
 # Start the Nuxt.js server
 cd WebInterface/FaRiWebUI/
 echo "Starting Nuxt.js server..."
-npm run dev -- --host
+npm run dev -- --host &
+
+wait
