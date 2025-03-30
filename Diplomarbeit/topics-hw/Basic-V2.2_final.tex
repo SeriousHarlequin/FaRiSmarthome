@@ -16,6 +16,7 @@
     \end{itemize}
 
     \subsubsection{Microcontroller}
+        \vfill
         The basic node uses an ESP32-C3-wroom-02 \cite{noauthor_esp32-c3_2023} microcontroller. 
         It is a low-power, highly integrated Wi-Fi and Bluetooth SoC. In the datasheet 
         it was stated that the MCU is recommended for a wide range of applications, including smart home devices 
@@ -71,7 +72,7 @@
 
 
 
-    \subsubsection{Temperature sensor}
+    \subsubsection{Temperature Sensor}
         The DS18B20 was chosen as the temperature sensor. It is a digital thermometer
         with an operating temperature range of -55°C to +125°C. The sensor is connected
         to the microcontroller via GPIO0 and communicates over a 1-Wire bus.
@@ -117,7 +118,7 @@
 
         A schottky diode is used to avoid backflow of current.
 
-    \subsubsection{Serial-Port}
+    \subsubsection{Serial Port}
 
         This interface is used to programm the basic node. The interface is connected directly
         with the UART of the ESP32-C3. 
@@ -126,9 +127,10 @@
         \centering
         \includegraphics[width=0.4\textwidth]{assets/HW/Serial-Port-schematic.png}
         \caption{Serial-Port implemented in the schematic.}
+        \label{fig:serial-portV2.2}
     \end{figure}
     
-    \subsubsection{3.3V DC-DC Converter}
+    \subsubsection{DC-DC Converter}
 
         The  step-down converter TLV62569 \cite{noauthor_tlv62569_2017} from Texas Instruments is used to convert 
         the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
@@ -136,8 +138,8 @@
         microcontroller, temperature sensor and a module, if attached to the
         Module-Connector.
 
-        To set the output-voltage, a voltage divider is used. With following formula
-        the output voltage can be calculated:
+        To set the output-voltage, a voltage divider is used to feed the FB pin of the IC. 
+        With following formula the output voltage can be calculated:
 
     \begin{equation}
         V_{OUT} = V_{FB} \cdot (1 + \frac{R_1}{R_2}) 
@@ -151,7 +153,7 @@
         of the converter is 0.6V. The resistor $R_2$ was set to 200kOhm.
 
     \begin{equation}
-        R_1 = (\frac{3,3V}{0,6V} - 1) \cdot {200kOhm} = \textbf{900kOhm}
+        R_1 = (\frac{3,3V}{0,6V} - 1) \cdot {200kOhm} = {900kOhm} \approx \textbf{910kOhm(E24)}
     \end{equation}
     
     \begin{figure}[H]
@@ -163,7 +165,7 @@
         The Power-Good feature is not used in this application. The EN-Pin is connected to 
         to 5V to enable the converter.
 
-    \subsubsection{Module-Connector}
+    \subsubsection{Module Connector}
 
         The module connector is used to join additional modules to the basic module.
         The connector has 15 pins, 8 for power and powermanagment and 7 for 
@@ -191,11 +193,11 @@
 
         Pin 6-15 are used for communication between the modules. 
 
-    \subsubsection{Spare-Header}
+    \subsubsection{Spare Header}
             
         The basic node has a spare header, which can be used to attach a button or 
         magnetic switch. The button can be used to interact with the node or trigger
-        a specific action. The header has 2 pins GND and GPIO 10.
+        a specific action. The header has 2 pins GND and GPIO 10 which is pulled to 3,3V.
 
         \begin{figure}[H]
             \centering
@@ -209,7 +211,9 @@
         The battery module has a voltage divider to monitor the battery voltage. 
         The voltage is measured by the microcontroller and can be used to determine
         the charge level of the battery. The voltage divider is connected to pin 1 of the 
-        module connector. The voltage divider is one to two, so the voltage is halved on pin 1.
+        module connector. When the battery reaches a certain voltage, the microcontroller 
+        can go into deep-sleep mode to save power.The 100nF capacitor is used to filter 
+        out noise from the battery.
 
         \begin{figure}[H]
             \centering
@@ -217,9 +221,9 @@
             \caption{Battery Monitoring implemented in the schematic.}
         \end{figure}
 
-        The 100nF capacitor is used to filter out noise from the battery.
+        
 
-    \subsubsection{Module-Detection}
+    \subsubsection{Module Detection}
     
         The basic node regonizes the attached module by measuring the voltage on pin 9.
         A 100kOhm resistor is installed on the base module pulling pin 9 to GND. 
@@ -234,22 +238,11 @@
     \end{figure}
     
     
-    
-    \subsubsection{Schematic - V2.2}
-      
-        
-    % \includepdf[pages=1, angle=270, scale=1.0]{assets/HW/PDF-Schematic/Node-V2.2.pdf}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.70,page=1, angle=270]{assets/HW/PDF-Schematic/Node-V2.2.pdf}
-        
-    \end{figure}
-    
 
     \subsubsection{PCB - V2.2}
 
         The PCB has a size of 30x75mm. The compenents used were mainly SMD components, 
-        to keep the PCB small. The PCB is a 2-layer board with a ground plane on the
+        to keep the PCB small. The PCB is a 2-layer board with a ground plane on
         both sides.
 
     \begin{figure}[H]
@@ -261,6 +254,5 @@
     
 
 
-        The hole schematic of the basic node is shown in the following page.
-    \includepdf[pages=1, angle=270, scale=1.0]{assets/HW/PDF-Schematic/Node-V2.2.pdf}
- 
+        
+    

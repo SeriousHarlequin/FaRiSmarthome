@@ -72,10 +72,10 @@
         Where $V_{REF}$ \cite{noauthor_tlv61070apdf_2022} is 500mV and $V_{OUT}$ is 5V. R2 was set to 100kOhm.
 
         \begin{equation}
-            R1 = ( \frac{5V}{500mV} - 1) \cdot 100kOhm = 900kOhm \approx 1MOhm
+            R1 = ( \frac{5V}{500mV} - 1) \cdot 100kOhm = 900kOhm \approx 910MOhm(E24)
         \end{equation}
 
-        The closest value to 900kOhm was 1MOhm in the E12 series.
+        The closest value to 900kOhm was 910kOhmMOhm in the E24 series.
         
         To prevent the boost converter from operating when the USB-C port is connected, the
         VBUS voltage is used to disable the boost converter. When a charger is connected
@@ -96,7 +96,8 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.7\textwidth]{assets/HW/PCB-BATTERY-V2.2.png}
-            \caption{Battery-PCB}
+            \caption{PCB of the battery module V2.2. [Red - Frontside, Blue - Backside]}
+            \label{fig:battery-module-pcb-V2.2}
         \end{figure}
 
 

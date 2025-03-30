@@ -41,14 +41,20 @@
                 \includegraphics[width=0.4\textwidth]{assets/HW/Motion-Module-Check.png}
                 \caption{Motion-Detection implemented in the schematic.}
             \end{figure}
-
-        \subsubsection{Schematic - V1.1}
-            The schematic of the Motion Module is shown in the following page.
-            \includepdf[pages=1, angle=270, scale=1.0]{assets/HW/PDF-Schematic/Motion-V1.1.pdf}
-            
-
+ 
 
         \subsubsection{PCB - V1.1}    
+
+            The PCB of the motion module is a 2-layer board with a size of 47,1x30mm. 
+            The PCB is designed to be mounted on the base module. The PCB layout of the motion 
+            module is shown in figure \ref{fig:motion-module-pcb-V1.1}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{assets/HW/PCB-MOTION-V1.1.png}
+                \caption{PCB of the motion module V1.1. [Red - Frontside, Blue - Backside]}
+                \label{fig:motion-module-pcb-V1.1}
+            \end{figure}
            
         
     \subsection {Hardware - V1.0} 
@@ -56,3 +62,16 @@
             This resistor was removed from the motion module and added to the base module. The
             reason for this change is to prevent the GPIO pin on the base module from floating. 
             The PCB layout of the motion module is shown in the following page.
+
+
+            \subsubsection{PCB - V1.0}    
+
+            The PCB of this version is identical with V1.1. The only difference is, that there 
+            is a footprint for the resistor R2 on the top side of the PCB.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{assets/HW/PCB-MOTION-V1.0.png}
+                \caption{PCB of the motion module V1.0. [Red - Frontside, Blue - Backside]}
+                \label{fig:motion-module-pcb-V1.0}
+            \end{figure}
