@@ -28,7 +28,7 @@ without the need to connect a USB-C cable.
 
     \subsubsection{DC-DC-Converter}
 
-        A buck-boost converter is used to convert the 3.7V from the battery to 3.3V to power the
+        A buck-boost converter is used to convert the 3-4.2V from the battery to 3.3V to power the
         basic module. The used IC is the TPS63000 from Texas Instruments it is a high efficiency
         buck-boost converter with a efficiency of up to 96\%. The inductor and the output voltage were
         calculated like stated in the datasheet\cite{noauthor_tps6300x_2015}. The inductor was selected 
@@ -50,15 +50,19 @@ without the need to connect a USB-C cable.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.4\textwidth]{assets/HW/BatteryV1.0-Buck-Boost.png}
+            \includegraphics[width=0.8\textwidth]{assets/HW/BatteryV1.0-Buck-Boost.png}
             \caption{DC-DC-Converter implemented in the schematic.}
         \end{figure}
 
-        There were problems with getting the IC to work properly. 
-    
+        There were problems with getting the TPS63000 to work properly. There was not 
+        the desired voltage of 3.3V at the output. This was not investigated further, because it
+        was decided to boost the voltage to 5V on the battery module and replace the
+        linear regulator on the basic module with a buck converter to improve efficiency.
+        Therefore a buck-boost converter was not needed anymore on later versions of the battery module. 
+
     \subsubsection{PCB}
         The PCB of the battery module is a 2-layer board with the same size as the basic module
-        with xmm.
+        with 75x30mm.
 
         \begin{figure}[H]
             \centering

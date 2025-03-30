@@ -84,6 +84,10 @@
             \caption{DS18B20 implemented in the schematic.}
         \end{figure}
 
+        As seen on the PCB in figure \ref{fig:basic-module-pcb-V2.2} the DS18B20 is mounted near the
+        ESP-32-C3. While testing it was noticed that the temperature sensor was affected by the
+        heat of the ESP32-C3. This issue will be fixed in the next version of the basic node. 
+
     \subsubsection{LED Indicator}
         The basic node has four addressable RGB-LEDs. Those LEDs have an integrated 
         controller and can be controlled individually. The WS2812b need 5V, GND and a DATA-IN.
@@ -129,10 +133,14 @@
         \caption{Serial-Port implemented in the schematic.}
         \label{fig:serial-portV2.2}
     \end{figure}
+
+        It must be noted that the pin 0 is not the pin to bring the ESP32-C3 into programming mode.
+        It was designed out of habit, since previous ESP32 always used pin 0 to enter
+        programming mode. The correct pin is GPIO 9 like stated in the documentation\cite{noauthor_boot_nodate}.
     
     \subsubsection{DC-DC Converter}
 
-        The  step-down converter TLV62569 \cite{noauthor_tlv62569_2017} from Texas Instruments is used to convert 
+        The step-down converter TLV62569 \cite{noauthor_tlv62569_2017} from Texas Instruments is used to convert 
         the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
         of up to 95\%, which is significant for battery operation. It powers the
         microcontroller, temperature sensor and a module, if attached to the
@@ -202,7 +210,8 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{assets/HW/NodeV2.2-Input.png}
-            \caption{Spare-Header implemented in the schematic.}
+            \caption{Spare header implemented in the schematic.}
+            \label{fig:spare-header}
         \end{figure}
 
 
@@ -225,8 +234,8 @@
 
     \subsubsection{Module Detection}
     
-        The basic node regonizes the attached module by measuring the voltage on pin 9.
-        A 100kOhm resistor is installed on the base module pulling pin 9 to GND. 
+        The basic node regonizes the attached module by measuring the voltage on pin 3.
+        A 100kOhm resistor is installed on the base module pulling pin 3 to GND. 
         When a module is attached, a voltage devider is created. The voltage on pin 9 is 
         determinted by the second resistor on the module. The microcontroller reads the
         voltage and can determine the attached module. 
@@ -241,7 +250,7 @@
 
     \subsubsection{PCB - V2.2}
 
-        The PCB has a size of 30x75mm. The compenents used were mainly SMD components, 
+        The PCB has a size of 75x30mm. The compenents used were mainly SMD components, 
         to keep the PCB small. The PCB is a 2-layer board with a ground plane on
         both sides.
 
@@ -249,9 +258,10 @@
         \centering
         \includegraphics[width=1\textwidth]{assets/HW/PCB-NODE-V2.2.png}
         \caption{PCB of the basic node. [Red - Frontside, Blue - Backside]}
-    \end{figure}	
+        \label{fig:basic-module-pcb-V2.2}
+        \end{figure}	
 
-    
+        
 
 
         

@@ -27,8 +27,8 @@
 
     \subsubsection{Battery}
 
-        The battery module uses a 3.7V Li-Ion battery to power the basic node. The battery 
-        used is a 21700 cell with a capacity of 4800mAh. The battery is secured with a 1A fuse.
+        The battery module uses a 3.7V Li-Ion battery to power the basic node. The battery can 
+        be any Li-Ion battery. The battery is secured with a 1A fuse.
  
         \begin{figure}[H]
             \centering
@@ -57,11 +57,21 @@
         boost converter with a 95\% efficiency.
 
         The inductor and the and the output voltage were calculated like stated in the
-        datasheet\cite{noauthor_tlv61070apdf_2022}. The inductor was calculated with the following formula:
+        datasheet\cite{noauthor_tlv61070apdf_2022}. The inductor was calculated with the formula:
         
         \begin{equation}
-            L = \frac{V_{OUT} \cdot I_{OUT}}{V_{IN} \cdot \eta}
-        \end{equation}  
+            I{L(DC)} = \frac{V_{OUT} \cdot I_{OUT}}{V_{IN} \cdot \eta}
+        \end{equation}   
+
+            
+        Where $I_{OUT}$ is the output current, $V_{IN}$ is the input voltage(worst case) and $\eta$ is the
+        efficiency(typical 90\%) of the boost converter. The output current was set to 1A, the input voltage 
+        to 3V and the output voltage to 5V. 
+
+        \begin{equation}
+            I_{L(DC)} = \frac{5V \cdot 1A}{3V \cdot 0.9} = \textbf{1.85A}
+        \end{equation}
+        \newline
 
         The output voltage was set with a resistor divider to 5V:
 
@@ -72,14 +82,14 @@
         Where $V_{REF}$ \cite{noauthor_tlv61070apdf_2022} is 500mV and $V_{OUT}$ is 5V. R2 was set to 100kOhm.
 
         \begin{equation}
-            R1 = ( \frac{5V}{500mV} - 1) \cdot 100kOhm = 900kOhm \approx 910MOhm(E24)
+            R1 = ( \frac{5V}{500mV} - 1) \cdot 100kOhm = 900kOhm \approx \textbf{910MOhm(E24)}
         \end{equation}
 
         The closest value to 900kOhm was 910kOhmMOhm in the E24 series.
         
         To prevent the boost converter from operating when the USB-C port is connected, the
         VBUS voltage is used to disable the boost converter. When a charger is connected
-        the VBUS signal(5V) is switches the transistor Q1 and pulls the enable pin to ground 
+        the VBUS signal(5V) it switches the transistor Q1 and pulls the enable pin to ground 
         and dissabling it.
         
         \begin{figure}[H]
@@ -99,5 +109,7 @@
             \caption{PCB of the battery module V2.2. [Red - Frontside, Blue - Backside]}
             \label{fig:battery-module-pcb-V2.2}
         \end{figure}
+
+
 
 
