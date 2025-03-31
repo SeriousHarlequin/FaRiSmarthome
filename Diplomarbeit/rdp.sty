@@ -209,6 +209,38 @@ The undersigned candidates have chosen to prepare a diploma thesis with the foll
 }
 
 
+
+
+\newcommand{\timeentriescurrentHW}{}
+\newcommand{\timeentriesnextHW}{}
+\newcounter{totalHoursHW}
+\newcommand{\addtimeentryHW}[3]{
+  \ifnum#1<36
+    \g@addto@macro\timeentriesnextHW{%
+      #1 & #2 & #3 \addtocounter{totalHoursHW}{#3}\\\hline
+    }
+  \else
+    \g@addto@macro\timeentriescurrentHW{%
+      #1 & #2 & #3 \addtocounter{totalHoursHW}{#3}\\\hline
+    }
+  \fi
+}
+\newcommand{\printtimeentriesHW}{
+  \setcounter{totalHoursHW}{0}
+  \begin{tabular}{|c|l|r|}
+    \hline
+    \multicolumn{3}{|c|}{2024} \\\hline
+    \textbf{Week} & \textbf{Task Description} & \textbf{Hours} \\\hline
+    \timeentriescurrentHW
+    \multicolumn{3}{c}{} \\\hline
+    \multicolumn{3}{|c|}{2025} \\\hline
+    \textbf{Week} & \textbf{Task Description} & \textbf{Hours} \\\hline
+    \timeentriesnextHW
+    \multicolumn{3}{c}{} \\\hline
+    \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{\thetotalHoursHW} \\\hline
+  \end{tabular}
+}
+
 %---------------CUSTOM PACKAGES-------------------
 \usepackage{subcaption}
 \usepackage{float}
