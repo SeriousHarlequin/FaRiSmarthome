@@ -1,9 +1,10 @@
+\needspace{11\baselineskip} \setAuthor{Fabian Schätzschock}
 \subsection{Base Software}
 The base software is the foundation of every node. %NOT DONE AT ALL, THIS ALL WRONG
 
 All slave nodes are customizable and modules can be swapped without flashing
 the firmware. To implement this, module specific source code is executed in
-its own thread. In the \texttt{Setup()} function, the module is determined
+its own thread. In the \texttt{Setup()} function, the module is determined,
 and the corresponding thread is started.
 
         \subsubsection{Determining the Module}
@@ -14,3 +15,6 @@ and the corresponding thread is started.
             \caption{Node Module Selection}
             \label{fig:NodeModuleSelection}
         \end{figure}
+
+\newpage
+\setAuthor{Richard Krammer}

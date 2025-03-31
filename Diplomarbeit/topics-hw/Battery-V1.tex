@@ -1,7 +1,8 @@
 \subsection{Hardware - V1.0}
 
 This version of the battery module is working completely different from the later versions. 
-It was intended to be a rough prototype for the base module V1.0 \& V1.1 to test the 
+It was intended to be a rough prototype for the base module V1.0 \& V1.1 
+(see section \ref{sec:basic_module}) to test the 
 concept of a pluggable battery module. The battery module is used to power the basic node,
 without the need to connect a USB-C cable.
 
@@ -54,11 +55,11 @@ without the need to connect a USB-C cable.
             \caption{DC-DC-Converter implemented in the schematic.}
         \end{figure}
 
-        There were problems with getting the TPS63000 to work properly. There was not 
-        the desired voltage of 3.3V at the output. This was not investigated further, because it
+        There were problems with getting the TPS63000 to work properly. The output was not at the
+        desired voltage of 3.3V. This issue was not investigated further, because it
         was decided to boost the voltage to 5V on the battery module and replace the
         linear regulator on the basic module with a buck converter to improve efficiency.
-        Therefore, a buck-boost converter was not needed anymore on later versions of the battery module. 
+        Therefore, a buck-boost converter was not needed anymore in later versions of the battery module. 
 
     \subsubsection{PCB}
         The PCB of the battery module is a 2-layer board with the same size as the basic module
