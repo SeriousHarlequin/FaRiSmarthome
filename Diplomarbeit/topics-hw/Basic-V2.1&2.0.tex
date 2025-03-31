@@ -2,6 +2,16 @@
 
     This version of the basic node had minor changes to the hardware. 
 
+    \subsubsection{Temperature Sensor}
+        This version of the base module had a missing pull-up resistor on the
+        temperature sensor. The sensor was not able to work without it.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{assets/HW/NodeV2.1-Temperatur-Sensor.png}
+            \caption{MCU implemented in the schematic, note the missing pull-up resistor.}
+        \end{figure}
+
     \subsubsection{Serial Port}
 
         It lacked an laid out Serial Interface, which was added in V2.2 as seen in
