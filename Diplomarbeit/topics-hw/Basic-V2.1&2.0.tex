@@ -1,10 +1,13 @@
 \subsection{Hardware - V2.1}
 
-    This version of the basic node had minor changes to the hardware. 
+    This version of the basic node had minor changes to the hardware.
+    It was produced and tested, resulting in V2.2. 
 
     \subsubsection{Temperature Sensor}
         This version of the base module had a missing pull-up resistor on the
-        temperature sensor. The sensor was not able to work without it.
+        temperature sensor. The DS18B20  was not able to work without it. It needs
+        a pull-up resistor to work properly as stated in the datasheet\cite{noauthor_ds18b20_nodate}. 
+        The pull-up resistor was added in V2.2.
 
         \begin{figure}[H]
             \centering
@@ -40,8 +43,10 @@
 
 \subsection{Hardware - V2.0}
 
-    This version of the basic node had major changes to the hardware. Following flaws
-    were discovered in V2.0:
+    This version of the basic node had minor changes compared to V2.1. The PCB was
+    producted, however it was never populated and testing, as the shipment took so
+    long, that version 2.1 was finished within that time and ordered as well. 
+    Following flaws were discovered in V2.0:
 
     \subsubsection{Ground-Plane}
         The ground-plane was removed underneath the ESP32-C3 to improve the
@@ -63,10 +68,12 @@
 
     \subsubsection{PCB - V2.0}
         The size of the PCB is identical to V2.1 with a footprint of 75x30mm.
-        
-        
+        In figure \ref{fig:basic-module-pcb-V2.0} the ground-plane under the ESP32-C3
+        pcb-antenna is clearly visible.
+
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\textwidth]{assets/HW/PCB-NODE-V2.0.png}
         \caption{PCB of the basic node V2.0. [Red - Frontside, Blue - Backside]}
+        \label{fig:basic-module-pcb-V2.0}
     \end{figure}

@@ -1,10 +1,27 @@
 \subsection{Hardware - V2.1}
+    \textbf{
+        There is no version 2.0 of this print. During the design process, 
+        complications arose that directly led to the designation V2.1.}
     Version 2.1 of the battery module is identical to version 2.2, except for the
     following components:
 
     \begin{itemize}
-        \item 1. A resisitor was added to prevent the boost converter from turning off when the 
-        battery module is connected to the base module.
+        \item 1. A resisitor was added to the boost converter circut.
         \item 2. Some footprints were different in size.
     \end{itemize}
 
+    \subsubsection{Boost Converter}
+        A resistor was added to the boost converter to prevent it from turning off when the
+        battery module is connected to the base module. The boost converter was not able to turn on, 
+        when the battery module was connected to the base module. 
+        When the battery module was connected to the base module, the boost converter turned off, 
+        even though the battery USB-C was not connected. Therefore 
+        
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{assets/HW/BatteryV2.1-Boost-Converter.png}
+            \caption{Boost-Converter implemented in version 2.1.}
+        \end{figure}
+    
+    \subsubsection{PCB - V2.1}
+        The PCB is identical to V2.2 with a footprint of 75x30mm.
