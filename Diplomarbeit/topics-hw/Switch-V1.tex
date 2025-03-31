@@ -1,5 +1,5 @@
     The switch module allows to switch 230V devices on and off and measure the current draw. 
-    This module can not be compined with any other module. The switch module has two revisions,
+    This module can not be combined with any other module. The switch module has two revisions,
     V1.0 and V1.1.
 
     Following components are required to fulfill the requirements:
@@ -17,8 +17,8 @@
 
     \subsubsection{Power-Supply}
 
-        Because the switch module is switching 230V, it will also supplay itself with this voltage.
-        A tranformer was chosen over a switching power supply because of the lower cost and the
+        Because the switch module is switching 230V, it will also supply itself with this voltage.
+        A transformer was chosen over a switching power supply because of the lower cost and the
         lower complexity.
 
         The used print transformer has the type FL4/9\cite{noauthor_low_nodate} it has two 115V primary windings and
@@ -120,7 +120,7 @@
 
         The 230V aspect was taken into account when designing the circuit board. The PCB is divided
         into two sections, the 230V and the low voltage section, which is marked by the ground plane. 
-        In the 230V section the relay, current sensor ans the tranformer are placed. 
+        The relay, current sensor and the transformer are placed in the 230V section. 
         Underneath the current sensor is a milled slot to ensure the isolation of the terminals. 
         
         \begin{figure}[H]
@@ -130,7 +130,7 @@
         \end{figure}
 
         The PCB has a size of 100x92mm. The switch module uses both SMD and THT components. It was decided to use more THT 
-        components on this module, because most parts were allready available as THT.
+        components on this module, because most parts were already available as THT.
 
         \begin{figure}[H]
             \centering
@@ -150,7 +150,7 @@
     the current.
 
     \subsubsection{Power-Supply}
-    While testing the module it was found that it is nowhere shown when 230V is present. Therefore
+    While testing the module it was found that it is nowhere shown when 230V is present. Therefore,
     a LED was added after the rectifier to indicate the presence of 230V.
 
     \subsubsection{Footprint}

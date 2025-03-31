@@ -1,8 +1,8 @@
 \subsection{Hardware - V1.1}
-    Version 1.x of the basic module was inteeded to be a ruff prototype to test the concept of a 
+    Version 1.x of the basic module was intended to be a ruff prototype to test the concept of a 
     plugable battery powered module. For this reason only the battery module was designed for this
-    version. Version 1.0 was never manifactured, but the design was used as a base for the
-    version 1.1. The version 1.1 was manifactured and tested. 
+    version. Version 1.0 was never manufactured, but the design was used as a base for the
+    version 1.1. The version 1.1 was manufactured and tested. 
 
     \subsubsection{Module Connector}
         The module connector has four connectors, one for the battery and three for the
@@ -19,8 +19,8 @@
 
 
         To connect a module there is a 10 pin header with IO-ports and a 6 pin header 
-        for suppling power. It was not inteeded to design a module, besides the battery module,
-        for this version. It was planned to be used in testing as an development board and connecting
+        for supplying power. It was not intended to design a module, besides the battery module,
+        for this version. It was planned to be used in testing as a development board and connecting
         the sensors over jumper wires.
         
         \begin{figure}[H]
@@ -38,7 +38,7 @@
     \subsubsection{DC-DC Converter}
         
         To convert the 5V from the USB port to 3.3V a LM7805 linear regulator was used. This regulator
-        would then be bybassed by the battery module when connected. Then the 3.3V would be supplied by the
+        would then be bypassed by the battery module when connected. Then the 3.3V would be supplied by the
         battery module. The 5V was also used to charge the battery.
 
         The LS33V is turned off by a P-Channel MOSFET when the battery module was connected.
@@ -50,7 +50,7 @@
         \end{figure}
 
     \subsubsection{Serial-To-USB Converter}
-        The Serial-To-USB converter was deamed to be unnassary since the MCU could also be programmed 
+        The Serial-To-USB converter was deemed to be unnecessary since the MCU could also be programmed 
         over native USB, it was removed from later versions.
 
         \begin{figure}
@@ -77,8 +77,8 @@
         to keep the size small and to make the designing of the case easier.
 
 \subsection{Hardware - V1.0}
-    This version had a finished schematic, but the PCB was nerver finished/further development into 
-    version 1.1. The schematic is very simular to the version 1.1. Following components were different 
+    This version had a finished schematic, but the PCB was never finished/further development into 
+    version 1.1. The schematic is very similar to the version 1.1. Following components were different 
     in this version:
     
     \begin{itemize}
@@ -100,7 +100,7 @@
         in the first version of the basic module.
 
     \subsubsection{Battery Monitoring}
-        The battery monitoring was done with a voltage divider with two 22kOhm resisitors. 
+        The battery monitoring was done with a voltage divider with two 22kOhm resistors. 
 
         \begin{figure}[H]
             \centering
@@ -108,5 +108,5 @@
             \caption{Battery implemented in the schematic.}
         \end{figure}
 
-        In version 1.1V the resisitor R3 and R4 were increased to 100kOhm to reduce the current 
+        In version 1.1V the resistor R3 and R4 were increased to 100kOhm to reduce the current 
         consumption of the voltage divider and a 100nF capacitor was added to filter the voltage.

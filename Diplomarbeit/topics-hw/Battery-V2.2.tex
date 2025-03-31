@@ -10,12 +10,12 @@
             \item 1. VBAT - used to detect battery and monitor the battery voltage
             \item 2. VBUS - used to charge and disable the battery module when the USB-C 
             is connected
-            \item 3. 3V3 - not used, but may be relavant for future modules/revisions
+            \item 3. 3V3 - not used, but may be relevant for future modules/revisions
             \item 4. GND
             \item 5. 5V - The battery module powers the basic node over this pin
         \end{itemize}
         
-        With the voltages the basic node is powered and the battery is charged.
+        With the voltages the basic node is powered, and the battery is charged.
 
         \begin{figure}[H]
             \centering
@@ -40,8 +40,8 @@
 
         The BMS handles the charging of the battery and assures that the battery is not
         being overcharged. The used IC is the MCP73811 from Microchip, it is a linear 
-        charge managementcontroller for both Li-Ion and Li-Polymer batteries. 
-        To prevent overdischarging, the microcontroller measures the battery voltage
+        charge management controller for both Li-Ion and Li-Polymer batteries. 
+        To prevent over discharging, the microcontroller measures the battery voltage
         and can goes into deep sleep mode when the battery voltage is too low.
 
         \begin{figure}[H]
@@ -90,7 +90,7 @@
         To prevent the boost converter from operating when the USB-C port is connected, the
         VBUS voltage is used to disable the boost converter. When a charger is connected
         the VBUS signal(5V) it switches the transistor Q1 and pulls the enable pin to ground 
-        and dissabling it.
+        and disabling it.
         
         \begin{figure}[H]
         \centering
@@ -101,7 +101,7 @@
     \subsubsection{PCB}
 
         The PCB has a size of 30x41.5mm, it fits directly under the basic module. 
-        The compenents used were mainly SMD components, in order to keep the PCB small. 
+        The components used were mainly SMD components, in order to keep the PCB small. 
 
         \begin{figure}[H]
             \centering

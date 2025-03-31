@@ -18,7 +18,7 @@
     \subsubsection{Microcontroller}
         \vfill
         The basic node uses an ESP32-C3-wroom-02 \cite{noauthor_esp32-c3_2023} microcontroller. 
-        It is a low-power, highly integrated Wi-Fi and Bluetooth SoC. In the datasheet 
+        It is a low-power, highly integrated Wi-Fi and Bluetooth SoC. In the data sheet 
         it was stated that the MCU is recommended for a wide range of applications, including smart home devices 
         and other IoT products.
         Before the ESP32-C3 was chosen, it was compared with the ESP32-S3-wroom-2 to see which one
@@ -61,7 +61,7 @@
 
         The ESP32-C3 does not have as many GPIO pins compared to the ESP32-S3, however the 
         abundance of GPIO pins is not necessary for the basic node. The ESP32 C3 is also 
-        cheaper and alocates less space on the PCB.
+        cheaper and allocates less space on the PCB.
 
         \begin{figure}[H]
             \centering
@@ -76,7 +76,7 @@
         The DS18B20 was chosen as the temperature sensor. It is a digital thermometer
         with an operating temperature range of -55°C to +125°C. The sensor is connected
         to the microcontroller via GPIO0 and communicates over a 1-Wire bus.
-        This sensor was used instead of the DHT11, for being smaller in size.
+        This sensor was used instead of the DHT11, for being smaller.
 
         \begin{figure}[H]
             \centering
@@ -85,7 +85,7 @@
         \end{figure}
 
         As seen on the PCB in figure \ref{fig:basic-module-pcb-V2.2} the DS18B20 is mounted near the
-        ESP-32-C3. While testing it was noticed that the temperature sensor was affected by the
+        ESP-32-C3. While testing, it was noticed that the temperature sensor was affected by the
         heat of the ESP32-C3. This issue will be fixed in the next version of the basic node. 
 
     \subsubsection{LED Indicator}
@@ -103,7 +103,7 @@
 
     \subsubsection{USB-C Connector}
 
-        The USB-C connector is used to power and programm the basic node. The connector can
+        The USB-C connector is used to power and program the basic node. The connector can
         be plugged in both ways, which makes it more user-friendly.
 
     \begin{figure}[H]
@@ -118,7 +118,7 @@
         The USB protocol interacts with the charger to determine the power output. In order to
         power the basic node with 5V, a 5.1kOhm resistor is connected to the CC1 and CC2 pins.
         The resistor tells the charger that the basic node is a default USB device and can draw
-        up to 3A of current.\cite{noauthor_fugen_2023}
+        up to 3A of current. \cite{noauthor_fugen_2023}
 
         A schottky diode is used to avoid backflow of current.
 
@@ -171,12 +171,12 @@
     \end{figure}
 
         The Power-Good feature is not used in this application. The EN-Pin is connected to 
-        to 5V to enable the converter.
+        5V to enable the converter.
 
     \subsubsection{Module Connector}
 
         The module connector is used to join additional modules to the basic module.
-        The connector has 15 pins, 8 for power and powermanagment and 7 for 
+        The connector has 15 pins, 8 for power and power management and 7 for 
         communication. 
 
     \begin{figure}[H]
@@ -194,7 +194,7 @@
         \item 1. VBAT - used to monitor the battery voltage
         \item 2. VBUS - used to charge and disable the battery module when the USB-C 
         is connected
-        \item 3. 3V3 - not used, but may be relavant for future modules/revisions
+        \item 3. 3V3 - not used, but may be relevant for future modules/revisions
         \item 4. GND
         \item 5. 5V - The battery module powers the basic node over this pin
     \end{itemize}
@@ -221,7 +221,7 @@
         The voltage is measured by the microcontroller and can be used to determine
         the charge level of the battery. The voltage divider is connected to pin 1 of the 
         module connector. When the battery reaches a certain voltage, the microcontroller 
-        can go into deep-sleep mode to save power.The 100nF capacitor is used to filter 
+        can go into deep-sleep mode to save power. The 100nF capacitor is used to filter 
         out noise from the battery.
 
         \begin{figure}[H]
@@ -234,10 +234,10 @@
 
     \subsubsection{Module Detection}
     
-        The basic node regonizes the attached module by measuring the voltage on pin 3.
+        The basic node recgonizes the attached module by measuring the voltage on pin 3.
         A 100kOhm resistor is installed on the base module pulling pin 3 to GND. 
-        When a module is attached, a voltage devider is created. The voltage on pin 9 is 
-        determinted by the second resistor on the module. The microcontroller reads the
+        When a module is attached, a voltage divider is created. The voltage on pin 9 is 
+        determined by the second resistor on the module. The microcontroller reads the
         voltage and can determine the attached module. 
     
     \begin{figure}[H]
@@ -250,7 +250,7 @@
 
     \subsubsection{PCB - V2.2}
 
-        The PCB has a size of 75x30mm. The compenents used were mainly SMD components, 
+        The PCB has a size of 75x30mm. The components used were mainly SMD components, 
         to keep the PCB small. The PCB is a 2-layer board with a ground plane on
         both sides.
 

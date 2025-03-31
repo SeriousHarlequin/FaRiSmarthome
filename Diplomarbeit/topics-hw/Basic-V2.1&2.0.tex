@@ -16,15 +16,15 @@
 
         It lacked an laid out Serial Interface, which was added in V2.2 as seen in
         Figure \ref{fig:serial-portV2.2} above. During the software development of 
-        the basic node, it happened that the programming over the nativ USB of the 
-        ESP32 C3 was not possible. Duo to setting buildflags, that would disable USB 
-        programming. To make programmingeasier and fix this issue, the serial interface 
+        the basic node, it happened that the programming over the native USB of the 
+        ESP32 C3 was not possible. Duo to setting build flags, that would disable USB 
+        programming. To make programming easier and fix this issue, the serial interface 
         laid out on the PCB. 
 
 
     \subsubsection{Module-Detection}
         While testing with this version, it was noticed that pin 3 was floating,
-        potentially causing the base module to regonize a module without one being attached.
+        potentially causing the base module to recognize a module without one being attached.
         To fix this issue in V2.2, the voltage divider on the modules were split up and
         a 100kOhm resistor was added to pull the pin to GND on the base module.
         
@@ -48,7 +48,7 @@
         signal quality. 
 
     \subsubsection{Spare-Header}
-        GPIO 10 of the MCU was not used, so it was decided to add a pinheader to later versions of the basic node.
+        GPIO 10 of the MCU was not used, so it was decided to add a pin header to later versions of the basic node.
         Where a button or magnetic switch could be attached to. When pressed or triggered, the
         button could be used to interact with the node or trigger a specific action.
 
