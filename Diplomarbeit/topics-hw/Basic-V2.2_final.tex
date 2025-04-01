@@ -2,7 +2,7 @@
 \setAuthor{Richard Krammer}
 
 
-    This section describes the latest hardware of the basic node. The basic node is a 
+    This section describes the latest hardware of the basic module. The basic module is a 
     simple node that can measure the ambient temperature and control four RGB-LEDs.
     The hardware consists of the following components:
 
@@ -11,18 +11,22 @@
         \item Temperature Sensor
         \item LED Indicator
         \item USB-C Connector
-        \item 3.3V DC-DC Converter
-        \item Module-Connector
+        \item Serial Port
+        \item DC-DC Converter
+        \item Module Connector
+        \item Battery Monitoring
+        \item Module Detection
+        \item Spare Header
     \end{itemize}
 
     \subsubsection{Microcontroller}
         \vfill
-        The basic node uses an ESP32-C3-wroom-02 \cite{noauthor_esp32-c3_2023} microcontroller. 
+        The basic module uses an ESP32-C3-wroom-02 \cite{noauthor_esp32-c3_2023} microcontroller. 
         It is a low-power, highly integrated Wi-Fi and Bluetooth SoC. In the data sheet 
         it was stated that the MCU is recommended for a wide range of applications, including smart home devices 
         and other IoT products.
         Before the ESP32-C3 was chosen, it was compared with the ESP32-S3-wroom-2\cite{noauthor_esp32-s3-wroom-2_2022} 
-        to see which one would be the better fit for the basic node. 
+        to see which one would be the better fit for the basic module. 
 
         \vspace{0.5cm}
         \begin{Parallel}{0.45\textwidth}{0.45\textwidth}
@@ -60,7 +64,7 @@
         \end{figure}
 
         The ESP32-C3 does not have as many GPIO pins compared to the ESP32-S3, however the 
-        abundance of GPIO pins is not necessary for the basic node. The ESP32 C3 is also 
+        abundance of GPIO pins is not necessary for the basic module. The ESP32 C3 is also 
         cheaper and allocates less space on the PCB.
 
         \begin{figure}[H]
@@ -73,10 +77,9 @@
 
 
     \subsubsection{Temperature Sensor}
-        The DS18B20 was chosen as the temperature sensor. It is a digital thermometer
+        The DS18B20\cite{noauthor_ds18b20_nodate} was chosen as the temperature sensor. It is a digital thermometer
         with an operating temperature range of -55°C to +125°C. The sensor is connected
         to the microcontroller via GPIO0 and communicates over a 1-Wire bus.
-        This sensor was used instead of the DHT11, for being smaller.
 
         \begin{figure}[H]
             \centering
@@ -89,11 +92,13 @@
         heat of the ESP32-C3. This issue will be fixed in the next version of the basic node. 
 
     \subsubsection{LED Indicator}
-        The basic node has four addressable RGB-LEDs. Those LEDs have an integrated 
-        controller and can be controlled individually. The WS2812b need 5V, GND and a DATA-IN.
-        DATA-IN is connected to the microcontroller via GPIO 2. The LEDs are used to 
-        indicate the status of the node. For example, to indicate if it detected motion or 
-        to display the charge-level of the battery, when the corresponding module is attached.
+        The basic module has four addressable RGB-LEDs. Those LEDs have an integrated 
+        controller and can be controlled individually. The WS2812b\cite{noauthor_ws2812b_nodate} 
+        needs 5V, GND and a DATA-IN. DATA-IN is connected to the microcontroller via GPIO 2. 
+        The LEDs can be cascaded by connecting the DATA-OUT of the last LED to the DATA-IN of 
+        the next LED. The LEDs are used to indicate the status of the node. For example, to 
+        indicate if it detected motion or to display the charge-level of the battery, 
+        when the corresponding module is attached.
 
         \begin{figure}[H]
             \centering
@@ -104,7 +109,8 @@
     \subsubsection{USB-C Connector}
 
         The USB-C connector is used to power and program the basic node. The connector can
-        be plugged in both ways, which makes it more user-friendly.
+        be plugged in both ways, which makes it more user-friendly. This particular connector was chosen, duo to being the new standard for USB connectors, 
+        therefor being widely spread.
 
     \begin{figure}[H]
         \centering
@@ -112,15 +118,9 @@
         \caption{USB-C Connector implemented in the schematic.}
     \end{figure}
 
-        This particular connector was chosen, duo to being the new standard for USB connectors, 
-        therefor being widely spread.
-
-        The USB protocol interacts with the charger to determine the power output. In order to
-        power the basic node with 5V, a 5.1kOhm resistor is connected to the CC1 and CC2 pins.
-        The resistor tells the charger that the basic node is a default USB device and can draw
-        up to 3A of current. \cite{noauthor_fugen_2023}
-
-        A schottky diode is used to avoid backflow of current.
+        In order to power the basic node with 5V, a 5.1k\(\Omega\) resistor is connected to 
+        the CC1 and CC2 each. The resistor tells the charger that the basic node is a 
+        default USB device and can draw up to 3A of current.\cite{noauthor_fugen_2023} A schottky diode is used to avoid backflow of current.
 
     \subsubsection{Serial Port}
 
@@ -144,9 +144,9 @@
         the 5V from the USB-C connector to 3.3V. The converter has a high efficiency
         of up to 95\%, which is significant for battery operation. It powers the
         microcontroller, temperature sensor and a module, if attached to the
-        Module-Connector.
+        module connector.
 
-        To set the output-voltage, a voltage divider is used to feed the FB pin of the IC. 
+        To set the output voltage, a voltage divider is used to feed the FB pin of the IC. 
         With following formula the output voltage can be calculated:
 
     \begin{equation}
@@ -170,7 +170,7 @@
         \caption{TLV62569 Converter implemented in the schematic.}
     \end{figure}
 
-        The Power-Good feature is not used in this application. The EN-Pin is connected to 
+        The Power-Good feature is not used in this application. The EN pin is connected to 
         5V to enable the converter.
 
     \subsubsection{Module Connector}
@@ -217,8 +217,9 @@
 
     \subsubsection{Battery Monitoring}
 
-        The battery module has a voltage divider to monitor the battery voltage. 
-        The voltage is measured by the microcontroller and can be used to determine
+        The battery module has a voltage divider to monitor the battery voltage,
+        to reduce the voltage to a safe level for the MCU to read. 
+        The voltage is measured by the ADC of the microcontroller and can be used to determine
         the charge level of the battery. The voltage divider is connected to pin 1 of the 
         module connector. When the battery reaches a certain voltage, the microcontroller 
         can go into deep-sleep mode to save power. The 100nF capacitor is used to filter 
@@ -236,9 +237,8 @@
     
         The basic node recgonizes the attached module by measuring the voltage on pin 3.
         A 100kOhm resistor is installed on the base module pulling pin 3 to GND. 
-        When a module is attached, a voltage divider is created. The voltage on pin 9 is 
-        determined by the second resistor on the module. The microcontroller reads the
-        voltage and can determine the attached module. 
+        When a module is attached, a voltage divider is created. The input voltage is 
+        determined by the second resistor on the module.
     
     \begin{figure}[H]
         \centering
