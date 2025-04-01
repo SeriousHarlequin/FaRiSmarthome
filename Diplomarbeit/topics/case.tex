@@ -1,7 +1,8 @@
 \section{Case} \setAuthor{Richard Krammer}
     There were cases designed for every module to protect the electronics inside and
     give the modules a finished look. The cases were only designed for the final versions of
-    the modules. It was designed in Fusion 360 and manifactured with a FDM 3D printer. 
+    the modules. It was designed in Fusion 360 and manifactured with a FDM 3D printer out of 
+    PLA. 
 
     \FloatBarrier
     \subsection{Basic}
@@ -12,60 +13,114 @@
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.8\textwidth]{assets/case/Node-Top2.JPG}
+            \includegraphics[width=0.75\textwidth]{assets/case/Node-Front1.JPG}
             \caption{Top view}
         \end{figure}
         \needspace{5\baselineskip}
+      
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.75\textwidth]{assets/case/Node-Back.JPG}
+            \caption{Bottom view}
+        \end{figure}
         The bottom part has a cutout for the module connector.
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.8\textwidth]{assets/case/Node-Bot.JPG}
-            \caption{Bottom view}
+            \includegraphics[width=0.75\textwidth]{assets/case/Node-Disassembled.JPG}
+            \caption{Partly disassembled}
         \end{figure}
 
     \FloatBarrier \newpage
     \subsection{Battery}
+        
+        This case consists of three pieces, the main part and the two covers for the PCB
+        and the battery.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.55\textwidth]{assets/case/Battery-Top.JPG}
+            \includegraphics[width=0.75\textwidth]{assets/case/Battery-Top1.JPG}
+            \caption{Front view}
+        \end{figure}
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.75\textwidth]{assets/case/Battery-Side.JPG}
+            \caption{Back view}
+        \end{figure}
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.75\textwidth]{assets/case/Battery-Disassembled.JPG}
+            \caption{Partly disassembled}
+        \end{figure}
+        The battery case is designed to hold a 22700 battery. 
+
+    \FloatBarrier
+    \subsection{Motion}
+        This case consists of two parts, the bottom an the cover for the PCB. 
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.7\textwidth, angle = -180]{assets/case/Motion-Front.JPG}
             \caption{Top view}
         \end{figure}
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.55\textwidth]{assets/case/Battery-Side.JPG}
-            \caption{Side view}
+            \includegraphics[width=0.7\textwidth, angle = -0]{assets/case/Motion-Disassembled.JPG}
+            \caption{Disassembled}
         \end{figure}
 
-    \FloatBarrier
-    \subsection{Motion}
-
-        This case consists of two parts, the top and the bottom. 
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.8\textwidth]{assets/case/Motion-Top.JPG}
-            \caption{Top view}
-        \end{figure}
         
 
         \FloatBarrier 
     \subsection{Switch}
+        This case consists of three part, the base and the two covers for the PCB.
             
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.6\textwidth, angle = 0]{assets/case/Switch-Open1.JPG}
-                \caption{Case open top view}
+                \includegraphics[width=0.72\textwidth, angle = 0]{assets/case/Switch-Front.JPG}
+                \caption{Switch fully assembled with input and output cables.}
             \end{figure}
     
             \begin{figure}[htbp]
                 \centering
-                \includegraphics[width=0.55\textwidth, angle = -90]{assets/case/Switch-Closed2.JPG}
-                \caption{Case closed top view}
+                \includegraphics[width=0.72\textwidth, angle = -0]{assets/case/Switch-Disassembled.JPG}
+                \caption{Partly disassembled}
             \end{figure}
-            
+
+            A cable strain relief was integrated into the case.
     \FloatBarrier
     \subsection{Combined Module}
+            
+            \subsubsection{Base, Battery and Motion Module}
+
+            \begin{figure}[H]%
+                \centering
+                \subfloat[\centering Front view]{{\includegraphics[width=6cm]{assets/case/Battery-Motion-Front.JPG} }}%
+                \qquad
+                \subfloat[\centering Side view]{{\includegraphics[width=6cm]{assets/case/Battery-Motion.JPG} }}%
+                \caption{Battery and motion module next to each other.}%
+                \label{fig:example}%
+            \end{figure}
+            The base module fits ontop of both modules.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth, angle = 0]{assets/case/Node-Battery-Motion-Front.JPG}
+                \caption{Basic, battery and motion module combined.}
+            \end{figure}
+
+            \subsubsection{Base and Motion Module}
+        
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=0.8\textwidth, angle = -0]{assets/case/Node-Switch.JPG}
+                \caption{Base module combined with switch module.}
+            \end{figure}
+
+            A cutout was added to make pulling the base module off the switch module easier.
+            
     
         
         
