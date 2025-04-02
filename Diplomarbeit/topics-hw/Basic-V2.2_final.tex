@@ -59,8 +59,7 @@
             \subfloat[\centering ESP-C3]{{\includegraphics[width=5.5cm]{assets/HW/ESP32-C3-sheet.png} }}%
             \qquad
             \subfloat[\centering ESP-S3]{{\includegraphics[width=5cm]{assets/HW/ESP-S3-sheet.png} }}%
-            \caption{Pyhsical comparison of the ESP32-C3 and ESP32-S3, Unit in mm.}%
-            \label{fig:example}%
+            \caption{Physical comparison of the ESP32-C3 and ESP32-S3, Unit in mm.}%
         \end{figure}
 
         The ESP32-C3 does not have as many GPIO pins compared to the ESP32-S3, however the 
@@ -120,11 +119,11 @@
 
         In order to power the basic node with 5V, a 5.1k\(\Omega\) resistor is connected to 
         the CC1 and CC2 each. The resistor tells the charger that the basic node is a 
-        default USB device and can draw up to 3A of current.\cite{noauthor_fugen_2023} A schottky diode is used to avoid backflow of current.
+        default USB device and can draw up to 3A of current. \cite{noauthor_fugen_2023} A schottky diode is used to avoid backflow of current.
 
     \subsubsection{Serial Port}
 
-        This interface is used to programm the basic node. The interface is connected directly
+        This interface is used to program the basic node. The interface is connected directly
         with the UART of the ESP32-C3. 
 
     \begin{figure}[H]
@@ -161,7 +160,7 @@
         of the converter is 0.6V. The resistor $R_2$ was set to 200k\(\Omega\).
 
     \begin{equation}
-        R_1 = (\frac{3,3V}{0,6V} - 1) \cdot {200kOhm} = {900kOhm} \approx \textbf{910kOhm(E24)}
+        R_1 = (\frac{3.3V}{0,6V} - 1) \cdot {200kOhm} = {900kOhm} \approx \textbf{910kOhm(E24)}
     \end{equation}
     
     \begin{figure}[H]
@@ -187,7 +186,7 @@
     \end{figure}
 
         Pin 3-5 and 6-8 are symmetrical to each other. It was designed this way
-        to allow the battery module and motion module(or for future moduless) to be attached simultaneously.
+        to allow the battery module and motion module(or for future modules) to be attached simultaneously.
         The battery module is plugged into pin 1-5 and is connected to following 
         voltages:
     
@@ -206,7 +205,7 @@
             
         The basic node has a spare header, which can be used to attach a button or 
         magnetic switch. The button can be used to interact with the node or trigger
-        a specific action. The header has 2 pins GND and GPIO 10 which is pulled to 3,3V.
+        a specific action. The header has 2 pins GND and GPIO 10 which is pulled to 3.3V.
 
         \begin{figure}[H]
             \centering

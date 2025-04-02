@@ -36,7 +36,7 @@
             \caption{Battery implemented in the schematic.}
         \end{figure}
 
-    \subsubsection{Battery Managment System}
+    \subsubsection{Battery Management System}
 
         The BMS handles the charging of the battery and assures that the battery is not
         being overcharged. The used IC is the MCP73811\cite{noauthor_mcp73811_2007} from Microchip, it is a linear 
@@ -47,7 +47,7 @@
         \begin{figure}[H]
         \centering
         \includegraphics[width=0.4\textwidth]{assets/HW/Battery-ChargerIC.png}
-        \caption{Battery-Managment-System implemented in the schematic.}
+        \caption{Battery-Management-System implemented in the schematic.}
         \label{fig:battery-chargerIC}
         \end{figure}
 
@@ -65,7 +65,7 @@
         \end{equation}   
 
             
-        Where $I_{OUT}$ is the output current, $V_{IN}$ is the input voltage(worst case) and $\eta$ is the
+        Where $I_{OUT}$ is the output current, $V_{IN}$ is the input voltage (worst case) and $\eta$ is the
         efficiency(typical 90\%) of the boost converter. The output current was set to 1A, the input voltage 
         to 3V and the output voltage to 5V. 
 
@@ -102,7 +102,7 @@
     \subsubsection{ON/OFF Switch}
         The switch disconnects the battery from the boost converter. Note that the battery 
         charging circuit is not influenced since VBUS is directly connected to the BMS as seen
-        in figure\ref[fig:battery-chargerIC].
+        in figure \ref{fig:battery-chargerIC}.
 
     \subsubsection{PCB - V2.2}
 

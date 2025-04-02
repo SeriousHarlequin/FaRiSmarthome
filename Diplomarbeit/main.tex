@@ -2,6 +2,7 @@
 \usepackage{rdp}
 \usepackage[scale=0.72, twoside, bindingoffset]{geometry}
 
+
 \school{HTBLuVA St. Pölten}
 \department{Higher Institute for Electronics and Technical Informatics}
 \subdepartment{Specializations in Embedded and Wireless Systems}
@@ -18,12 +19,15 @@
 
 \begin{document}
 \frontmatter
+\KOMAoptions{headsepline=off}
     \maketitle
     \affidavit
-    \includepdf[pages=-]{topics/template/Diplomarbeitsvorlage_V4.pdf}
+    \includepdf[pages=-, pagecommand={}]{topics/template/Diplomarbeitsvorlage_V4.pdf}
+    \KOMAoptions{headsepline=.5pt}
     \tableofcontents
     
-    \mainmatter 
+\mainmatter 
+    \pagestyle{scrheadings}
     \include{acknowledgement}
     \include{introduction}
     
