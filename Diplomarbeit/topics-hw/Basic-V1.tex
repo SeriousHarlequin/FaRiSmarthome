@@ -18,9 +18,9 @@
         
 
 
-        To connect a module there is a 10 pin header with IO-ports and a 6 pin header 
+        There are a 4 and 6 pin header with IO ports and a 6 pin header 
         for supplying power. It was not intended to design a module, besides the battery module,
-        for this version. It was planned to be used in testing as a development board and connecting
+        for this version. It was planned to be used as a development board by connecting
         the sensors over jumper wires.
         
         \begin{figure}[H]
@@ -30,18 +30,18 @@
             \label{fig:node-battery-connectorV1.1}
         \end{figure}
 
-        When the Battery module is connected, VBUS and EN-MODUL are shorted together.
+        When the Battery module is connected, VBUS and EN-MODUL are shorted together by the battery module.
         This is used to disable the linear voltage regulator on the basic module with the MOSFET Q1. 
         The battery module would then supply the basic module with 3,3V. The battery module is 
         powered by the
 
     \subsubsection{DC-DC Converter}
         
-        To convert the 5V from the USB port to 3.3V a LM7805 linear regulator was used. This regulator
+        To convert the 5V from the USB port to 3.3V a LD33V linear regulator was used. This regulator
         would then be bypassed by the battery module when connected. Then the 3.3V would be supplied by the
         battery module. The 5V was also used to charge the battery.
 
-        The LS33V is turned off by a P-Channel MOSFET when the battery module was connected.
+        The LD33V is turned off by a P-channel MOSFET when the battery module was connected.
 
         \begin{figure}[H]
             \centering
@@ -49,21 +49,30 @@
             \caption{DC-DC Converter implemented in the schematic.}
         \end{figure}
 
-    \subsubsection{Serial-To-USB Converter}
-        The Serial-To-USB converter was deemed to be unnecessary since the MCU could also be programmed 
-        over native USB, it was removed from later versions.
+        Since there is no 5V on the board when the battery module is connected and this 
+        voltage may be needed for future modules, it was decided to always supply the 
+        base module with 5V and to replace the LD33V with a step-down converter in later version. 
+ 
+
+    \subsubsection{USB-to-UART Converter}
+        The USB-to-UART converter was deemed to be unnecessary since the IC was hard to solder on
+        and the MCU could also be programmed over native USB, it was removed from later versions.
 
         \begin{figure}
             \centering
             \includegraphics[width=0.6\textwidth]{assets/HW/NodeV1.1-CP2102.png}
-            \caption{Serial-To-USB Converter implemented in the schematic.}
+            \caption{Serial-to-USB Converter implemented in the schematic.}
         \end{figure}
+
+        It must be noted that IO 0 is not the right pin to put the ESP32-C3 into
+        programming mode. The correct pin is IO 9 as stated in the documentaion of Espressif.\cite{noauthor_boot_nodate}
+        This flaw was not discovered until V2.2 since it was not possible to solder the CP2102
+        on the board without destroying it.
 
     \subsubsection{PCB}
 
         The PCB of the basic module is a 2-layer board with a size of 75x30mm. 
-        The PCB is designed to be mounted on the battery module. The PCB layout of the basic 
-        module is shown in figure \ref{fig:basic-module-pcb-V1.1}.
+        The PCB is designed to be mounted over the battery module.
 
         \begin{figure}[H]
             \centering
@@ -77,18 +86,18 @@
         to keep the size small and to make the designing of the case easier.
 
 \subsection{Hardware - V1.0}
-    This version had a finished schematic, but the PCB was never finished/further development into 
+    This version had a finished schematic, but the PCB was never finished and further development into 
     version 1.1. The schematic is very similar to the version 1.1. Following components were different 
     in this version:
     
     \begin{itemize}
         \item 1. Micro USB connector was used.
-        \item 2. No power headers.
-        \item 3. Different battery monitoring.
+        \item 2. No power header.
+        \item 3. Different component values uesed for battery monitoring.
     \end{itemize}
 
     \subsubsection{Micro USB Connector}
-        The frist version of the basic module was designed to be powered over a micro USB connector.
+        The first version of the basic module was designed to be powered over a micro USB connector.
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{assets/HW/NodeV1.0-Micro-USB.png}

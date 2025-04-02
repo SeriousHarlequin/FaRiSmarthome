@@ -1,6 +1,5 @@
 \subsection{Hardware - V2.1}
-    \textbf{
-        There is no version 2.0 of this print. During the design process, 
+    \textbf{There is no version 2.0 of the battery module. During the design process, 
         complications arose that directly led to the designation V2.1.}
     Version 2.1 of the battery module is identical to version 2.2, except for the
     following components:
@@ -13,15 +12,26 @@
     \subsubsection{Boost Converter}
         A resistor was added to the boost converter to prevent it from turning off when the
         battery module is connected to the base module. The boost converter was not able to turn on, 
-        when the battery module was connected to the base module. 
-        When the battery module was connected to the base module, the boost converter turned off, 
-        even though the battery USB-C was not connected. Therefore 
-        
+        when the battery module was connected to the base module. The boost converter turned off, 
+        even though the battery USB-C was not connected. The reason for this was, that the  
+        transistor was switched on duo to a small voltage that was present on the base of the
+        transistor when it was connected to the base module. 
+
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{assets/HW/BatteryV2.1-Boost-Converter.png}
             \caption{Boost-Converter implemented in version 2.1.}
         \end{figure}
+
+        To fix this issue, a 47k\(\Omega\) resistor was added to the base of the transistor pulling 
+        it to ground.
     
     \subsubsection{PCB - V2.1}
-        The PCB is identical to V2.2 with a footprint of 75x30mm.
+        The PCB is identical in size with V2.2 with a footprint of 30x41.5mm.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.7\textwidth]{assets/HW/PCB-BATTERY-V2.1.png}
+            \caption{PCB of the battery module V2.1. [Red - Frontside, Blue - Backside]}
+            \label{fig:battery-module-pcb-V2.1}
+        \end{figure}

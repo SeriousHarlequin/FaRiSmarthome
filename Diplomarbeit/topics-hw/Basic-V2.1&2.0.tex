@@ -1,13 +1,13 @@
 \subsection{Hardware - V2.1}
 
-    This version of the basic node had minor changes to the hardware.
-    It was produced and tested, resulting in V2.2. 
+    This version of the basic module had minor changes to the hardware compared
+    to the version after. It was produced and tested, resulting in V2.2. 
 
     \subsubsection{Temperature Sensor}
         This version of the base module had a missing pull-up resistor on the
         temperature sensor. The DS18B20  was not able to work without it. It needs
         a pull-up resistor to work properly as stated in the datasheet\cite{noauthor_ds18b20_nodate}. 
-        The was fixed in V2.2.
+        This was fixed in V2.2.
 
         \begin{figure}[H]
             \centering
@@ -22,13 +22,13 @@
         the basic node, it happened that the programming over the native USB of the 
         ESP32 C3 was not possible. Duo to setting build flags, that would disable USB 
         programming. To make programming easier and fix this issue, the serial interface 
-        laid out on the PCB. 
+        was laid out on the board. 
 
 
     \subsubsection{Module-Detection}
-        While testing with this version, it was noticed that pin 3 was floating,
-        potentially causing the base module to recognize a module without one being attached.
-        To fix this issue in V2.2, the voltage divider on the modules were split up and
+        While testing this version, it was noticed that pin 3 was floating when no module 
+        is connected, potentially causing the base module to recognize a module without 
+        one being attached. To fix this issue in V2.2, the voltage divider on the modules were split up and
         a 100kOhm resistor was added to pull the pin to GND on the base module.
         
     \subsubsection{PCB - V2.1}
@@ -43,24 +43,24 @@
 
 \subsection{Hardware - V2.0}
 
-    This version of the basic node had minor changes compared to V2.1. The PCB was
-    producted, however it was never populated and testing, as the shipment took so
+    This version of the basic module had minor changes compared to V2.1. The PCB was
+    producted, however it was never populated or tested, as the shipment took so
     long, that version 2.1 was finished within that time and ordered as well. 
     Following flaws were discovered in V2.0:
 
-    \subsubsection{Ground-Plane}
-        The ground-plane was removed underneath the ESP32-C3 to improve the
+    \subsubsection{Ground Plane}
+        The ground plane was removed underneath the ESP32-C3 to improve the
         signal quality. 
 
-    \subsubsection{Spare-Header}
-        GPIO 10 of the MCU was not used, so it was decided to add a pin header to later versions of the basic node.
+    \subsubsection{Spare Header}
+        GPIO 10 of the MCU was not used, so it was decided to add a pin header to later versions of the basic module.
         Where a button or magnetic switch could be attached to. When pressed or triggered, the
         button could be used to interact with the node or trigger a specific action.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.4\textwidth]{assets/HW/NodeV2.0-ESP32-C3.png}
-            \caption{MCU implemented in the schematic with pin 10 not used.}
+            \includegraphics[width=0.6\textwidth]{assets/HW/NodeV2.0-ESP32-C3.png}
+            \caption{MCU implemented in the schematic version 2.0 with pin 10 not used.}
         \end{figure}
 
         
@@ -68,7 +68,7 @@
 
     \subsubsection{PCB - V2.0}
         The size of the PCB is identical to V2.1 with a footprint of 75x30mm.
-        In figure \ref{fig:basic-module-pcb-V2.0} the ground-plane under the ESP32-C3
+        In figure \ref{fig:basic-module-pcb-V2.0} the ground plane under the ESP32-C3
         pcb-antenna is clearly visible.
 
     \begin{figure}[H]

@@ -18,8 +18,7 @@
     \subsubsection{Power-Supply}
 
         Because the switch module is switching 230V, it will also supply itself with this voltage.
-        A transformer was chosen over a switching power supply because of the lower cost and the
-        lower complexity.
+        A transformer was chosen because of the simplicity.
 
         The used print transformer has the type FL4/9\cite{noauthor_low_nodate} it has two 115V primary windings and
         two 9V secondary windings. The primary windings are connected in serial to the 230V mains and the
@@ -40,7 +39,7 @@
         \end{itemize}
 
         \begin{equation}
-            C = \frac{I \cdot \Delta T}{\Delta U} = \frac{100mA \cdot 10ms}{0.5V} = 2mF
+            C = \frac{I \cdot \Delta T}{\Delta U} = \frac{100mA \cdot 10ms}{0.5V} = 2mF \approx \textbf{2.2mF}
         \end{equation}
         \newline
         The output voltage of 18V is stepped down to 12V with the LM2575\cite{noauthor_lm2575_2015} buck converter. The output
@@ -48,9 +47,7 @@
         the LM2575. If the 12V output version is chosen the Resistor R6 is not needed and R5 is
         bridged. 
 
-        The 12V are needed to power the relay.
-
-        The 12V are then stepped down to 5V with the LM7805 linear regulator. The base module and 
+        The 12V are used to drive the relay and to generate 5V with the LM7805 linear regulator. The base module and 
         current sensor are powered with the 5V.
 
          \begin{figure}[H]
@@ -61,9 +58,9 @@
 
     \subsubsection{Relay}
         The switch module uses a relay to switch the 230V devices on and off. The relay used is 
-        the JW1aFSN from Panasonic. The relay is controlled by a transistor and a flyback diode
-        to protect the transistor from the voltage spike when the relay is switched off. The relay
-        is rated for 10A at 250VAC. A LED was added to the relay to indicate the state of the relay. 
+        the JW1aFSN from Panasonic\cite{noauthor_jw_2024}. The relay is controlled by a transistor 
+        and a flyback diode to protect the transistor from the voltage spike when the relay is switched off. 
+        The relay is rated for 10A at 250VAC. A LED was added to the relay to indicate the state of the relay. 
         The LED is connected to the port of the microcontroller and a resistor to limit the current.
 
         \begin{figure}[H]
@@ -72,7 +69,7 @@
             \caption{Switch implemented in the schematic.}
         \end{figure}
 
-        The relay is normally open. A connection is made from J1 to J2, when the coil is energized.
+        
 
         \begin{figure}[H]
             \centering
@@ -84,37 +81,97 @@
 
     \subsubsection{Current-Sensor}
 
-        The current sensor is used to measure the current draw of the switched device. The current
-        sensor used is the ACS712ELCTR-20A-S\cite{noauthor_acs712_2024} from Allegro. The sensor is 
-        rated for 20A and has a sensitivity of 100mV/A. The sensor is connected to the microcontroller 
-        over an analog pin.
+        The current sensor is used to measure the current draw of the switched device. For this
+        purpose the ACS712ELCTR-20A-S\cite{noauthor_acs712_2024} from Allegro was chosen. It is 
+        connected to the microcontroller over an analog pin. The sensor is rated for 20A. 
 
         The available versions of the sensor were capably of measuring +-5A, +-20A and +-30A. 
         The 20A version was chosen because it covers the 10A current the relay is capable of. 
-        The sensor is a Hall-Effect sensor, which measures the magnetic field of the current flowing
+        The sensor is a Hall effect sensor, which measures the magnetic field of the current flowing
         through the wire. The sensor is placed in the current path of the relay. The sensor has a 
-        sensitivity of 100mV/A, which means that the output voltage is 100mV for every Ampere flowing
+        sensitivity of 100mV/A, which means that the output voltage is 100mV for every ampere flowing
         through the wire.
+
+
+        The IC is powered with 5V and the output on VIOUT is 2.5V when no current and 4.5V when 
+        20A is flowing. In Order to adapt the output to the 3.3V ADC of the ESP32, a voltage divider
+        is used like shown in the datasheet.
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\textwidth]{assets/HW/Current-Sensor-schematic.png}
             \caption{Current-Sensor implemented in the schematic as shown in the datasheet.}
+            \label{fig:current-sensor-schematic}
         \end{figure}
 
         The sensor is embedded in the current path of the relay. The terminals are 
-        electrically isolated from the signal pins like described in the datasheet \cite{noauthor_acs712_2024}. 
+        electrically isolated from the signal pins like described in the datasheet \cite{noauthor_acs712_2024}.
 
-        The IC is powered with 5V and the output on VIOUT is 2.5V when no current and 4.5V when 
-        20A is flowing. In Order to adapt the output to the 3.3V ADC of the ESP32, a voltage divider
-        is used like shown in the datasheet. The output is then connected to the ADC of the ESP32.
+        
+        The output of this circuit was tested and measured.
+        A power supply in series with an amperemeter was connected to the terminals of the 
+        current sensor and the amount of current was set in the power supply.
+        The IC was supplied with 5V from a second power supply. The voltage was measured as 
+        the current was altered though the IC. 
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{assets/HW/Switch-Measurment-ACS712-circuit.png}
+            \caption{Measurment circuit}
+        \end{figure}
+        
+        The orange points are measured. All the other points were generated 
+        since the power supply is only capable of 5A. The negative current was achieved by 
+        swapping the terminals at the ACS712.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.8\textwidth]{assets/HW/Datasheet-Allergro-Typical4.png}
-            \caption{Current-Sensor implemented in the schematic as shown in the datasheet.}
-            \label{fig:current-sensor-schematic-datasheet}
+            \begin{minipage}{0.8\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/HW/Switch-Measurment-ACS712.png}
+                \caption{Output Voltage versus Sensed Current of the ACS712.}
+            \end{minipage}%
+            \begin{minipage}{0.4\textwidth}
+                \centering
+                \begin{tabular}{|c|c|}
+                    \hline
+                    \textbf{I[A]} & \textbf{\(V_{OUT}\)[V]} \\
+                    \hline  
+                    5 & 2.310 \\
+                    4 & 2.240 \\
+                    3 & 2.160 \\
+                    2 & 2.087 \\
+                    1 & 2.006 \\
+                    0 & 1.928 \\
+                    -1 & 1.849 \\
+                    -2 & 1.769 \\
+                    -3 & 1.691 \\
+                    -4 & 1.613 \\
+                    -5 & 1.537 \\
+                    \hline
+                \end{tabular}
+                \captionof{table}{Measurments}
+            \end{minipage}
         \end{figure}
+
+        The output voltage stays linear with a avarage change of 77.3mV/A.
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Device} & \textbf{Model} & \textbf{Purpose} \\
+                \hline
+                Powersupply & EMG 18135 & Supply voltage for ACS712 \\
+                \hline
+                Powersupply & Korad KA3005D DC  & Simulating current draw \\
+                \hline
+                Multimeter & Voltcraft VC271  & Measuring voltage \\
+                \hline
+                Multimeter & Fluke 175 true rms & Measuring current \\
+                \hline
+            \end{tabular}
+            \caption{Used devices for measuring the current sensor.}
+            \label{tab:costs-base-module}
+        \end{table}
 
         \subsubsection{PCB}
 
@@ -148,6 +205,12 @@
     The base resistor of the transistor was forgotten in the schematic. The transistor was destroyed
     when the MCU pulled the port high. To prevent this in V1.1, a base resistor was added to limit 
     the current.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{assets/HW/SwitchV1.0-Relay.png}
+        \caption{Missing base resistor before transistor Q1.}
+    \end{figure}
 
     \subsubsection{Power-Supply}
     While testing the module it was found that it is nowhere shown when 230V is present. Therefore,

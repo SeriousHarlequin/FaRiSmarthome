@@ -36,7 +36,7 @@
             \caption{Battery implemented in the schematic.}
         \end{figure}
 
-    \subsubsection{Battery-Managment-System}
+    \subsubsection{Battery Managment System}
 
         The BMS handles the charging of the battery and assures that the battery is not
         being overcharged. The used IC is the MCP73811\cite{noauthor_mcp73811_2007} from Microchip, it is a linear 
@@ -48,9 +48,10 @@
         \centering
         \includegraphics[width=0.4\textwidth]{assets/HW/Battery-ChargerIC.png}
         \caption{Battery-Managment-System implemented in the schematic.}
+        \label{fig:battery-chargerIC}
         \end{figure}
 
-    \subsubsection{Boost-Converter}
+    \subsubsection{Boost Converter}
 
         The boost converter is used to convert the 3.7V from the battery to 5V to power the 
         basic node. The used IC is the TLV61070 from Texas Instruments, it is a high efficiency
@@ -94,14 +95,20 @@
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{assets/HW/Boost-Converter.png}
+        \includegraphics[width=0.9\textwidth]{assets/HW/Boost-Converter.png}
         \caption{Boost-Converter implemented in the schematic.}
         \end{figure}
 
-    \subsubsection{PCB}
+    \subsubsection{ON/OFF Switch}
+        The switch disconnects the battery from the boost converter. Note that the battery 
+        charging circuit is not influenced since VBUS is directly connected to the BMS as seen
+        in figure\ref[fig:battery-chargerIC].
+
+    \subsubsection{PCB - V2.2}
 
         The PCB has a size of 30x41.5mm, it fits directly under the basic module. 
         The components used were mainly SMD components, in order to keep the PCB small. 
+        It is a 2-layer PCB.
 
         \begin{figure}[H]
             \centering

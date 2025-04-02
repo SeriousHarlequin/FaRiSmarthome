@@ -1,17 +1,23 @@
 \section{Motion Detector Module} \setAuthor{Richard Krammer}
 
-    This module allows the node to detect motion in its environment. This Module can be 
-    attached simultaneously with the Battery Module to the Base Module
-
+    This module allows the node to detect motion in its environment. This module can be 
+    attached simultaneously with the battery module to the base bodule.
+    The motion module has two revisions, V1.0 and V1.1. The only difference is that 
+    a resistor was removed from the V1.1 version. The schematic and layout did not 
+    change. The resistor was removed from this print and one was added to the Base Module
+    in order to prevent the GPIO pin from floating.
+    
     \subsection {Hardware - V1.1(Final)}
-        The motion module has two revisions, V1.0 and V1.1. The only difference is that 
-        a resistor was removed from the V1.1 version. The schematic and layout did not 
-        change. The resistor was removed from this print and added to the Base Module
-        in order to prevent the GPIO pin from floating.
-        
+
+        Following components are required to fulfill the requirements:
+        \begin{itemize}
+            \item 1. Sensor
+            \item 2. Module Connector
+        \end{itemize}
+            
 
         \subsubsection{Sensor}
-            The PIR sensor EKMB1305111K is used to detect motion. This particular sensor was chosen
+            The PIR sensor EKMB1305111K\cite{noauthor_pir_2019} is used to detect motion. This particular sensor was chosen
             for its ability to oversee a wide angel of about 150° with a range of 5m, therefor it is
             a good choice to observe corridors or rooms in a house.
 
@@ -21,11 +27,15 @@
                 \caption{PIR Sensor implemented in the schematic.}
             \end{figure}
 
+            The sensor operates with a voltage of 3.3V.
+            The sensor has a digital output, which is connected to the GPIO pin 4 of the ESP32-C3.
+            The pull down resistor R3 is required since the sensor output is a drain.
+
         \subsubsection{Module Connector}
             The Motion Module connects with an 10-pin connector to the Base Module. It is supplied 
             with 3.3V and GND. And pin 4 is used to read the sensor.
 
-            \begin{figure}[htbp]
+            \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.4\textwidth]{assets/HW/Motion-Module-Port.png}
                 \caption{Module-Connector implemented in the schematic.}
@@ -57,8 +67,21 @@
         
     \subsection {Hardware - V1.0} 
             Version 1.0 of the motion module is identical to version 1.1, except for the resistor R2.
-            This resistor was removed from the motion module and added to the base module. The
-            reason for this change is to prevent the GPIO pin on the base module from floating. 
+        
+            \subsubsection{Module Detection}
+
+            This version had a complete voltage divider with a 330k\(\Omega\) and 680k\(\Omega\)
+            setting the voltage between the resistors to about 2.2V. 
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.4\textwidth]{assets/HW/MotionV1.0-Module-Detection.png}
+                \caption{Module detection implemented in the schematic.}
+                \label{fig:motion-module-check-V1.0}
+            \end{figure}
+
+            In V1.1 the resisitor R2 was removed from the motion module and one was added to the base module. 
+            The reason for this change is to prevent the GPIO pin on the base module from floating. 
             The PCB layout of the motion module is shown in the following page.
 
 

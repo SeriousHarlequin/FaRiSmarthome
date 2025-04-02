@@ -25,23 +25,34 @@ without the need to connect a USB-C cable.
         
         With the voltages the basic node is powered, and the battery is charged.
 
-    \subsubsection{Battery}
-
     \subsubsection{DC-DC-Converter}
 
         A buck-boost converter is used to convert the 3-4.2V from the battery to 3.3V to power the
         basic module. The used IC is the TPS63000 from Texas Instruments it is a high efficiency
         buck-boost converter with a efficiency of up to 96\%. The inductor and the output voltage were
         calculated like stated in the datasheet\cite{noauthor_tps6300x_2015}. The inductor was selected 
-        by calculating the maximum inductor current:
+        after calculating the maximum inductor current:
 
         \begin{equation}
-            D = \frac{V_{OUT} - V_{IN} }{V_{VOUT}}
+            D = \frac{V_{OUT} - V_{IN} }{V_{VOUT}} = \frac{3.3V - 3.0V}{3.3V} = 0.0909
         \end{equation}
 
         \begin{equation}
             I_{PEAK} = \frac{I_{OUT}}{\eta \cdot (1 - D)} + \frac{V_{IN} \cdot D}{2 \cdot f \cdot L} 
         \end{equation}
+
+        Where D is the duty cycle, \(I_{OUT}\) is the output current set to 0.8A, \(\eta\)
+        is the efficiency(0.9 as assumption), \(V_{IN}\) is the lowest input voltage set to 3V,
+        \(f\) is the switching frequency set to 2.5MHz and \(L\) is the inductor value set to 2.2\(\mu\)H.
+
+        
+
+        \begin{equation}
+            I_{PEAK} = \frac{0.8A}{0.9 \cdot (1 - 0.0909)} + \frac{3V \cdot 0.0909}{2 \cdot 2.5MHz \cdot 2.2\mu H} 
+            = 1.0025A \approx \textbf{1A} 
+        \end{equation}
+
+        \vspace{1cm}
 
         The output voltage was set with a resistor divider to 3.3V:
 
@@ -49,7 +60,13 @@ without the need to connect a USB-C cable.
             R1 = R_2 \cdot (\frac{V_{OUT}}{V_{FB}} - 1)
         \end{equation}
 
-        \begin{figure}[H]
+        Where \(V_{FB}\) is 500mV, $R_2$ is 200k\(\Omega\) and \(V_{OUT}\) is 3.3V.
+
+        \begin{equation}
+            R1 = 200k\Omega \cdot (\frac{3.3V}{0.5V} - 1) = 1120k\Omega \approx \textbf{$1M\Omega$}
+        \end{equation}
+
+         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\textwidth]{assets/HW/BatteryV1.0-Buck-Boost.png}
             \caption{DC-DC-Converter implemented in the schematic.}
@@ -61,9 +78,9 @@ without the need to connect a USB-C cable.
         linear regulator on the basic module with a buck converter to improve efficiency.
         Therefore, a buck-boost converter was not needed anymore in later versions of the battery module. 
 
-    \subsubsection{PCB}
+    \subsubsection{PCB - V1.0}
         The PCB of the battery module is a 2-layer board with the same size as the basic module
-        with 75x30mm.
+        with 75x30mm. The print would be plugged into the basic module V1.1 from underneath.
 
         \begin{figure}[H]
             \centering
