@@ -134,7 +134,7 @@
         \label{fig:serial-portV2.2}
     \end{figure}
 
-        It must be noted that the pin 0 is not the pin to bring the ESP32-C3 into programming mode.
+        It must be noted that pin 0 is not the right one to bring the ESP32-C3 into programming mode.
         It was designed out of habit, since previous ESP32 always used pin 0 to enter
         programming mode. The correct pin is GPIO 9 like stated in the documentation\cite{noauthor_boot_nodate}.
     
@@ -187,7 +187,7 @@
     \end{figure}
 
         Pin 3-5 and 6-8 are symmetrical to each other. It was designed this way
-        to allow the battery module and motion module to be attached simultaneously.
+        to allow the battery module and motion module(or for future moduless) to be attached simultaneously.
         The battery module is plugged into pin 1-5 and is connected to following 
         voltages:
     
