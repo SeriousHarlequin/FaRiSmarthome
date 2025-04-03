@@ -8,4 +8,4 @@ Idee zu der Modul-Erkennung: Spannungsteiler am Module. Wenn das Modul aufgestec
 20.12.2024: 	Fehler-Node: Pull-Up Widerstand DS18B20 fehlt, Serial Interface rauslegen, 
 		Fehler-SWITCH: Basis Wiederstand fehlt beim Transitor der das Relai schaltet, Footprints anpassen
 		Fehler-BATTERY: Pull-Down Widerstand an der Basis von Q1 hinzufügen(Schaltet sonst die Versorgung aus, obwohl keine Externe Stromversogung angesteckt ist), Footprints zu klein für Widerstände(Nicht so Wichtig)
-		Allgemeiner Fehler, Spannungsteiler, zum erkennen des Modules, muss auf NODE und Modul aufgeteilt sein, sonst Floated der Input-Pin an der Node wenn kein Modul angesteckt ist.
+		Allgemeiner Fehler, Spannungsteiler, zum erkennen des Modules, muss auf NODE und Modul aufgeteilt sein, sonst floated der Input-Pin an der Node wenn kein Modul angesteckt ist.
