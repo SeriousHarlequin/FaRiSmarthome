@@ -18,7 +18,7 @@ void initTFT(TFT_eSPI *tft){
     lv_init();
 
     tft->init();
-    tft->setRotation(3); 
+    tft->setRotation(1); 
     // tft->fillScreen(TFT_BLACK);
 
     lv_disp_draw_buf_init( &draw_buf, buf, NULL, displayWidth * displayHeight / 10 );
