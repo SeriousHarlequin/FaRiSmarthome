@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{RUN}\PYG{+w}{ }chmod\PYG{+w}{ }+x\PYG{+w}{ }/app/start.sh
+
+\PYG{c}{\PYGZsh{} Expose ports (adjust as needed)}
+\PYG{k}{EXPOSE}\PYG{+w}{ }\PYG{l+s}{3000 5000}
+
+\PYG{c}{\PYGZsh{} Start command}
+\PYG{k}{ENTRYPOINT}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}/app/start.sh\PYGZdq{}}\PYG{p}{]}
+\end{Verbatim}

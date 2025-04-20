@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{build\PYGZus{}flags}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{    }\PYG{o}{\PYGZhy{}}\PYG{n}{DARDUINO\PYGZus{}USB\PYGZus{}MODE}\PYG{o}{=}\PYG{l+m+mi}{1}
+\PYG{+w}{    }\PYG{o}{\PYGZhy{}}\PYG{n}{DARDUINO\PYGZus{}USB\PYGZus{}CDC\PYGZus{}ON\PYGZus{}BOOT}\PYG{o}{=}\PYG{l+m+mi}{1}
+\end{Verbatim}

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{[}\PYG{n}{Unit}\PYG{p}{]}
+\PYG{n}{Description}\PYG{o}{=}\PYG{n}{udp}\PYG{+w}{ }\PYG{n}{discovery}
+\PYG{n}{After}\PYG{o}{=}\PYG{n}{network}\PYG{p}{.}\PYG{n}{target}
+
+\PYG{p}{[}\PYG{n}{Service}\PYG{p}{]}
+\PYG{n}{ExecStart}\PYG{o}{=/}\PYG{n}{usr}\PYG{o}{/}\PYG{n}{bin}\PYG{o}{/}\PYG{n}{python3}\PYG{+w}{ }\PYG{o}{/}\PYG{n}{home}\PYG{o}{/}\PYG{n}{fabian}\PYG{o}{/}\PYG{n}{farismart}\PYG{o}{/}\PYG{n}{Main}\PYG{p}{.}\PYG{n}{py}
+\PYG{n}{WorkingDirectory}\PYG{o}{=/}\PYG{n}{home}\PYG{o}{/}\PYG{n}{fabian}
+\PYG{n}{StandardOutput}\PYG{o}{=}\PYG{n}{inherit}
+\PYG{n}{StandardError}\PYG{o}{=}\PYG{n}{inherit}
+\PYG{n}{Restart}\PYG{o}{=}\PYG{n}{always}
+\PYG{n}{User}\PYG{o}{=}\PYG{n}{fabian}
+
+\PYG{p}{[}\PYG{n}{Install}\PYG{p}{]}
+\PYG{n}{WantedBy}\PYG{o}{=}\PYG{n}{multi}\PYG{o}{\PYGZhy{}}\PYG{n}{user}\PYG{p}{.}\PYG{n}{target}
+\end{Verbatim}

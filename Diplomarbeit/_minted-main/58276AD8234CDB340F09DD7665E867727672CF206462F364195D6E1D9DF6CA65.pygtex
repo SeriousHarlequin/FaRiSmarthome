@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}udpBroadcast.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}WebServer.h\PYGZdq{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setup}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{n}{ethernetInit}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{initWebServer}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{server}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{createTasks}\PYG{p}{();}
+\PYG{+w}{    }\PYG{c+c1}{//...}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

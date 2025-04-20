@@ -1,6 +1,7 @@
 #include "display.h"
 extern TFT_eSPI tft;
 
+TFT_eSPI tft = TFT_eSPI(displayWidth, displayHeight);
 
 void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p )
 {
@@ -11,14 +12,16 @@ void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *colo
     tft.pushColors( ( uint16_t * )&color_p->full, w * h, true );
     tft.endWrite();
 
+    pinMode(BCKLIGHT_PIN, OUTPUT);
+    digitalWrite(BCKLIGHT_PIN, HIGH);
     lv_disp_flush_ready( disp );
 }
 
-void initTFT(TFT_eSPI *tft){
+void initTFT(){
     lv_init();
 
-    tft->init();
-    tft->setRotation(1); 
+    tft.init();
+    tft.setRotation(1); 
     // tft->fillScreen(TFT_BLACK);
 
     lv_disp_draw_buf_init( &draw_buf, buf, NULL, displayWidth * displayHeight / 10 );
