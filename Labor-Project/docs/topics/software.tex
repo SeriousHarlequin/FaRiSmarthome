@@ -31,11 +31,11 @@
 
     \section{FaRiLib}
     Die Libary soll als Grundgerüst für die Implementierung aller Smarthome-Geräte
-    dienen. Daher ist der größte Teil der geschriebenen Funktionen Teil der 
+    dienen. Daher ist der modulübergreifende Teil der geschriebenen Funktionen Teil der 
     \textit{FaRiLib} Library. Diese Funktionen werden nach Kategorien in verschiedene
-    Dateien aufgeteilt (Zum Beispiel: \lstinline{FaRiLib/src/Display.cpp} und 
-    \lstinline{FaRiLib/src/ESP-NOW.cpp}). Die selbe Gliederung gilt für die 
-    dazugehörigen Header-Dateien (Zum Beispiel: \\ \lstinline{FaRiLib/include/Display.h} und 
+    Dateien aufgeteilt (Zum Beispiel: \lstinline{FaRiLib/src/ESP-NOW.cpp}). 
+    Die selbe Gliederung gilt für die dazugehörigen Header-Dateien 
+    (Zum Beispiel: 
     \lstinline{FaRiLib/include/ESP-NOW.h}).
 
     \section{ESP32-S3 Konfiguration}
@@ -83,6 +83,7 @@
 
     \input{software_UserInterface}
     \input{software_kommunikation}
+    \input{software_rtos}
 
 
 

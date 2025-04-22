@@ -49,8 +49,7 @@
             Ebenso muss im "tft\_eSPI.h" folgendes editiert werden:
 \begin{lstlisting}[style=cppCode]
     #ifdef TOUCH_CS
-    //CHANGE THIS LINE
-    #if 0
+    #if 0 //CHANGED THIS 1 to a 0
         #if !defined(DISABLE_ALL_LIBRARY_WARNINGS)
         #error >>>>------>> ...
         #endif
@@ -104,6 +103,33 @@
             Trotz mehrerer Versuche, die Library zu modifizieren, wirf die Library
             immer wieder \lstinline{include-Fehler} in dem dann inkludiertem Touch.h File. \\~\\
             
+    \newpage
+    \subsection{Rotary Encoder Input}
+    Anstatt des Touchscreens wurde ein Rotary Encoder verwendet, um die
+    Benutzeroberfläche zu steuern. Da \texttt{lvgl} nur eingeschränkte
+    Unterstützung für Rotary Encoder bietet, wurde eine eigene Implementierung
+    geschrieben. 
 
+        \subsubsection{lv\_groups}
+        lv\_groups sind Gruppen von Objekten, durch die iteriert werden kann.
+        Dies Eigenschaft wird verwendet, um die Objekte in der Benutzeroberfläche
+        mit dem Rotary Encoder auszuwählen. \\~\\
+
+        Vereinfacht kann die Funktionsweise wie folgt dargestellt werden:
+        \begin{lstlisting}[style=cppCode]
+    if(encoder.getCount() > 1){
+      encoder.setCount(0);
+      focusNext(currentGroup);
+    }
+
+    if(encoder.getCount() < -1){
+      encoder.setCount(0);
+      focusPrev(currentGroup);
+    }
+        \end{lstlisting}
+
+        Die momentane Gruppe ändert sich, wenn auf eine andere Ansicht 
+        gewechselt wird. So kann der Code allgemein gehalten werden und
+        muss nicht für jede Ansicht angepasst werden. 
             
 

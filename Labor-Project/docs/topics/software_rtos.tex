@@ -1,0 +1,56 @@
+\section{Echtzeit Prezesse}
+Um zeitkritische Prozesse zuverlässig zu steuern, wird das Echtzeitbetriebssystem
+FreeRTOS verwendet. Dies ist notwendig, da \texttt{lvgl} einen handler benötigt,
+der alle 5ms aufgerufen werden soll, um die Benutzeroberfläche zu aktualisieren.
+Ebenso soll ESP-NOW periodisch nach einer Bridge suchen, um Informationen 
+über das Smarthome zu erhalten. Ein RTOS vereinfacht die Implementierung
+dieser Prozesse dramatisch.
+
+    \subsection{Struktur}
+    In der \texttt{Setup()} Funktion werden drei Tasks erstellt, diese sind 
+    zuständig für: 
+    \begin{itemize}
+        \item lvgl Handler
+        \item Input Logik
+        \item ESP-NOW
+    \end{itemize}
+
+        \subsubsection{lvgl Handler}
+        Der lvgl Handler wird alle 5ms aufgerufen und ist für die Aktualisierung
+        der Benutzeroberfläche zuständig. Dies geschieht durch den Aufruf
+        der lvgl Funktion \texttt{lv\_task\_handler()}. Anschließend wird der 
+        Task für 5ms in den Sleep-Mode versetzt.
+        \begin{lstlisting}[style=cppCode]
+    void loop() { // should only contain lvgl handler
+        lv_task_handler();
+        vTaskDelay(5 / portTICK_PERIOD_MS);
+    }
+            \end{lstlisting}
+
+        \subsubsection{Input Logik}
+        Der Input Logik Task ist für die Verarbeitung der Eingaben zuständig.
+        Diese werden am Rotary Encoder eingelesen und in lvgl Aktionen umgewandelt.
+
+        \subsubsection{ESP-NOW}
+        Der ESP-NOW Task ist nur für die Ursprungsuche der Bridge zuständig.
+        Diese wird durchgeführt, indem alle 5 Sekunden ein Broadcast-Paket
+        gesendet wird. Wird auf dieses Paket geantwortet, wird die 
+        MAC-Adresse der Bridge gespeichert und die Suche permanent beendet.
+
+    \subsection{Race Conditions}
+    Da Der ESP32-S3 über zwei Kerne verfügt, kann es vorkommen, dass lvgl-Objekte
+    bearbeitet werden, während das User-Interface aktualisiert wird. Dies kann
+    zu unvorhersehbaren Fehlern und somit zu einem Absturz des Programms führen.
+    Um dies zu verhindern, wird ein Mutex verwendet. Dieser wird sowohl
+    im lvgl Handler, als auch in der Input Logik aktiviert, sobald ein lvgl-Objekt
+    bearbeitet wird.\\~\\
+    Vereinfacht kann der Mutex wie folgt verwendet werden:
+
+    \begin{lstlisting}[style=cppCode]
+    xSemaphoreTake(lvglMutex, portMAX_DELAY);
+    // modify lvgl object
+    xSemaphoreGive(lvglMutex);
+    \end{lstlisting}
+
+    Wird diese Methode bei jeder Bearbeitung eines lvgl-Objektes verwendet,
+    wird sichergestellt, dass immer nur ein Task auf das lvgl-Objekt zugreift.
