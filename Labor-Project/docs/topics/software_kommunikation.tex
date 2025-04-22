@@ -17,3 +17,29 @@
     „Espressif“ verwendet. Diese sind offiziell unterstützt
     und bieten eine einfache Möglichkeit, um eine Kommunikation
     zwischen ESP32's zu ermöglichen.
+
+        \subsubsection{Eingabesicherung}
+        Daten werden in Form von Structs übertragen. Diese Structs
+        sind in der \texttt{FaRiLib} Library definiert. Um sicherzustellen,
+        dass keine falschen Daten übertragen werden, wird gecheckt, ob die
+        Strukturgröße mit der erwarteten Strukturgröße übereinstimmt. \par
+        Diese Maßnahmen minimieren das Risiko von Fehlern der Werte oder unbefugten 
+        Speicherzugriffen. Da das Struct direkt auf den Speicher des ESP32
+        kopiert wird, können falsche Datentypen unvorhersehbare Fehler
+        verursachen und anderen Speicherplatz überschreiben. \\
+
+        Dieser Check kann wie folgt implementiert werden:
+        \begin{lstlisting}[style=cppCode]
+    void OnDataRecv(
+        const uint8_t * mac, 
+        onst uint8_t *incomingData, 
+        int len) 
+    {
+        if(sizeof(espnowSlave.msgReceived) != len) return;
+        //. . . Rest of the code
+    }
+        \end{lstlisting}
+    
+        Mit dieser Zeile wird die Datenverarbeitung abgebrochen,
+        wenn die Strukturgröße nicht 
+        übereinstimmt und der Speicher wird nicht überschrieben.

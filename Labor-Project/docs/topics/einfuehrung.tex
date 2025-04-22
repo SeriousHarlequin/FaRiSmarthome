@@ -13,6 +13,13 @@ abzufragen und anzupassen.
     Des Weiteren muss so kein Browser oder App geöffnet werden, um das Smarthome zu 
     steuern.
 
+    \section{Hardware}
+    Das Control-Panel soll klein genug sein, um auf einem Schreibtisch zu stehen
+    und über ein reguläres Handyladegerät versorgt werden. Die Technik 
+    soll in einem 3D-gedruckten Gehäuse verbaut sein, in dem nur das Display und
+    die Bedienelemente sichtbar sind. 
+
+    \newpage
     \section{Das Smarthome}
     Das Smarthome, mit dem das Control-Panel kommuniziert, ist ein bereits 
     bestehendes System, das als Diplomarbeit derselben Autoren entwickelt wurde.
@@ -20,12 +27,17 @@ abzufragen und anzupassen.
     miteinander kommunizieren. Die Geräte sind in der Lage, verschiedene 
     Sensor-Daten zu erfassen, sowie Aktoren zu steuern. Als Alternative zum
     Control-Panel kann das Smarthome auch über eine Web-Oberfläche gesteuert werden.
+    \\~\\
+    Die Kommunikation des Systems kann wie folgt visualisiert werden: 
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=1\textwidth]{Networking.png}
+        \caption{Das Smarthome}
+        \label{fig:smarthome}
+    \end{figure}
 
-    \section{Hardware}
-    Das Control-Panel soll klein genug sein, um auf einem Schreibtisch zu stehen
-    und über ein reguläres Handyladegerät versorgt werden. Die Technik 
-    soll in einem 3D-gedruckten Gehäuse verbaut sein, in dem nur das Display und
-    die Bedienelemente sichtbar sind. 
+    Das Control-Panel wird als Node in diesem Netzwerk fungieren.
+
 
 
         
