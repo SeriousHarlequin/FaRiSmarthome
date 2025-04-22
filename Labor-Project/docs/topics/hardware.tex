@@ -11,8 +11,8 @@
         \subsection{Versorgung}
         Das Board wird mit 5V über USB-C versorgt, um den ESP32-S3 mit 3V3 zu 
         versorgung, wird ein AMS1117 Spannungswandler verwenden. Dieser wurde ausgewählt, 
-        aufgrund der einfachen Implementierung. Die Verluste bei der Umwandlung können vernachlässigt werden, da 
-        es sich nicht um ein batteriebetriebenes Gerät handelt.
+        aufgrund der einfachen Implementierung. Die Verluste bei der Umwandlung können vernachlässigt 
+        werden, da es sich nicht um ein batteriebetriebenes Gerät handelt.
 
             \begin{figure}[h!]
                 \centering
@@ -23,8 +23,8 @@
             \end{figure}
 
         Die Widerstände R1 und R2 mit 5,1kOhm sind mit den CC-Leitungen auf GND verbunden.
-        Dadurch weiß das Netzteil welche Spannung und wie viel Strom es zur verfügung stellen
-        muss. 
+        Dadurch weiß das Netzteil(falls dieses "Power Delivery" unterstützt) welche Spannung 
+        und wie viel Strom es zur verfügung stellen muss. 
 
             \begin{figure}[h!]
                 \centering
@@ -36,7 +36,8 @@
 
         Ein- und Ausgangsseitig liegt jeweils ein Glättungskondensator. Die Diode wurde hinzugefügt 
         um zu verhindern, dass am Ausgang eine größere Spannung
-        anliegt als beim Eingang - wie z.B. beim Abstecken des Gerätes.
+        anliegt als beim Eingang - wie z.B. beim Abstecken des Gerätes. Das soll verhindern,
+        dass der AMS1117 beschädigt wird.
 
         \newpage
 
@@ -46,7 +47,7 @@
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=8cm]{microcontroller.png}
+                \includegraphics[width=10cm]{microcontroller.png}
                 \caption{uC im Schaltplan.}
                 \label{fig:sch3}
 
@@ -97,14 +98,15 @@
         Die Berührung am Resisivtouch-Panel wird vom XPT2046 erfasst und mittels 
         SPI-BUS vom µC ausgelesen. Da es bei der Implementierung von Touch softwareseitig
         Probleme gab, wurde stattdessen ein Drehgeber mit Taste verwendet.
-        Dafür wurden die in der Abbildung \ref{fig:sch1} bzw. \ref{fig:sch4} gezeigten Pins mit 
+        Dafür wurden die in der Abbildung \ref{fig:sch3} bzw. \ref{fig:sch4} gezeigten Pins mit 
         dem Prefix "Touch" für das Einlesen des Drehgebers verwendet.
 
         \subsection{LED-Streifen}
 
-        Der LED-Streifen ist mit WS2812B bestückt. Das sind adressierbare RGB-LEDs, 
-        die über einen einzigen Datenpin angesteuert werden. 
-        Der Datenpin des LED-Streifens ist mit dem GPIO42 des ESP32-S3 verbunden. 
+        Der LED-Streifen ist eine eigene Platine welche mit WS2812B LEDs bestückt ist. Das sind 
+        adressierbare RGB-LEDs, die über einen einzigen Datenpin angesteuert werden. Dadurch 
+        können beliebig viele Streifen hintereinander geschalten werden. Der Datenpin des 
+        LED-Streifens ist mit dem GPIO42 des ESP32-S3 verbunden. 
 
             \begin{figure}[h!]
                 \centering
@@ -152,8 +154,8 @@
 
         
         
-        Der Inkrementalgeber hat die relativen Ausgange A und B Signalen. Diese geben beide
-        eine definierte Menge an Impulse ab. Beide Signale sind zueinander 90° Phasenverschoben. Somit
+        Der Inkrementalgeber hat die Ausgänge A und B. Diese geben beide die selbe
+        definierte Menge an Impulse pro Umdrehung ab. Beide Signale sind zueinander 90° Phasenverschoben. Somit
         kann die Drehrichtung bestimmt werden. Da je nach Drehrichtung die positive Flanke entweder
         zuerst bei A oder B erfasst wird.
 
@@ -173,7 +175,8 @@
 
             \end{figure}
         Der Encoder KY-040 ist fertig bestückt auf ein PCB. Wie in Abbildung \ref{fig:sch6} zu sehen ist, 
-        hat dieses Bauteil 5 Anschlussdrähte. Der Encoder gibt 20 Impulse pro Umdrehung aus.
+        hat dieses Bauteil 5 Anschlussdrähte. Der Encoder gibt 20 Impulse pro Umdrehung aus und 
+        rastet beim Drehen nach jedem Impuls ein.
 
         \newpage
         
@@ -199,14 +202,15 @@
     In diesem Kapitel werden die unterschiedlichen PCBs beschrieben.
 
 
-        \subsection{ARGB-Print}
+        \subsection{ARGB-Print V1 \& V1.1}
         Dieser Print hat einen Eingang und einen Ausgang, es können mehrere von diesen 
-        Platinen in Reihe geschalten werden.
+        Platinen in Reihe geschalten werden. Da wie beschrieben in \ref{} ARGB-LEDs verwendet werden.
+        Für das Gehäuse sind nur zwei LED-Streifen vorgesehen. 
 
         \begin{figure}[h!]
             \centering
             \includegraphics[width=8cm]{pcb-argb.png}
-            \caption{PCB-ARGB wird blieb für V1.1 unverändert.}
+            \caption{PCB-ARGB [Blau - Rückseite, Rot - Vorderseite]}
             \label{fig:pcbargb}
 
         \end{figure}
