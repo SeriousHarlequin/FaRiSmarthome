@@ -17,10 +17,10 @@ void ui_Screen1_screen_init(void)
     ui_Label1 = lv_label_create(ui_Screen1);
     lv_obj_set_width(ui_Label1, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label1, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label1, 100);
+    lv_obj_set_x(ui_Label1, 130);
     lv_obj_set_y(ui_Label1, 0);
     lv_obj_set_align(ui_Label1, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label1, "Hello World");
+    lv_label_set_text(ui_Label1, "Encoder Value: x");
     lv_obj_set_style_text_font(ui_Label1, &lv_font_montserrat_48, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Checkbox1 = lv_checkbox_create(ui_Screen1);
@@ -59,6 +59,12 @@ void ui_Screen1_screen_init(void)
     lv_obj_add_flag(ui_Button1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
+    ui_btn1Label = lv_label_create(ui_Button1);
+    lv_obj_set_width(ui_btn1Label, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_btn1Label, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_btn1Label, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_btn1Label, "Data");
+
     ui_Button2 = lv_btn_create(ui_Screen1);
     lv_obj_set_width(ui_Button2, 100);
     lv_obj_set_height(ui_Button2, 50);
@@ -67,6 +73,12 @@ void ui_Screen1_screen_init(void)
     lv_obj_set_align(ui_Button2, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button2, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_btn2Label = lv_label_create(ui_Button2);
+    lv_obj_set_width(ui_btn2Label, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_btn2Label, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_btn2Label, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_btn2Label, "Bridge");
 
     ui_Button3 = lv_btn_create(ui_Screen1);
     lv_obj_set_width(ui_Button3, 100);
@@ -77,31 +89,38 @@ void ui_Screen1_screen_init(void)
     lv_obj_add_flag(ui_Button3, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button3, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
+    ui_bnt3Label = lv_label_create(ui_Button3);
+    lv_obj_set_width(ui_bnt3Label, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_bnt3Label, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_bnt3Label, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_bnt3Label, "Next Page");
+
     ui_Panel1 = lv_obj_create(ui_Screen1);
     lv_obj_set_width(ui_Panel1, 300);
     lv_obj_set_height(ui_Panel1, 300);
     lv_obj_set_x(ui_Panel1, -240);
     lv_obj_set_y(ui_Panel1, -80);
     lv_obj_set_align(ui_Panel1, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Panel1, LV_OBJ_FLAG_HIDDEN);     /// Flags
     lv_obj_clear_flag(ui_Panel1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_Label2 = lv_label_create(ui_Panel1);
-    lv_obj_set_width(ui_Label2, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label2, -35);
-    lv_obj_set_y(ui_Label2, -120);
-    lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label2, "IP: xxx.xxx.xxx.xxx");
-    lv_obj_set_style_text_font(ui_Label2, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_IPLabel = lv_label_create(ui_Panel1);
+    lv_obj_set_width(ui_IPLabel, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_IPLabel, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_IPLabel, -35);
+    lv_obj_set_y(ui_IPLabel, -120);
+    lv_obj_set_align(ui_IPLabel, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_IPLabel, "IP: xxx.xxx.xxx.xxx");
+    lv_obj_set_style_text_font(ui_IPLabel, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label4 = lv_label_create(ui_Panel1);
-    lv_obj_set_width(ui_Label4, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label4, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label4, -20);
-    lv_obj_set_y(ui_Label4, -90);
-    lv_obj_set_align(ui_Label4, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label4, "MAC: xx:xx:xx:xx:xx:xx");
-    lv_obj_set_style_text_font(ui_Label4, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_MacLabel = lv_label_create(ui_Panel1);
+    lv_obj_set_width(ui_MacLabel, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_MacLabel, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_MacLabel, -20);
+    lv_obj_set_y(ui_MacLabel, -90);
+    lv_obj_set_align(ui_MacLabel, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_MacLabel, "MAC: xx:xx:xx:xx:xx:xx");
+    lv_obj_set_style_text_font(ui_MacLabel, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_MasterFound = lv_checkbox_create(ui_Panel1);
     lv_checkbox_set_text(ui_MasterFound, "Master Found");
@@ -112,6 +131,33 @@ void ui_Screen1_screen_init(void)
     lv_obj_set_align(ui_MasterFound, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_MasterFound, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_MasterFound, LV_OBJ_FLAG_CLICKABLE);      /// Flags
+
+    ui_Panel2 = lv_obj_create(ui_Screen1);
+    lv_obj_set_width(ui_Panel2, 300);
+    lv_obj_set_height(ui_Panel2, 300);
+    lv_obj_set_x(ui_Panel2, -240);
+    lv_obj_set_y(ui_Panel2, -80);
+    lv_obj_set_align(ui_Panel2, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Panel2, LV_OBJ_FLAG_HIDDEN);     /// Flags
+    lv_obj_clear_flag(ui_Panel2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_tempLabel = lv_label_create(ui_Panel2);
+    lv_obj_set_width(ui_tempLabel, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_tempLabel, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_tempLabel, -15);
+    lv_obj_set_y(ui_tempLabel, -120);
+    lv_obj_set_align(ui_tempLabel, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_tempLabel, "Temperature [°C]: 00");
+    lv_obj_set_style_text_font(ui_tempLabel, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_switchLabel = lv_label_create(ui_Panel2);
+    lv_obj_set_width(ui_switchLabel, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_switchLabel, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_switchLabel, -50);
+    lv_obj_set_y(ui_switchLabel, -90);
+    lv_obj_set_align(ui_switchLabel, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_switchLabel, "Switch State: x");
+    lv_obj_set_style_text_font(ui_switchLabel, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_Button1, ui_event_Button1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button2, ui_event_Button2, LV_EVENT_ALL, NULL);

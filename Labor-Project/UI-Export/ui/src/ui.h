@@ -25,14 +25,20 @@ extern lv_obj_t * ui_Checkbox2;
 extern lv_obj_t * ui_Checkbox3;
 void ui_event_Button1(lv_event_t * e);
 extern lv_obj_t * ui_Button1;
+extern lv_obj_t * ui_btn1Label;
 void ui_event_Button2(lv_event_t * e);
 extern lv_obj_t * ui_Button2;
+extern lv_obj_t * ui_btn2Label;
 void ui_event_Button3(lv_event_t * e);
 extern lv_obj_t * ui_Button3;
+extern lv_obj_t * ui_bnt3Label;
 extern lv_obj_t * ui_Panel1;
-extern lv_obj_t * ui_Label2;
-extern lv_obj_t * ui_Label4;
+extern lv_obj_t * ui_IPLabel;
+extern lv_obj_t * ui_MacLabel;
 extern lv_obj_t * ui_MasterFound;
+extern lv_obj_t * ui_Panel2;
+extern lv_obj_t * ui_tempLabel;
+extern lv_obj_t * ui_switchLabel;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Screen2

@@ -17,14 +17,20 @@ lv_obj_t * ui_Checkbox2;
 lv_obj_t * ui_Checkbox3;
 void ui_event_Button1(lv_event_t * e);
 lv_obj_t * ui_Button1;
+lv_obj_t * ui_btn1Label;
 void ui_event_Button2(lv_event_t * e);
 lv_obj_t * ui_Button2;
+lv_obj_t * ui_btn2Label;
 void ui_event_Button3(lv_event_t * e);
 lv_obj_t * ui_Button3;
+lv_obj_t * ui_bnt3Label;
 lv_obj_t * ui_Panel1;
-lv_obj_t * ui_Label2;
-lv_obj_t * ui_Label4;
+lv_obj_t * ui_IPLabel;
+lv_obj_t * ui_MacLabel;
 lv_obj_t * ui_MasterFound;
+lv_obj_t * ui_Panel2;
+lv_obj_t * ui_tempLabel;
+lv_obj_t * ui_switchLabel;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Screen2
@@ -55,7 +61,10 @@ void ui_event_Button1(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_state_modify(ui_Checkbox3, LV_STATE_CHECKED, _UI_MODIFY_STATE_TOGGLE);
+        _ui_flag_modify(ui_Panel2, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_TOGGLE);
+    }
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_flag_modify(ui_Panel1, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 
@@ -65,6 +74,9 @@ void ui_event_Button2(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_flag_modify(ui_Panel1, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_TOGGLE);
+    }
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_flag_modify(ui_Panel2, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 
