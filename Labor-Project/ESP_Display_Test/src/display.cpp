@@ -1,7 +1,8 @@
 #include "display.h"
-extern TFT_eSPI tft;
 
 TFT_eSPI tft = TFT_eSPI(displayWidth, displayHeight);
+lv_style_t HighlightStyle;
+
 
 void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p )
 {
@@ -36,4 +37,57 @@ void initTFT(){
     lv_disp_drv_register( &disp_drv );
 
     ui_init();
+
+    //init style for the focused object
+    lv_style_init(&HighlightStyle);
+    lv_style_set_outline_color(&HighlightStyle, lv_color_hex(0x00FF00)); // Green outline
+    lv_style_set_outline_width(&HighlightStyle, 5); // Outline width
+    lv_style_set_outline_opa(&HighlightStyle, LV_OPA_COVER); // Fully opaque outline
+}
+void focusNext(lv_group_t* group){
+    if (group == nullptr) return;
+
+    lv_obj_t* focused_obj = lv_group_get_focused(group);
+    if (focused_obj != nullptr) {
+        lv_obj_remove_style(focused_obj, &HighlightStyle, LV_PART_ANY | LV_STATE_ANY);
+    }
+
+    lv_group_focus_next(group);
+
+    focused_obj = lv_group_get_focused(group);
+    if (focused_obj != nullptr) {
+        lv_obj_add_style(focused_obj, &HighlightStyle, 0);
+    }
+}
+
+void focusPrev(lv_group_t* group){
+    if (group == nullptr) return;
+
+    lv_obj_t* focused_obj = lv_group_get_focused(group);
+    if (focused_obj != nullptr) {
+        lv_obj_remove_style(focused_obj, &HighlightStyle, LV_PART_ANY | LV_STATE_ANY);
+    }
+
+    lv_group_focus_prev(group);
+
+    focused_obj = lv_group_get_focused(group);
+    if (focused_obj != nullptr) {
+        lv_obj_add_style(focused_obj, &HighlightStyle, 0);
+    }
+}
+
+void moveToScreen1(lv_group_t*& currentGroup, lv_group_t* group1){
+    lv_obj_remove_style(ui_Button4, &HighlightStyle, 0);
+    lv_event_send(lv_group_get_focused(currentGroup), LV_EVENT_CLICKED, NULL);
+    currentGroup = group1;
+    lv_group_focus_obj(ui_Button1);
+    lv_obj_add_style(lv_group_get_focused(currentGroup), &HighlightStyle, 0);
+}
+
+void moveToScreen2(lv_group_t*& currentGroup, lv_group_t* group2) {
+    lv_obj_remove_style(ui_Button3, &HighlightStyle, 0);
+    lv_event_send(lv_group_get_focused(currentGroup), LV_EVENT_CLICKED, NULL);
+    currentGroup = group2;
+    lv_group_focus_obj(ui_Button4);
+    lv_obj_add_style(lv_group_get_focused(currentGroup), &HighlightStyle, 0);
 }
