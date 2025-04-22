@@ -93,7 +93,7 @@ void ui_Screen1_screen_init(void)
     lv_obj_set_width(ui_bnt3Label, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_bnt3Label, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_bnt3Label, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_bnt3Label, "Next Page");
+    lv_label_set_text(ui_bnt3Label, "Settings");
 
     ui_Panel1 = lv_obj_create(ui_Screen1);
     lv_obj_set_width(ui_Panel1, 300);

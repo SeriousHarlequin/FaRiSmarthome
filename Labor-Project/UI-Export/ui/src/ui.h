@@ -46,6 +46,11 @@ void ui_Screen2_screen_init(void);
 extern lv_obj_t * ui_Screen2;
 void ui_event_Button4(lv_event_t * e);
 extern lv_obj_t * ui_Button4;
+extern lv_obj_t * ui_Label6;
+extern lv_obj_t * ui_Button5;
+extern lv_obj_t * ui_Label7;
+extern lv_obj_t * ui_Label8;
+extern lv_obj_t * ui_Label9;
 // CUSTOM VARIABLES
 
 // EVENTS
