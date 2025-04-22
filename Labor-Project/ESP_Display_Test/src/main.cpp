@@ -79,7 +79,7 @@ void lvglTimer(void *pvParameters){
       }
       
       else lv_event_send(lv_group_get_focused(currentGroup), LV_EVENT_CLICKED, NULL);
-      vTaskDelay(100);
+      vTaskDelay(200);
     }
     xSemaphoreGive(lvglMutex);
 
@@ -125,11 +125,43 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   if (!espnowSlave.msgReceived.master) return;
 
   if(espnowSlave.macMaster[0] == 0){
-      //See if it is a master and store its MAC
-      memcpy(espnowSlave.macMaster, mac, 6);
-      espnowSlave.addMaster(mac);
+    //See if it is a master and store its MAC
+    memcpy(espnowSlave.macMaster, mac, 6);
+    espnowSlave.addMaster(mac);
 
   }
-  Serial.println("Message received");
+  
+  char value1[16], value2[16], value3[16], value4[16];
+  sscanf(espnowSlave.msgReceived.message, "%15[^,],%15[^,],%15[^,],%15[^,]", value1, value2, value3, value4);
+  
+  xSemaphoreTake(lvglMutex, portMAX_DELAY);
+
+  char macStr[18];
+  snprintf(macStr, sizeof(macStr), "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+  lv_label_set_text_fmt(ui_MacLabel, "MAC: %s", macStr);
+  lv_obj_add_state(ui_MasterFound, LV_STATE_CHECKED);
+  lv_obj_set_x(ui_MacLabel, lv_obj_get_x(ui_MacLabel) + 15);
+
+  lv_label_set_text_fmt(ui_tempLabel, "Temperature[°C]: %s", value1);
+  lv_label_set_text_fmt(ui_switchLabel, "Switch State: %s", value2);
+  lv_obj_set_x(ui_switchLabel, lv_obj_get_x(ui_switchLabel) - 25);
+
+  lv_label_set_text_fmt(ui_IPLabel, "IP: %s", value3);
+
+  //show active nodes
+  if (strcmp(value4, "1") == 0) {
+    lv_obj_add_state(ui_Checkbox1, LV_STATE_CHECKED);
+  } else if (strcmp(value4, "2") == 0) {
+    lv_obj_add_state(ui_Checkbox1, LV_STATE_CHECKED);
+    lv_obj_add_state(ui_Checkbox2, LV_STATE_CHECKED);
+  } else if (strcmp(value4, "3") == 0) {
+    lv_obj_add_state(ui_Checkbox1, LV_STATE_CHECKED);
+    lv_obj_add_state(ui_Checkbox2, LV_STATE_CHECKED);
+    lv_obj_add_state(ui_Checkbox3, LV_STATE_CHECKED);
+  }
+
+  xSemaphoreGive(lvglMutex);
+    Serial.println("Message received");
+
 
 }
