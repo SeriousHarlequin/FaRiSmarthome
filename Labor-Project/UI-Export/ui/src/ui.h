@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-#include "C:\Users\fabian\Documents\GitHub\FaRiSmarthome\Labor-Project\UI-Export\lvgl"
+#include "lvgl.h"
 
 #include "ui_helpers.h"
 #include "ui_events.h"
@@ -25,17 +25,21 @@ extern lv_obj_t * ui_Checkbox2;
 extern lv_obj_t * ui_Checkbox3;
 void ui_event_Button1(lv_event_t * e);
 extern lv_obj_t * ui_Button1;
-void ui_event_Button4(lv_event_t * e);
-extern lv_obj_t * ui_Button4;
-void ui_event_Button5(lv_event_t * e);
-extern lv_obj_t * ui_Button5;
+void ui_event_Button2(lv_event_t * e);
+extern lv_obj_t * ui_Button2;
+void ui_event_Button3(lv_event_t * e);
+extern lv_obj_t * ui_Button3;
+extern lv_obj_t * ui_Panel1;
+extern lv_obj_t * ui_Label2;
+extern lv_obj_t * ui_Label4;
+extern lv_obj_t * ui_MasterFound;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Screen2
 void ui_Screen2_screen_init(void);
 extern lv_obj_t * ui_Screen2;
-void ui_event_Button3(lv_event_t * e);
-extern lv_obj_t * ui_Button3;
+void ui_event_Button4(lv_event_t * e);
+extern lv_obj_t * ui_Button4;
 // CUSTOM VARIABLES
 
 // EVENTS
