@@ -1,12 +1,16 @@
 \graphicspath{ {HW-PIC/} }
 
 
+
 \chapter{Hardware}
+    In diesem Kapitel werden die zwei unterschiedlichen Hardwarerevisionen des Projektes
+    beschrieben. 
 
     \section{Umsetzung - V1}
     
-    In diesem Kapitel werden die unterschiedlichen Hardwarerevisionen des Projektes
-    beschrieben. 
+        Die Platine ist so entwickelt worden, dass sie auf der Rückseite des Displays 
+        montiert werden kann. Was die erste Version von V1.1 unterscheidet ist, dass
+        es vorgesehen war den integrierten Touch des Displays zu verwenden.
 
         \subsection{Versorgung}
         Das Board wird mit 5V über USB-C versorgt, um den ESP32-S3 mit 3V3 zu 
@@ -23,8 +27,8 @@
             \end{figure}
 
         Die Widerstände R1 und R2 mit 5,1kOhm sind mit den CC-Leitungen auf GND verbunden.
-        Dadurch weiß das Netzteil(falls dieses "Power Delivery" unterstützt) welche Spannung 
-        und wie viel Strom es zur verfügung stellen muss. 
+        Dadurch weiß das Netzteil(falls dieses ``Power Delivery`` unterstützt) welche Spannung 
+        und wie viel Strom es zur Verfügung stellen muss. 
 
             \begin{figure}[h!]
                 \centering
@@ -42,7 +46,7 @@
         \newpage
 
         \subsection{Mikrocontroller}
-        Der ESP32-S3-WROOM-2 ist das Herzstück des Gerätes. Dieser verfügt über eine On-board PCB Antenne
+        Der ESP32-S3-WROOM-2 ist das Herzstück des Gerätes. Dieser verfügt über eine On-Board PCB Antenne
         und kommuniziert darüber mit dem Smart-Home System. 
 
             \begin{figure}[h!]
@@ -52,6 +56,8 @@
                 \label{fig:sch3}
 
             \end{figure}
+        
+        Der Piezo wird von einen NPN-Transistor eingeschalten, wenn IO47 high ist.
 
         \newpage
         \subsection{Display}
@@ -71,13 +77,15 @@
         Das zugekaufte Display hat eine Auflösung von 800x480 Pixeln und nutzt den SSD1963 Controller.
         Es ist ebenfalls ein SD-Kartenleser eingebaut. Dieser kann über SPI ausgelesen(Gelb markiert), ist 
         aber für dieses Projekt nicht in verwendung. 
-
+        
         \newpage
-        Das Display wurde über Amazon erworben.
+        
+        Das Display wurde über Amazon erworben.\cite{noauthor_viferr_nodate} Es handelt sich um ein 7 Zoll Display mit
+        einer Auflösung von 800x480 Pixeln. Es ist mit einem resistiven Touchscreen ausgestattet.
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=8cm]{TBD.png}
+                \includegraphics[width=14cm]{display-front.jpg}
                 \caption{Vorderseite des Displays.}
                 \label{fig:displayfront}
             
@@ -85,7 +93,7 @@
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=8cm]{TBD.png}
+                \includegraphics[width=14cm]{display-back.jpg}
                 \caption{Rückseite des Displays.}
                 \label{fig:displayback}
             
@@ -121,11 +129,10 @@
 
  
     \newpage
-    \section{V1.1 (Finale)}       
+    \section{Umsetzung V1.1 (Finale)}       
     In diesem Kapitel der Hardware werden nur die Änderungen zur V1 beschrieben. 
 
         \subsection{Mikrocontroller}
-        
 
             \begin{figure}[h!]
                 \centering
@@ -169,8 +176,8 @@
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=8cm]{TBD.png}
-                \caption{KY-040 Encoder}
+                \includegraphics[width=6cm]{encoder-pic.png}
+                \caption{KY-040 Encoder \cite{noauthor_iduino_nodate}}
                 \label{fig:sch8}
 
             \end{figure}
@@ -223,7 +230,7 @@
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=12cm]{pcb-v1.png}
-                \caption{PCB V1}
+                \caption{PCB V1 [Blau - Rückseite, Rot - Vorderseite]}
                 \label{fig:pcb1}
 
             \end{figure}
@@ -234,16 +241,35 @@
         Das PCB wurde für die finale Version wurde angepasst. Der Rotary Encoder und das Serial-Interface
         haben jetzt einen eigenen Pin-Header.
 
-            \begin{figure}[h!]
+            \begin{figure}[htbp]
                 \centering
                 \includegraphics[width=12cm]{pcb-v1.1.png}
-                \caption{PCB V1.1}
+                \caption{PCB V1.1 [Blau - Rückseite, Rot - Vorderseite]}
                 \label{fig:pcb1.1}
 
             \end{figure}
+
+
+            \begin{figure}[htbp]
+                \centering
+                \subfloat[\centering Rückseite]{{\includegraphics[width=6cm]{pcb-back.jpg} }}
+                \qquad
+                \subfloat[\centering Front]{{\includegraphics[width=6cm]{pcb-front.jpg} }}
+                \caption{PCB V1.1 bestückt.}
+                \label{fig:example}
+            \end{figure}
+            
             
         
     \newpage
+    \section{Schaltplan} 
+    Die folgenden zwei Seiten zeigen den Schaltplan der ersten und der finalen Version.   
+            \includepdf[pages={1}, angle = 90]{Control-Panel_V1.pdf}
+            \includepdf[pages={1}, angle = 90]{Control-Panel_V1.1.pdf}
+            
+    
+
+
     \section{Gehäuse}
     Das Gehäuse wurde aus 3D-gedruckten Teilen zusammengesetzt. Die Teile wurden in Fusion 360 
     entworfen und anschließend mit einem Creality Cr-10s Pro V2 gedruckt. Das Gehäuse besteht aus zwei 
@@ -271,6 +297,17 @@
     Der untere Teil des Gehäuses ist so gestaltet, dass der Oberteil sicher darauf sitzt und alle internen
     Komponenten schützt. Es bietet auch Öffnungen für die Stromversorgung. In dieses Teil wird
     die Strombuchse sowie der Encoder verbaut.
+
+    Das Loch in der Mitte des unteren Teils ist für die Montage des Encoders gedacht. Die 
+    andere Öffnung auf der Rückseite ist für die Stromversorgung, in dieser wird 
+    eine USB-C Buchse eingebaut.
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=14cm]{display-fertig.jpg}
+        \caption{Gehäuse zusammengebaut mit den Komponenten.}
+        \label{fig:case_bottom}
+    \end{figure}
    
 
     % \newpage
