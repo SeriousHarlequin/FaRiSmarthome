@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{version}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}3\PYGZsq{}}
+\PYG{n+nt}{services}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{app}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n+nt}{build}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{.}
+\PYG{+w}{    }\PYG{n+nt}{ports}\PYG{p}{:}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}3000:3000\PYGZdq{}}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Nuxt.js default port}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}5000:5000\PYGZdq{}}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Flask default port}
+
+\end{Verbatim}

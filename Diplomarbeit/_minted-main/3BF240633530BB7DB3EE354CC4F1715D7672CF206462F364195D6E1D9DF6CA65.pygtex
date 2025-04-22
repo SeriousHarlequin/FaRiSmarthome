@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{lib\PYGZus{}extra\PYGZus{}dirs}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{    }\PYG{p}{..}\PYG{o}{/}\PYG{n}{globalLibs}
+\end{Verbatim}

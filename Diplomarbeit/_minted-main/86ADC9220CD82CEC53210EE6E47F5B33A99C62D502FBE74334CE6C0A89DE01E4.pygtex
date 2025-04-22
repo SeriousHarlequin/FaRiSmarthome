@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{l+s}{debian:latest}
+
+\PYG{c}{\PYGZsh{} Install required packages}
+\PYG{k}{RUN}\PYG{+w}{ }apt\PYGZhy{}get\PYG{+w}{ }update\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{    }apt\PYGZhy{}get\PYG{+w}{ }install\PYG{+w}{ }\PYGZhy{}y\PYG{+w}{ }python3\PYG{+w}{ }python3\PYGZhy{}pip\PYG{+w}{ }nodejs\PYG{+w}{ }npm\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{    }python3\PYGZhy{}flask\PYG{+w}{ }python3\PYGZhy{}flask\PYGZhy{}cors\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{    }rm\PYG{+w}{ }\PYGZhy{}rf\PYG{+w}{ }/var/lib/apt/lists/*
+\end{Verbatim}

@@ -6,12 +6,15 @@
 
 // MOSI=23, MISO=19, SCK=18
 // #define CS_PIN  10
+#define BCKLIGHT_PIN  48
 
 static const uint16_t displayWidth  = 800;
 static const uint16_t displayHeight = 480;
 static lv_disp_draw_buf_t draw_buf;
 static lv_color_t buf[ displayWidth * displayHeight / 10 ];
 
+extern TFT_eSPI tft;
+
 void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p);
 //initialize all display functionality (tft_eSPI, lvgl, SquareLineStudio)
-void initTFT(TFT_eSPI *tft);
+void initTFT();

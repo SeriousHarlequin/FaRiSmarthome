@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+[env:esp32\PYG{p}{\PYGZhy{}}c3\PYG{p}{\PYGZhy{}}devkitm\PYG{l+m}{\PYGZhy{}1}]
+platform \PYG{p}{=} espressif32
+board \PYG{p}{=} esp32\PYG{p}{\PYGZhy{}}c3\PYG{p}{\PYGZhy{}}devkitm\PYG{l+m}{\PYGZhy{}1}
+framework \PYG{p}{=} arduino
+
+build\PYGZus{}flags \PYG{p}{=}
+   \PYG{p}{\PYGZhy{}}DARDUINO\PYGZus{}USB\PYGZus{}MODE\PYG{p}{=}\PYG{l+m}{1}
+   \PYG{p}{\PYGZhy{}}DARDUINO\PYGZus{}USB\PYGZus{}CDC\PYGZus{}ON\PYGZus{}BOOT\PYG{p}{=}\PYG{l+m}{1}
+
+lib\PYGZus{}deps \PYG{p}{=}
+   fastled/FastLED@\PYGZca{}\PYG{l+m}{3}.\PYG{l+m}{9}.\PYG{l+m}{5}
+   milesburton/DallasTemperature@\PYGZca{}\PYG{l+m}{3}.\PYG{l+m}{11}.\PYG{l+m}{0}
+
+lib\PYGZus{}extra\PYGZus{}dirs \PYG{p}{=}
+   ../globalLibs
+\end{Verbatim}

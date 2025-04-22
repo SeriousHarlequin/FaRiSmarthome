@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} Set the working directory}
+\PYG{k}{WORKDIR}\PYG{+w}{ }\PYG{l+s}{/app}
+
+\PYG{c}{\PYGZsh{} Copy project files into the container}
+\PYG{k}{COPY}\PYG{+w}{ }./\PYG{+w}{ }/app
+\end{Verbatim}

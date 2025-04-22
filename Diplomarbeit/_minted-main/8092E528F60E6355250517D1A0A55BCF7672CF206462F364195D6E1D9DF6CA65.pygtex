@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{[}\PYG{n}{env}\PYG{o}{:\PYGZlt{}}\PYG{n}{BOARDNAME}\PYG{o}{\PYGZgt{}}\PYG{p}{]}
+\PYG{+w}{    }\PYG{n}{platform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{espressif32}
+\PYG{+w}{    }\PYG{n}{board}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{BOARDNAME}\PYG{o}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{n}{framework}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{arduino}
+\end{Verbatim}

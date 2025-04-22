@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{project}\PYG{p}{(}\PYG{l+s}{FaRiLib}\PYG{p}{)}
+
+\PYG{n+nb}{include\PYGZus{}directories}\PYG{p}{(}\PYG{l+s}{include}\PYG{p}{)}
+
+\PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{SOURCE\PYGZus{}FILES}
+\PYG{+w}{    }\PYG{l+s}{src/*}
+\PYG{p}{)}
+\end{Verbatim}
